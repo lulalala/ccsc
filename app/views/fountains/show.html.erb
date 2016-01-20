@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @fountain.issue %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fountain.title %>
+</p>
+
+<%= link_to 'Edit', edit_fountain_path(@fountain) %> |
+<%= link_to 'Back', fountains_path %>

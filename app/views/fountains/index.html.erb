@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fountains</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Issue</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fountains.each do |fountain| %>
+      <tr>
+        <td><%= fountain.issue %></td>
+        <td><%= fountain.title %></td>
+        <td><%= link_to 'Show', fountain %></td>
+        <td><%= link_to 'Edit', edit_fountain_path(fountain) %></td>
+        <td><%= link_to 'Destroy', fountain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fountain', new_fountain_path %>
