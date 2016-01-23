@@ -20,6 +20,7 @@ gem 'high_voltage'
 gem 'pg', '~> 0.18.4'
 gem 'puma'
 gem 'simple_form'
+gem 'kaminari'
 
 # Import
 gem 'nokogiri', '~> 1.6.7'
