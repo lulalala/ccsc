@@ -7,7 +7,7 @@ class FetchPage
   def initialize(url, issue)
     @post = Post.new
     @url = url
-    @doc = Nokogiri.HTML(open(url))
+    @doc = Nokogiri.HTML(open(url, redirect:false))
     @fountain = Fountain.find_by(issue:issue)
     parse
   end
@@ -83,7 +83,7 @@ end
     begin
       p = FetchPage.new(url, i)
       p.save
-    rescue OpenURI::HTTPError
+    rescue OpenURI::HTTPError, OpenURI::HTTPRedirect
       break
     end
   end
