@@ -21,6 +21,10 @@ gem 'high_voltage'
 gem 'pg', '~> 0.18.4'
 gem 'puma'
 gem 'simple_form'
+
+# Import
+gem 'nokogiri', '~> 1.6.7'
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
