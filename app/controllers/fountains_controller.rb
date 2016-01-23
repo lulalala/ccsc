@@ -3,7 +3,7 @@ class FountainsController < ApplicationController
 
   # GET /fountains
   def index
-    @fountains = Fountain.all
+    @fountains = Fountain.order(id: :desc).page(params[:page])
   end
 
   # GET /fountains/1
