@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Fountains</h1>
+<h1>心泉</h1>
 
 <table class="table">
   <tbody>
     <% @fountains.each do |fountain| %>
       <tr>
-        <td><%= fountain.issue %></td>
+        <td>第 <%= fountain.issue %> 期</td>
         <td><%= link_to fountain.title, fountain %></td>
       </tr>
     <% end %>
