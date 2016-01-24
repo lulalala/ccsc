@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:show]
   resources :fountains, only: [:index, :show]
+
+  namespace :admin do
+    resources :fountains, except: [:show]
+    resources :posts, except: [:show]
+  end
 end

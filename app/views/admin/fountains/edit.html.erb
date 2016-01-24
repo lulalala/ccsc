@@ -1,0 +1,18 @@
+<h1>修改</h1>
+
+
+<%= render 'form' %>
+
+<br/>
+
+<h2>目前預覽</h2>
+<div class="preview">
+  <%= content_tag :iframe, "", src:fountain_path(@admin_fountain), width:'100%', height:'600px' %>
+</div>
+<hr>
+
+<%= link_to 'Back', admin_fountains_path %>
+
+<hr>
+
+<%= link_to '刪除', @admin_fountain, method: :delete, data: { confirm: 'Are you sure?' } %>
