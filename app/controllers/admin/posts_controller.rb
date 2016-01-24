@@ -35,7 +35,7 @@ class Admin::PostsController < Admin::BaseController
   def update
     respond_to do |format|
       if @admin_post.update(admin_post_params)
-        format.html { redirect_to @admin_post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to post_path(@admin_post), notice: 'Post was successfully updated.' }
       else
         format.html { render :edit }
       end

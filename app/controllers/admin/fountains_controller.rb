@@ -21,7 +21,7 @@ class Admin::FountainsController < Admin::BaseController
 
     respond_to do |format|
       if @admin_fountain.save
-        format.html { redirect_to @admin_fountain, notice: 'Fountain was successfully created.' }
+        format.html { redirect_to edit_admin_fountains_path(@admin_fountain), notice: 'Fountain was successfully created.' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class Admin::FountainsController < Admin::BaseController
   def update
     respond_to do |format|
       if @admin_fountain.update(admin_fountain_params)
-        format.html { redirect_to @admin_fountain, notice: 'Fountain was successfully updated.' }
+        format.html { redirect_to edit_admin_fountains_path(@admin_fountain), notice: 'Fountain was successfully updated.' }
       else
         format.html { render :edit }
       end
