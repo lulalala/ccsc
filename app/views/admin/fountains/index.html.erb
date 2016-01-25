@@ -19,6 +19,9 @@
         <td><%= admin_fountain.issue %></td>
         <td><%= admin_fountain.title %></td>
         <td><%= link_to '修改', edit_admin_fountain_path(admin_fountain) %></td>
+        <td>
+          <%= link_to '為這期新增文章', new_admin_post_path(fountain_id: admin_fountain) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
