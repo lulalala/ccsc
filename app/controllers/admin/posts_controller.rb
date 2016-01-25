@@ -21,7 +21,7 @@ class Admin::PostsController < Admin::BaseController
 
     respond_to do |format|
       if @admin_post.save
-        format.html { redirect_to post_path(@admin_post), notice: 'Post was successfully created.' }
+        format.html { redirect_to admin_fountains_path, notice: 'Post was successfully created.' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class Admin::PostsController < Admin::BaseController
   def update
     respond_to do |format|
       if @admin_post.update(admin_post_params)
-        format.html { redirect_to post_path(@admin_post), notice: 'Post was successfully updated.' }
+        format.html { redirect_to admin_fountains_path, notice: 'Post was successfully updated.' }
       else
         format.html { render :edit }
       end
