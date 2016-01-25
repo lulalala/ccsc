@@ -6,7 +6,7 @@
   <tbody>
     <% @fountains.each do |fountain| %>
       <tr>
-        <td>第 <%= fountain.issue %> 期</td>
+        <td style="width: 6em">第 <%= fountain.issue %> 期</td>
         <td><%= link_to fountain.title, fountain %></td>
       </tr>
     <% end %>
