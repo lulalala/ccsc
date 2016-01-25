@@ -2,7 +2,6 @@ class Admin::PostsController < Admin::BaseController
   before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/posts
-  # GET /admin/posts.json
   def index
     @admin_posts = Admin::Post.page(params[:page])
   end
@@ -17,7 +16,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   # POST /admin/posts
-  # POST /admin/posts.json
   def create
     @admin_post = Admin::Post.new(admin_post_params)
 
@@ -31,7 +29,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   # PATCH/PUT /admin/posts/1
-  # PATCH/PUT /admin/posts/1.json
   def update
     respond_to do |format|
       if @admin_post.update(admin_post_params)
@@ -43,7 +40,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   # DELETE /admin/posts/1
-  # DELETE /admin/posts/1.json
   def destroy
     @admin_post.destroy
     respond_to do |format|
