@@ -2,13 +2,23 @@
 
 <%= render 'form' %>
 
-<br/>
+<hr/>
 
-<h2>目前預覽</h2>
 <%= link_to '為這期新增文章', new_admin_post_path(fountain_id: @admin_fountain) %>
-<div class="preview">
-  <%= content_tag :iframe, "", src:fountain_path(@admin_fountain), width:'100%', height:'600px' %>
-</div>
+
+<table class="table">
+  <tbody>
+  <% @admin_fountain.fountain_entries.order(id: :asc).each do |e| %>
+      <% post = e.post %>
+      <tr>
+        <td><%= link_to post.title, post %></td>
+        <td><%= post.author %></td>
+        <td><%= link_to '修改文章', edit_admin_post_path(post) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <hr>
 
 <%= link_to 'Back', admin_fountains_path %>
