@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :fountains, except: [:show]
     resources :posts, except: [:show]
+    resources :groups, except: [:show]
   end
 end
