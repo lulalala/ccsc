@@ -12,6 +12,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'migration_comments', '~> 0.3'
 end
 gem 'bootstrap-sass'
 gem 'devise'
