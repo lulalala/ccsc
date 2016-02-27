@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :fountains, except: [:show]
     resources :posts, except: [:show]
     resources :groups, except: [:show]
+    resources :notices, except: [:show]
   end
 end

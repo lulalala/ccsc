@@ -1,0 +1,13 @@
+<%= simple_form_for(@admin_notice) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :body, as: :ckeditor, input_html: {rows: 40} %>
+    <%= f.association :group %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

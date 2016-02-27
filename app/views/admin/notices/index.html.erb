@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>各會訊息</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>所屬分會</th>
+      <th>標題</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_notices.each do |admin_notice| %>
+      <tr>
+        <td><%= admin_notice.group.name %></td>
+        <td><%= admin_notice.title %></td>
+        <td><%= link_to 'Edit', edit_admin_notice_path(admin_notice) %></td>
+        <td><%= link_to 'Destroy', admin_notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Notice', new_admin_notice_path %>
