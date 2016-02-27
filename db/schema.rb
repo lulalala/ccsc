@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227093212) do
+ActiveRecord::Schema.define(version: 20160227095109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20160227093212) do
 
   create_table "groups", force: :cascade, comment: "內部團體" do |t|
     t.string   "name",                    comment: "名稱"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notices", force: :cascade, comment: "新聞訊息" do |t|
+    t.integer  "group_id"
+    t.string   "title",                   comment: "標題"
+    t.text     "body",                    comment: "內文"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
