@@ -1,1 +1,9 @@
+<li class="dropdown">
+  <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">活動訊息<span class="caret"></span></a>
+  <ul class="dropdown-menu" aria-labelledby="dLabel">
+    <% Group.all.each do |group| %>
+      <li><%= link_to group.name, group_path(group) %></li>
+    <% end %>
+  </ul>
+</li>
 <li><%= link_to '心泉', fountains_path %></li>

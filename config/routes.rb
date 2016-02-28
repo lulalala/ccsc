@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
+  resources :groups, only: [:show]
   resources :posts, only: [:show]
   resources :fountains, only: [:index, :show]
 

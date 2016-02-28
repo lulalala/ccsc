@@ -1,0 +1,7 @@
+<h1><%= @group.name %></h1>
+
+<% notice = @group.notices.order(id: :desc).first %>
+<% if notice %>
+  <h1><%= notice.title %></h1>
+  <%= notice.body.html_safe %>
+<% end %>
