@@ -24,8 +24,8 @@
                     <h4><i class="fa fa-fw fa-check"></i> 最新消息</h4>
                 </div>
                 <div class="panel-body">
-                  <%= truncate(strip_tags(@notice.body), length:60) %>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                  <%= truncate(strip_tags(@notice.body), length:80) %>
+                  <%= link_to "閱讀內文", @notice.group, 'btn btn-default' %>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="panel-body">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                    <%= link_to "閱讀內文", '#', 'btn btn-default' %>
                 </div>
             </div>
         </div>
@@ -46,8 +46,8 @@
                     <h4><i class="fa fa-fw fa-compass"></i> 文化福傳</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                  <%= link_to "閱讀內文", '#', 'btn btn-default' %>
                 </div>
             </div>
         </div>
