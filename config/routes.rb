@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :posts, except: [:show]
     resources :groups, except: [:show]
     resources :notices, except: [:show]
+    resources :schedules
   end
 end

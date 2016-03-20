@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>行事曆列表</h1>
+
+<%= link_to '新增活動', new_admin_schedule_path, class:'btn btn-default' %>
+
+
+<% @groups.each do |g| %>
+  <table class="table">
+    <thead>
+    <tr>
+     <th><%= g.name %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% g.schedules.each do |s| %>
+      <tr>
+        <td>  <%=link_to s.created_at.strftime("%Y/%m/%d-%H:%M"), admin_schedule_path(s) %> </td>
+        <td><%= link_to '編輯', edit_admin_schedule_path(s) %></td>
+      </tr>
+        <% end %>
+    </tbody>
+  </table>
+<% end %>
+    
+<%#= paginate @schedules %>
+
+<br>
+
+<%#= link_to '新增活動', new_admin_schedule_path, class:'btn btn-default' %>
