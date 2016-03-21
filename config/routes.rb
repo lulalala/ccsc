@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:show]
   resources :posts, only: [:show]
   resources :fountains, only: [:index, :show]
+  resources :schedules, only: [:index]
 
   namespace :admin do
     resources :fountains, except: [:show]

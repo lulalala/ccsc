@@ -1,7 +1,6 @@
-class Admin::SchedulesController < ApplicationController
+class Admin::SchedulesController < Admin::BaseController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
   def index
-    @schedules = Schedule.all.page(params[:page])
     @groups = Group.all
   end
 

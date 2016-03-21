@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>行事曆</h1>
+
+
+<%# @groups.each do |g| %>
+ <!-- <div class ="col-md-4">
+  <table class="table">
+    <tbody>
+      <tr><%#= g.name %></tr>
+      <tr><%#= g.latest_schedule %></tr>
+      <tr><%#= g.latest_created_at %></tr>   
+    </tbody>
+  </table>
+ </div> -->
+<%# end %>
+
+<% @groups.each do |g| %>
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><i class="fa fa-fw fa-gift"></i> <%= g.name %></h4>
+    </div>
+    <div class="panel-body">
+      <%= sanitize g.latest_schedule %>
+      <div class ="small"><%= g.latest_created_at %></div>
+    </div>
+  </div>
+</div>
+<% end %>
