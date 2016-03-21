@@ -3,10 +3,10 @@ class Group < ActiveRecord::Base
   has_many :schedules
 
   def latest_schedule
-    self.schedules.last.body
+    self.schedules.last.try(:body)
   end
 
   def latest_created_at
-    self.schedules.last.created_at.strftime("%Y/%m/%d-%H:%M")
+    self.schedules.last.try(:created_at).try(:strftime, "%Y/%m/%d-%H:%M")
   end
 end
