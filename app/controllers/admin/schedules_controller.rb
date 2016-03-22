@@ -1,10 +1,7 @@
 class Admin::SchedulesController < Admin::BaseController
-  before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :set_schedule, only: [:edit, :update, :destroy]
   def index
     @groups = Group.all
-  end
-
-  def show
   end
 
   def new
