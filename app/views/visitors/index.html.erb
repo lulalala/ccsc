@@ -24,8 +24,8 @@
                     <h4><i class="fa fa-fw fa-check"></i> 最新消息</h4>
                 </div>
                 <div class="panel-body">
-                  <%= truncate(strip_tags(@notice.body), length:80) %>
-                  <%= link_to "閱讀內文", @notice.group, 'btn btn-default' %>
+                  <%= truncate(strip_tags(@notice.try(:body)), length:80) %>
+                  <%= link_to "閱讀內文", @notice.try(:group), 'btn btn-default' %>
                 </div>
             </div>
         </div>
