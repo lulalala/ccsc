@@ -2,29 +2,47 @@
 
 <h1>行事曆</h1>
 
-
-<%# @groups.each do |g| %>
- <!-- <div class ="col-md-4">
-  <table class="table">
+<div class ="col-md-12">
+ <% @groups.each do |g| %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><b><%= g.name %></b></th>
+      </tr>
+    </thead>
+    
     <tbody>
-      <tr><%#= g.name %></tr>
-      <tr><%#= g.latest_schedule %></tr>
-      <tr><%#= g.latest_created_at %></tr>   
+      <% if g.schedules.present? %>
+        <tr>
+          <th scope="row">活動內容</th>
+          <td><%= sanitize g.latest_schedule %></td>
+        </tr>
+        <tr>
+          <th scope="row">更新時間</th>
+          <td><div class="small"><%= g.latest_created_at %></div></td>
+        </tr>
+      <% else %>
+        <tr>
+          <th scope="row">#</th>
+          <td>目前暫無活動</td>
+        </tr>
+      <% end %> 
     </tbody>
   </table>
- </div> -->
-<%# end %>
+ <% end %>
+</div>
+ 
 
-<% @groups.each do |g| %>
-<div class="col-md-4">
+<%# @groups.each do |g| %>
+<!-- <div class="col-md-4">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4><i class="fa fa-fw fa-gift"></i> <%= g.name %></h4>
+      <h4><i class="fa fa-fw fa-gift"></i> <%#= g.name %></h4>
     </div>
     <div class="panel-body">
-      <%= sanitize g.latest_schedule %>
-      <div class ="small"><%= g.latest_created_at %></div>
+      <%#= sanitize g.latest_schedule %>
+      <div class ="small"><%#= g.latest_created_at %></div>
     </div>
   </div>
-</div>
-<% end %>
+</div> -->
+<%# end %>
