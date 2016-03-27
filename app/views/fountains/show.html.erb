@@ -6,16 +6,7 @@
   <%= @fountain.title %>
 </h1>
 
-<table class="table">
-  <tbody>
-  <% @fountain.fountain_entries.order(id: :asc).each do |e| %>
-    <% post = e.post %>
-    <tr>
-      <td><%= link_to post.title, post %></td>
-      <td><%= post.author %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render partial: 'fountains/catalogue', :locals => {fountain: @fountain} %>
 
-<%= link_to 'Back', fountains_path %>
+<p><%= link_to 'Back', fountains_path %></p>
+

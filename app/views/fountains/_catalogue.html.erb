@@ -1,0 +1,11 @@
+<table class="table">
+  <tbody>
+  <% fountain.fountain_entries.each do |e| %>
+    <% post = e.post %>
+    <tr>
+      <td><%= link_to post.title, post %></td>
+      <td><%= post.author %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table> 

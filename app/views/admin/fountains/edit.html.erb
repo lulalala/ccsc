@@ -1,11 +1,12 @@
-<h1>修改</h1>
+<h1>心泉第<%= @admin_fountain.issue %>期修改</h1>
 
 <%= render 'form' %>
 
 <hr/>
 
-<%= link_to '為這期新增文章', new_admin_post_path(fountain_id: @admin_fountain) %>
+<%= link_to '為這期新增文章', new_admin_post_path(fountain_id: @admin_fountain), class:'btn btn-lg btn-primary' %>
 
+<h2>本期文章</h2>
 <table class="table">
   <tbody>
   <% @admin_fountain.fountain_entries.order(id: :asc).each do |e| %>
@@ -18,11 +19,3 @@
   <% end %>
   </tbody>
 </table>
-
-<hr>
-
-<%= link_to 'Back', admin_fountains_path %>
-
-<hr>
-
-<%= link_to '刪除', @admin_fountain, method: :delete, data: { confirm: 'Are you sure?' } %>

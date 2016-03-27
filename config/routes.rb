@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   resources :schedules, only: [:index]
 
   namespace :admin do
-    resources :fountains, except: [:show]
+    resources :fountains, except: [:show] do
+      member do
+        post 'new_catalogue'
+      end
+    end
     resources :posts, except: [:show]
     resources :groups, except: [:show]
     resources :notices, except: [:show]
