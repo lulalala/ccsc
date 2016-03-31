@@ -11,6 +11,9 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # Setting
 gem 'settingslogic', '~> 2.0'
 
+# Image
+gem 'flickr-objects', '~> 0.6.2'
+
 group :development, :test do
   gem 'byebug'
 end
