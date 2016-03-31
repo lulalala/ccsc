@@ -1,5 +1,5 @@
 class Admin::FountainsController < Admin::BaseController
-  before_action :set_admin_fountain, only: [:edit, :update, :destroy]
+  before_action :set_admin_fountain, only: [:edit, :update, :destroy, :new_catalogue]
 
   # GET /admin/fountains
   def index
@@ -45,6 +45,12 @@ class Admin::FountainsController < Admin::BaseController
     respond_to do |format|
       format.html { redirect_to admin_fountains_url, notice: 'Fountain was successfully destroyed.' }
     end
+  end
+
+  def new_catalogue
+    @admin_fountain.catalogue = render_to_string partial: '/fountains/catalogue', locals: {fountain:@admin_fountain}
+    @admin_fountain.save!
+    redirect_to edit_admin_fountain_path(@admin_fountain)
   end
 
   private

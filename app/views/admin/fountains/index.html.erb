@@ -22,6 +22,9 @@
         <td>
           <%= link_to '為這期新增文章', new_admin_post_path(fountain_id: admin_fountain) %>
         </td>
+        <td>
+          <%= link_to '新增目錄', new_catalogue_admin_fountain_path(admin_fountain), :method => :post, class: 'btn btn-default' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
