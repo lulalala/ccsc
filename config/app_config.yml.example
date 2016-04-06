@@ -1,0 +1,15 @@
+hosts:
+  default: &default_host
+    :protocol: 'http'
+    :subdomain: null
+    :domain: 'localhost'
+    :port: 3000
+  asset:
+    <<: *default_host
+rails:
+  secret_token: ''
+  secret_key_base: ''
+admin:
+  name: ''
+  email: ''
+  password: ''
