@@ -7,6 +7,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bh', '~> 1.3.5'
+
+# Setting
+gem 'settingslogic', '~> 2.0'
+
 group :development, :test do
   gem 'byebug'
 end
