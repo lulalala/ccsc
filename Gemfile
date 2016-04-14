@@ -7,7 +7,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bh', '~> 1.3.5'
-
+gem 'acts-as-taggable-on', '~> 3.4'
 # Setting
 gem 'settingslogic', '~> 2.0'
 
