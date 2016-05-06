@@ -1,4 +1,4 @@
 class FountainEntry < ActiveRecord::Base
   belongs_to :fountain
-  belongs_to :post
+  has_one :post, as: :owner
 end
