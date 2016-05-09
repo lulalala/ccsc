@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>文章列表</h1>
+
+<%= link_to '新增文章', new_admin_post_path, class:'btn btn-default' %>
+
+<table>
+  <thead>
+  <tr>
+    <th>標題</th>
+    <th>作者</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_fountain_entries.each do |admin_fountain_entry| %>
+      <tr>
+        <td><%= admin_fountain_entry.post.title %></td>
+        <td><%= admin_fountain_entry.post.author %></td>
+        <td><%= link_to '顯示前台', post_path(admin_fountain_entry) %></td>
+        <td><%= link_to '編輯', edit_admin_fountain_entry_path(admin_fountain_entry) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fountain entry', new_admin_fountain_entry_path %>

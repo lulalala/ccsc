@@ -1,0 +1,15 @@
+<%= simple_form_for(@admin_fountain_entry, url:admin_fountain_fountain_entries_path) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.fields_for(:post) do |p| %>
+      <%= p.input :title, label:'標題' %>
+      <%= p.input :author, label:'作者' %>
+      <%= p.input :body, label:'內文', as: :ckeditor, input_html: {rows: 40} %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, '存檔', class:'btn btn-lg btn-default' %>
+  </div>
+<% end %>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       member do
         post 'new_catalogue'
       end
+      resources :fountain_entries, except: [:show]
     end
     resources :posts, except: [:show]
     resources :groups, except: [:show]
