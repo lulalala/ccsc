@@ -1,0 +1,17 @@
+<%= simple_form_for @admin_culture_entry, url: url do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.simple_fields_for :post, @post do |p| %>
+      <%= p.input :title, label:'標題' %>
+      <%= p.input :author, label:'作者' %>
+      <%= p.input :tag_list, label: '關鍵字' %>
+      <%= f.input :category, collection: CultureEntry::CATEGORIES, label: '分類', include_blank:false %>
+      <%= p.input :body, label:'內文', as: :ckeditor, input_html: {rows: 40} %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, '存檔', class:'btn btn-lg btn-default' %>
+  </div>
+<% end %>
