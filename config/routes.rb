@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       end
       resources :fountain_entries, except: [:show]
     end
+    resources :culture_entries, except: [:show, :destroy] 
     resources :posts, except: [:show]
     resources :groups, except: [:show]
     resources :notices, except: [:show]
