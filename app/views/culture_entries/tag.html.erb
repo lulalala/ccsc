@@ -1,0 +1,7 @@
+<h1 class="title">文化福傳──反映基督信仰與中華文化</h1>
+<h3 class="title"><%= @tag %></h3>
+<% @culture_entries.each do |c| %>
+  <%= link_to c.post.title, culture_preaching_path(c), class: 'post-link' %>
+  <%= c.post.author %>
+<% end %>
+

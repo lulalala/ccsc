@@ -1,0 +1,4 @@
+<% culture_entries.each do |c| %>
+  <%= link_to c.post.title, culture_preaching_path(c), class: 'post-link' %>
+  <%= c.post.author %>
+<% end %>
