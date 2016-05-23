@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get "/", to: redirect('/admin/notices')
     resources :fountains, except: [:show] do
       member do
         post 'new_catalogue'
