@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :posts, only: [:show]
   resources :fountains, only: [:index, :show]
   resources :schedules, only: [:index]
+  resources :culture_preachings, only: [:index, :show], controller: "culture_entries" do
+    get :tag, on: :collection
+  end
 
   namespace :admin do
     resources :fountains, except: [:show] do
@@ -15,6 +18,7 @@ Rails.application.routes.draw do
       end
       resources :fountain_entries, except: [:show]
     end
+    resources :culture_entries, except: [:show, :destroy] 
     resources :posts, except: [:show]
     resources :groups, except: [:show]
     resources :notices, except: [:show]

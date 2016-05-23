@@ -1,0 +1,6 @@
+<% culture_entries.each do |c| %>
+  <div class ="list-item">
+    <B><%= link_to c.post.title, culture_preaching_path(c), class: 'post-link' %></B>
+    <%= c.post.author %><br/ >
+  </div>
+<% end %>

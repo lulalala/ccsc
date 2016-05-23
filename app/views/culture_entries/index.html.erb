@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title">文化福傳──反映基督信仰與中華文化</h1>
+<br>
+<% if @culture_entries_yi.present? %>
+  <h3 class="title">詣</h3>
+  <hr />
+<% end %>
+  <%= render 'list', :culture_entries => @culture_entries_yi %>
+<% if @culture_entries_story.present? %>
+  <h3 class="title">小故事小道理</h3>
+  <hr />
+<% end %>
+  <%= render 'list', :culture_entries => @culture_entries_story %>
+<% if @culture_entries_essay.present? %>
+  <h3 class="title">論文</h3>
+  <hr />
+<% end %>
+  <%= render 'list', :culture_entries => @culture_entries_essay %>
+<h3 class="title">關鍵字</h3>
+<hr />
+<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  <%= link_to tag.name, tag_culture_preachings_path(tag: tag.name), :class => css_class %>
+<% end %>
+<%#= paginate @culture_entries %>
+
+<br>
+
+

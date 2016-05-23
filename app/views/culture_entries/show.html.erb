@@ -1,0 +1,13 @@
+<h1>
+  <%= @culture_entry.post.title %>
+</h1>
+
+<div class="author"><%= @culture_entry.post.author %></div>
+<br />
+<p>
+  關鍵字：<%= @culture_entry.post.tag_list %>
+  <%#=sanitize @culture_entry.post.tag_list.map { |t| link_to t, admin_tag_path(t) }.join(', ') %>
+</p>
+<div class="body">
+  <%= @culture_entry.post.body.html_safe %>
+</div>

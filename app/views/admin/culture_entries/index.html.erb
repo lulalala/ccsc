@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>文化福傳文章列表</h1>
+<%= link_to '新增文化福傳文章', new_admin_culture_entry_path, class: 'btn btn-default' %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>標題</th>
+      <th>作者</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @culture_entries.each do |c| %>
+      <tr>
+        <td><%= link_to c.post.title, edit_admin_culture_entry_path(c) %></td>
+        <td><%= c.post.author %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @culture_entries %>
+
+<br>
+
+
