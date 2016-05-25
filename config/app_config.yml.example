@@ -16,3 +16,5 @@ admin:
 flickr:
   key: 
   secret: 
+disqus:
+  token: 
