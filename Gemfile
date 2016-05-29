@@ -8,6 +8,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bh', '~> 1.3.5'
 gem 'acts-as-taggable-on', '~> 3.4'
+
+gem 'disqus_rails', '~> 0.0.6'
+
 # Setting
 gem 'settingslogic', '~> 2.0'
 

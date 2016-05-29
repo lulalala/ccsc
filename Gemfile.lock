@@ -85,6 +85,7 @@ GEM
     devise_invitable (1.5.5)
       actionmailer (>= 3.2.6, < 5)
       devise (>= 3.2.0)
+    disqus_rails (0.0.6)
     erubis (2.7.0)
     execjs (2.6.0)
     faraday (0.9.2)
@@ -215,6 +216,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise_invitable
+  disqus_rails (~> 0.0.6)
   flickr-objects (~> 0.6.2)
   high_voltage
   jquery-rails
