@@ -13,3 +13,6 @@ admin:
   name: ''
   email: ''
   password: ''
+flickr:
+  key: 
+  secret: 

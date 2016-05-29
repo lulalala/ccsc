@@ -11,6 +11,14 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # Setting
 gem 'settingslogic', '~> 2.0'
 
+# Image
+gem 'flickr-objects', '~> 0.6.2'
+
+# Assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-ekko-lightbox', '~> 4.0.1'
+end
+
 group :development, :test do
   gem 'byebug'
 end

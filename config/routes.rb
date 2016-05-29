@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   resources :culture_preachings, only: [:index, :show], controller: "culture_entries" do
     get :tag, on: :collection
   end
+  resources :albums, only: [:index, :show]
 
   namespace :admin do
+    get "/", to: redirect('/admin/notices')
     resources :fountains, except: [:show] do
       member do
         post 'new_catalogue'

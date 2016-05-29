@@ -13,6 +13,7 @@
     <% Group.all.each do |group| %>
       <li><%= link_to group.name, group_path(group) %></li>
     <% end %>
+    <li><%= link_to "影音紀錄", albums_path %></li>
   </ul>
 </li>
 <li class="dropdown">
