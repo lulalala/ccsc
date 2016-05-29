@@ -39,6 +39,7 @@ gem 'puma'
 gem 'simple_form'
 gem 'kaminari'
 gem 'ckeditor', '~> 4.1.6'
+gem 'cells', '~> 3.11.3'
 
 # Import
 gem 'nokogiri', '~> 1.6.7'
