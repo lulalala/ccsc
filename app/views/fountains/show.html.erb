@@ -6,7 +6,7 @@
   <%= @fountain.title %>
 </h1>
 
-<%= render partial: 'fountains/catalogue', :locals => {fountain: @fountain} %>
+<%= render_cell :fountain, :catalogue, @fountain %>
 
 <p><%= link_to 'Back', fountains_path %></p>
 
