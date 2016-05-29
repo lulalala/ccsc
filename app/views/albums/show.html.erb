@@ -1,0 +1,11 @@
+<h2><%= @album.title %></h2>
+
+<div class="row">
+  <% @photos.each do |p| %>
+    <div style="width: 150px" class="pull-left thumb">
+      <%= link_to image_tag(p.square150.source_url, class:"img-responsive"), p.largest.source_url, class:"thumbnail", data:{toggle:"lightbox", gallery:"gallery"} %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "回上一頁", albums_path %>

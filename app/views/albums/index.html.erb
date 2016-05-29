@@ -1,0 +1,10 @@
+<h2>活動相簿</h2>
+
+<ul>
+<% @albums.each do |album| %>
+  <li>
+    <%= link_to album.title, album_path(album.id) %>
+    <%= album.description %>
+  </li>
+<% end %>
+</ul>
