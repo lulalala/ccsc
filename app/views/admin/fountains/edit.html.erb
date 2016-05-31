@@ -4,17 +4,16 @@
 
 <hr/>
 
-<%= link_to '為這期新增文章', new_admin_fountain_fountain_entry_path(fountain_id: @admin_fountain), class:'btn btn-lg btn-primary' %>
+<%= link_to '為這期新增文章', new_admin_fountain_entry_path(fountain_id: @admin_fountain), class:'btn btn-lg btn-primary' %>
 
 <h2>本期文章</h2>
 <table class="table">
   <tbody>
   <% @admin_fountain.fountain_entries.order(id: :asc).each do |e| %>
-      <% post = e.post %>
       <tr>
-        <td><%= link_to post.title, post %></td>
-        <td><%= post.author %></td>
-        <td><%= link_to '修改文章', edit_admin_post_path(post) %></td>
+        <td><%= e.title %></td>
+        <td><%= e.author %></td>
+        <td><%= link_to '修改文章', edit_admin_fountain_entry_path(e) %></td>
       </tr>
   <% end %>
   </tbody>
