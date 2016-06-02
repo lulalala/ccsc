@@ -16,6 +16,8 @@ gem 'settingslogic', '~> 2.0'
 
 # Image
 gem 'flickr-objects', '~> 0.6.2'
+gem 'carrierwave', '~> 0.11.2'
+gem 'mini_magick'
 
 # Assets
 source 'https://rails-assets.org' do
