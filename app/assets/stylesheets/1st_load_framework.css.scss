@@ -1,4 +1,10 @@
-// import the CSS framework
+// Bootstrap override
+$navbar-inverse-border: none;
+$navbar-inverse-link-color: #fff;
+nav.navbar {
+  background: image-url("navbar_bg.jpg")
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
