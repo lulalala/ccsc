@@ -25,6 +25,9 @@ db/*.sqlite3
 /config/database.yml
 /config/app_config.yml
 
+# uploads
+/public/uploads/
+
 # various artifacts
 **.war
 *.rbc
