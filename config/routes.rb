@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
-  resources :groups, only: [:show]
+  resources :groups, only: [:show] do
+    resources :notices, only: [:index, :show]
+  end
   resources :posts, only: [:show]
   resources :fountains, only: [:index, :show]
   resources :schedules, only: [:index]

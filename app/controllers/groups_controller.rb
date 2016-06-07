@@ -1,13 +1,12 @@
 class GroupsController < ApplicationController
-  before_action :set_fountain, only: [:show]
-
   # GET /groups/1
   def show
-  end
+    @group = Group.find(params[:id])
+    @notice = @group.notices.order(id: :desc).first
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_fountain
-      @group = Group.find(params[:id])
+    if @notice
+      redirect_to url_for([@group, @notice])
+    else
     end
+  end
 end

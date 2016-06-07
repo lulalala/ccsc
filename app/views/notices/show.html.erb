@@ -1,0 +1,11 @@
+<h2><%= @group.name %></h2>
+
+<% if @notice %>
+  <h1>
+    <%= @notice.title %>
+  </h1>
+
+  <%= @notice.body.html_safe %>
+
+  <%= link_to "#{@group.name}過往活動訊息", [@group, :notices] %>
+<% end %>

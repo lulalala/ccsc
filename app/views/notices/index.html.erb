@@ -1,0 +1,14 @@
+<h1><%= @group.name %>過往活動訊息</h1>
+
+<table class="table">
+  <% @notices.each do |n| %>
+    <tr>
+      <td>
+        <%= link_to n.title, [@group, n] %>
+      </td>
+      <td>
+        <%= n.created_at.strftime('%d/%m/%Y') %>
+      </td>
+    </tr>
+  <% end %>
+</table>
