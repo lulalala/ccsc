@@ -10,12 +10,13 @@
         <th><b><%= g.name %></b></th>
       </tr>
     </thead>
-    
+
     <tbody>
       <% if g.schedules.present? %>
         <tr>
           <th scope="row">活動內容</th>
-          <td><%= sanitize g.latest_schedule %></td>
+          <td><%= g.latest_schedule.to_s.html_safe %>
+          </td>
         </tr>
         <tr>
           <th scope="row">更新時間</th>
@@ -26,12 +27,12 @@
           <th scope="row">#</th>
           <td>目前暫無活動</td>
         </tr>
-      <% end %> 
+      <% end %>
     </tbody>
   </table>
  <% end %>
 </div>
- 
+
 
 <%# @groups.each do |g| %>
 <!-- <div class="col-md-4">
