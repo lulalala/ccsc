@@ -15,7 +15,8 @@
       <% if g.schedules.present? %>
         <tr>
           <th scope="row">活動內容</th>
-          <td><%= sanitize g.latest_schedule %></td>
+          <td><%= g.latest_schedule.to_s.html_safe %>
+          </td>
         </tr>
         <tr>
           <th scope="row">更新時間</th>
