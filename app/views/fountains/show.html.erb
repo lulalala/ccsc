@@ -6,6 +6,10 @@
   <%= @fountain.title %>
 </h1>
 
+<% if @fountain.image.present? %>
+  <%= image_tag @fountain.image.url, class:'margin' %>
+<% end %>
+
 <%= render_cell :fountain, :catalogue, @fountain %>
 
 <p><%= link_to 'Back', fountains_path %></p>
