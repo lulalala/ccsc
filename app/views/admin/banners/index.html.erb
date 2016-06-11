@@ -1,0 +1,9 @@
+<h1>招牌圖</h1>
+
+<table class="table">
+  <% @banners.each do |banner| %>
+    <tr>
+      <td><%= link_to banner.name, edit_admin_banner_path(banner) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @banner] do |f| %>
+  <% if @banner.new_record? %>
+    <%= f.input :name %>
+  <% end %>
+  <%= f.input :image, type: :file %>
+  <%= f.submit %>
+<% end %>
