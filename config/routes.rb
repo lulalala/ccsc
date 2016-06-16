@@ -31,5 +31,6 @@ Rails.application.routes.draw do
     resources :schedules, except: [:show]
     resources :banners, except: [:show]
     resources :infos, except: [:show]
+    resources :categories, except: [:show]
   end
 end
