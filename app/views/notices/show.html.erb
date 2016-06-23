@@ -7,5 +7,6 @@
 
   <%= @notice.body.html_safe %>
 
+  <br />
   <%= link_to "#{@group.name}過往活動訊息", [@group, :notices] %>
 <% end %>
