@@ -121,6 +121,7 @@ GEM
       activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
+    lulalala_presenter (0.0.1)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     migration_comments (0.3.2)
@@ -236,6 +237,7 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   kaminari
+  lulalala_presenter
   migration_comments (~> 0.3)
   mini_magick
   nokogiri (~> 1.6.7)
