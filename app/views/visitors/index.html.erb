@@ -24,7 +24,8 @@
                     <h4><i class="fa fa-fw fa-check"></i> 最新消息</h4>
                 </div>
                 <div class="panel-body">
-                  <%= truncate(strip_tags(@notice.try(:body)), length:80) %>
+                  <%= @notice.title %><br />
+                  <%= @notice.presenter.index_abstract %>
                   <%= link_to "閱讀內文", @notice.try(:group), 'btn btn-default' %>
                 </div>
             </div>
@@ -46,7 +47,8 @@
                     <h4><i class="fa fa-fw fa-compass"></i> 文化福傳</h4>
                 </div>
                 <div class="panel-body">
-                  <p><%= truncate(strip_tags(@culture_entry.post.body), length:50) %></p>
+                  <%= @culture_entry.post.title %><br />
+                  <%= @culture_entry.presenter.index_abstract %>
                   <%= link_to "閱讀內文", culture_preaching_path(@culture_entry), 'btn btn-default' %>
                 </div>
             </div>
