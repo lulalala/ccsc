@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @info] do |f| %>
+  <% if @info.new_record? %>
+    <%= f.input :seo_name %>
+  <% end %>
+  <%= f.input :title %>
+  <%= f.input :body, as: :ckeditor, input_html: {rows: 40} %>
+  <%= f.submit %>
+<% end %>

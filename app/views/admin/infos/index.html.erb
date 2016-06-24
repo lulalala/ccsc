@@ -1,0 +1,9 @@
+<h1>頁面</h1>
+
+<table class="table">
+  <% @infos.each do |info| %>
+    <tr>
+      <td><%= link_to info.title, edit_admin_info_path(info) %></td>
+    </tr>
+  <% end %>
+</table>
