@@ -37,8 +37,14 @@
                     <h4><i class="fa fa-fw fa-gift"></i> 活動報導</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <%= link_to "閱讀內文", '#', 'btn btn-default' %>
+                  <%=
+                    @old_people = Info.find_by(seo_name: :old_people)
+                    truncate(
+                      strip_tags(@old_people.body),
+                      length:80
+                    )
+                  %></p>
+                  <%= link_to "閱讀內文", info_path(seo_name: :old_people), 'btn btn-default' %>
                 </div>
             </div>
         </div>
