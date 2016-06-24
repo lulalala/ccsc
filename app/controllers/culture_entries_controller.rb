@@ -1,6 +1,6 @@
 class CultureEntriesController < ApplicationController
   def index
-    @culture_entries_yi = CultureEntry.where(category: '詣')
+    @culture_entries_yi = CultureEntry.where(category: '宗旨')
     @culture_entries_story = CultureEntry.where(category: '小故事小道理')
     @culture_entries_essay = CultureEntry.where(category: '論文')
     tag_cloud
