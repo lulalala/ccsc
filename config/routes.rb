@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get :tag, on: :collection
   end
   resources :albums, only: [:index, :show]
+  get 'infos/:seo_name', to: 'infos#show', as: :info
 
   namespace :admin do
     get "/", to: redirect('/admin/notices')

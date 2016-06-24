@@ -1,10 +1,10 @@
 <li class="dropdown">
   <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">關於我們<span class="caret"></span></a>
   <ul class="dropdown-menu" aria-labelledby="dLabel">
-    <li><%= link_to "小會是什麼？", page_path(:intro) %></li>
-    <li><%= link_to "宗旨精神", page_path(:purpose) %></li>
-    <li><%= link_to "歷史沿革", page_path(:history) %></li>
-    <li><%= link_to "大事年表", page_path(:timeline) %></li>
+    <li><%= link_to_info :intro %></li>
+    <li><%= link_to_info :purpose %></li>
+    <li><%= link_to_info :history %></li>
+    <li><%= link_to_info :timeline %></li>
   </ul>
 </li>
 <li class="dropdown">
