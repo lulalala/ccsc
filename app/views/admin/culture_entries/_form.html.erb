@@ -5,8 +5,7 @@
     <%= f.simple_fields_for :post, @post do |p| %>
       <%= p.input :title, label:'標題' %>
       <%= p.input :author, label:'作者' %>
-      <%= p.input :tag_list, label: '關鍵字' %>
-      <%= f.input :category, collection: CultureEntry::CATEGORIES, label: '分類', include_blank:false %>
+      <%= f.select :category_id, categories_as_select_options('文化福傳'), label:'分類' %>
       <%= p.input :body, label:'內文', as: :ckeditor, input_html: {rows: 40} %>
     <% end %>
   </div>
