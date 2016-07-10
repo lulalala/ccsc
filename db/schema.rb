@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623141521) do
+ActiveRecord::Schema.define(version: 20160710133002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +51,12 @@ ActiveRecord::Schema.define(version: 20160623141521) do
 
   create_table "culture_entries", force: :cascade do |t|
     t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "category"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "category_id"
   end
 
+  add_index "culture_entries", ["category_id"], name: "index_culture_entries_on_category_id", using: :btree
   add_index "culture_entries", ["post_id"], name: "index_culture_entries_on_post_id", using: :btree
 
   create_table "fountain_entries", force: :cascade do |t|
@@ -178,6 +179,7 @@ ActiveRecord::Schema.define(version: 20160623141521) do
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "culture_entries", "categories"
   add_foreign_key "culture_entries", "posts"
   add_foreign_key "fountain_entries", "fountains"
   add_foreign_key "fountain_entries", "posts"
