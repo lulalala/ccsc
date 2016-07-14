@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :schedules, only: [:index]
   resources :culture_preachings, only: [:index, :show], controller: "culture_entries" do
     get :tag, on: :collection
+    get 'categories/:category', to: 'culture_entries#category', on: :collection
   end
   resources :albums, only: [:index, :show]
   get 'infos/:seo_name', to: 'infos#show', as: :info

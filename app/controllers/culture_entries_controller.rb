@@ -16,6 +16,12 @@ class CultureEntriesController < ApplicationController
     @culture_entries = posts.map(&:owner)
   end
 
+  def category
+    @category = Category.where(scope: "文化福傳").find_by!(name:params[:category])
+
+    @entries = CultureEntry.where(category: @category)
+  end
+
   private
 
   def tag_cloud
