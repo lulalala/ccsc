@@ -41,6 +41,6 @@ class Admin::CultureEntriesController < Admin::BaseController
   end
 
   def admin_culture_entry_params
-    params.require(:culture_entry).permit(:category, post_attributes: [:id, :title, :author, :body, :tag_list]) 
+    params.require(:culture_entry).permit(:category_id, post_attributes: [:id, :title, :author, :body, :tag_list]) 
   end
 end
