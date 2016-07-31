@@ -21,4 +21,34 @@
     </div>
     <%= render 'layouts/footer' %>
   </body>
+
+  <!-- bootstrap hidden modals -->
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">站內搜尋</h4>
+        </div>
+        <div class="modal-body">
+          <script>
+            (function () {
+              var cx = '010909150957257603198:ogwfxsqobk4';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </html>
