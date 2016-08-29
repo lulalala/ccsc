@@ -18,7 +18,7 @@
       <tr>
         <td><%= admin_fountain_entry.post.title %></td>
         <td><%= admin_fountain_entry.post.author %></td>
-        <td><%= link_to '顯示前台', post_path(admin_fountain_entry) %></td>
+        <td><%= link_to '顯示前台', fountain_entry_path(admin_fountain_entry) %></td>
         <td><%= link_to '編輯', edit_admin_fountain_entry_path(admin_fountain_entry) %></td>
       </tr>
     <% end %>

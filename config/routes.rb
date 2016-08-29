@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:show] do
     resources :notices, only: [:index, :show]
   end
-  resources :posts, only: [:show]
+  resources :fountain_entries, only: [:show]
   resources :fountains, only: [:index, :show]
   resources :schedules, only: [:index]
   resources :culture_preachings, only: [:index, :show], controller: "culture_entries" do

@@ -9,7 +9,7 @@
     <% section.entries.each do |e| %>
       <% post = e.post %>
       <tr>
-        <td><%= link_to post.title, post %></td>
+        <td><%= link_to post.title, e %></td>
         <td><%= post.author %></td>
       </tr>
     <% end %>
