@@ -13,4 +13,12 @@ module ApplicationHelper
     info = Info.find_by(seo_name: seo_name)
     link_to info.title, info_path(seo_name: seo_name)
   end
+
+  def render_page_classes
+    classes = [ params[:controller].tr('/','_'), params[:action] ]
+    if @page_classes
+      classes.concat(@page_classes)
+    end
+    classes.join(' ')
+  end
 end
