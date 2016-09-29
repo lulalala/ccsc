@@ -4,4 +4,6 @@ class CultureEntry < ActiveRecord::Base
   has_one :post, as: :owner
   belongs_to :category
   accepts_nested_attributes_for :post
+
+  validates :category_id, presence: true
 end

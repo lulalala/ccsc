@@ -10,6 +10,8 @@ class Post < ActiveRecord::Base
   after_save :link_to_fountain
   before_save :set_special_tags
 
+  validates :title, presence:true
+
   def link_to_fountain
     if fountain_id
       FountainEntry.find_or_create_by(post_id:id, fountain_id:fountain_id)
