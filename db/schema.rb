@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710133002) do
+ActiveRecord::Schema.define(version: 20161005140755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,27 +59,6 @@ ActiveRecord::Schema.define(version: 20160710133002) do
   add_index "culture_entries", ["category_id"], name: "index_culture_entries_on_category_id", using: :btree
   add_index "culture_entries", ["post_id"], name: "index_culture_entries_on_post_id", using: :btree
 
-  create_table "fountain_entries", force: :cascade do |t|
-    t.integer  "fountain_id"
-    t.integer  "post_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "order"
-    t.string   "category"
-  end
-
-  add_index "fountain_entries", ["fountain_id"], name: "index_fountain_entries_on_fountain_id", using: :btree
-  add_index "fountain_entries", ["post_id"], name: "index_fountain_entries_on_post_id", using: :btree
-
-  create_table "fountains", force: :cascade do |t|
-    t.integer  "issue"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "catalogue"
-    t.string   "image"
-  end
-
   create_table "groups", force: :cascade, comment: "內部團體" do |t|
     t.string   "name",                    comment: "名稱"
     t.datetime "created_at", null: false
@@ -102,6 +81,28 @@ ActiveRecord::Schema.define(version: 20160710133002) do
     t.text     "body",                    comment: "內文"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "periodical_entries", force: :cascade do |t|
+    t.integer  "periodical_id"
+    t.integer  "post_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "order"
+    t.string   "category"
+  end
+
+  add_index "periodical_entries", ["periodical_id"], name: "index_periodical_entries_on_periodical_id", using: :btree
+  add_index "periodical_entries", ["post_id"], name: "index_periodical_entries_on_post_id", using: :btree
+
+  create_table "periodicals", force: :cascade do |t|
+    t.integer  "issue"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "catalogue"
+    t.string   "image"
+    t.string   "type"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -181,7 +182,7 @@ ActiveRecord::Schema.define(version: 20160710133002) do
 
   add_foreign_key "culture_entries", "categories"
   add_foreign_key "culture_entries", "posts"
-  add_foreign_key "fountain_entries", "fountains"
-  add_foreign_key "fountain_entries", "posts"
+  add_foreign_key "periodical_entries", "periodicals"
+  add_foreign_key "periodical_entries", "posts"
   add_foreign_key "posts", "users"
 end
