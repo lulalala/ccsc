@@ -13,13 +13,13 @@ class FountainCell < Cell::Rails
     end
   end
 
-  def catalogue(fountain)
-    @fountain = fountain
+  def catalogue(periodical)
+    @periodical = periodical
 
     @sections = []
 
     previous_category = :not_set
-    @fountain.fountain_entries.order(order: :asc, id: :asc).each do |entry|
+    @periodical.entries.order(order: :asc, id: :asc).each do |entry|
       if entry.category == previous_category
         @sections.last.add_entry(entry)
       else
