@@ -7,5 +7,4 @@ class PeriodicalEntry < ActiveRecord::Base
   delegate :title, :body, :author, to: :post
 
   validates :periodical_id, presence: true
-  validates :post_id, presence: true
 end
