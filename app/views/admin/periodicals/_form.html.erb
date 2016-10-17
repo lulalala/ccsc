@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8">
-    <%= simple_form_for(@admin_fountain) do |f| %>
+    <%= simple_form_for([:admin, @periodical], as: :periodical) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -18,8 +18,8 @@
     <% end %>
   </div>
   <div class="col-md-4">
-    <% if @admin_fountain.persisted? && @admin_fountain.image.present? %>
-      <%= image_tag @admin_fountain.image.url, style:'width: 100%' %>
+    <% if @periodical.persisted? && @periodical.image.present? %>
+      <%= image_tag @periodical.image.url, style:'width: 100%' %>
     <% end %>
   </div>
 </div>

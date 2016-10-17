@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>心泉列表</h1>
+
+<%= link_to '新增期數', new_admin_periodical_path, class:'btn btn-default' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>期數</th>
+      <th>標題</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @periodicals.each do |periodical| %>
+      <tr>
+        <td><%= periodical.issue %></td>
+        <td><%= periodical.title %></td>
+        <td><%= link_to '修改', edit_admin_periodical_path(periodical) %></td>
+        <td>
+          <%= link_to '為這期新增文章', new_admin_periodical_entry_path(periodical_id: periodical) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @periodicals %>

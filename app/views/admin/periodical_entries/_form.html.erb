@@ -1,4 +1,4 @@
-<%= simple_form_for(@admin_fountain_entry) do |f| %>
+<%= simple_form_for([:admin, @periodical_entry]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -9,7 +9,7 @@
     <% end %>
     <%= f.input :category, label:'類別' %>
     <%= f.input :order, label:'頁數' %>
-    <%= f.hidden_field :fountain_id %>
+    <%= f.hidden_field :periodical_id %>
   </div>
 
   <div class="form-actions">

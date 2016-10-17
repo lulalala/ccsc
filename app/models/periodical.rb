@@ -1,5 +1,5 @@
 class Periodical < ActiveRecord::Base
-  has_many :periodical_entries
+  has_many :entries, class_name: "PeriodicalEntry"
   mount_uploader :image, FountainUploader
 
   validates :issue, presence: true

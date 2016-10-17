@@ -19,12 +19,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/", to: redirect('/admin/notices')
-    resources :fountains, except: [:show] do
-      member do
-        post 'new_catalogue'
-      end
-    end
-    resources :fountain_entries, except: [:show]
+    resources :fountains, type:"Fountain", controller:"periodicals", except: [:show]
+    resources :periodical_entries, except: [:index, :show]
+
     resources :culture_entries, except: [:show, :destroy]
     resources :posts, except: [:show]
     resources :groups, except: [:show]
