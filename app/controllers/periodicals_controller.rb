@@ -15,7 +15,7 @@ class PeriodicalsController < ApplicationController
   end
 
   def model_class
-    params[:type].constantize if params[:type].in?(["Fountain"])
+    params[:type].constantize if params[:type].in?(["Fountain", "Seed"])
   end
   helper_method :model_class
 end

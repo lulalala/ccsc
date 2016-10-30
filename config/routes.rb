@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :periodical_entries, only: [:show]
   resources :fountains, type:"Fountain", controller:"periodicals", only: [:index, :show]
+  resources :seeds, type:"Seed", controller:"periodicals", only: [:index, :show]
   resources :schedules, only: [:index]
   resources :culture_preachings, only: [:index, :show], controller: "culture_entries" do
     get :tag, on: :collection
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/", to: redirect('/admin/notices')
     resources :fountains, type:"Fountain", controller:"periodicals", except: [:show]
+    resources :seeds, type:"Seed", controller:"periodicals", except: [:show]
     resources :periodical_entries, except: [:index, :show]
 
     resources :culture_entries, except: [:show, :destroy]
