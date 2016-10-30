@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :notices, only: [:index, :show]
   end
   resources :periodical_entries, only: [:show]
-  resources :fountains, only: [:index, :show]
+  resources :fountains, type:"Fountain", controller:"periodicals", only: [:index, :show]
   resources :schedules, only: [:index]
   resources :culture_preachings, only: [:index, :show], controller: "culture_entries" do
     get :tag, on: :collection

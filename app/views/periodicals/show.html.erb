@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h2>第<%= @periodical.issue %>期</h2>
+
+<h1>
+  <%= @periodical.title %>
+</h1>
+
+<% if @periodical.image.present? %>
+  <%= image_tag @periodical.image.url, class:'margin' %>
+<% end %>
+
+<%= render_cell :fountain, :catalogue, @periodical %>
+
+<p><%= link_to 'Back', url_for(model_class) %></p>
+

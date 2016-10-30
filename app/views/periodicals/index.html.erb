@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= model_class.fullname %></h1>
+
+<%= banner_tag('心泉列表') %><br/>
+
+<table class="table">
+  <tbody>
+    <% @periodicals.each do |periodical| %>
+      <tr>
+        <td style="width: 6em">第 <%= periodical.issue %> 期</td>
+        <td><%= link_to periodical.title, periodical %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @periodicals %>
