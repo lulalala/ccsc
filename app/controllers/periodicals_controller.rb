@@ -2,7 +2,7 @@ class PeriodicalsController < ApplicationController
   before_action :set_periodical, only: [:show]
 
   def index
-    @periodicals = model_class.order(id: :desc).page(params[:page])
+    @periodicals = model_class.where(public: true).order(id: :desc).page(params[:page])
   end
 
   def show
