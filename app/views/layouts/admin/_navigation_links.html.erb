@@ -2,7 +2,8 @@
 <li><%= link_to '內部團體', Admin::Group %></li>
 <li><%= link_to '各會訊息', Admin::Notice %></li>
 <li><%= link_to '行事曆', admin_schedules_path %></li>
-<li><%= link_to '心泉', Admin::Fountain %></li>
+<li><%= link_to '心泉', [:admin, Fountain] %></li>
+<li><%= link_to '芥子', [:admin, Seed] %></li>
 <li><%= link_to '文化福傳', admin_culture_entries_path %></li>
 <li><%= link_to '招牌圖', admin_banners_path %></li>
 <li><%= link_to '照片', 'https://www.flickr.com/photos/139810412@N04/albums' %></li>

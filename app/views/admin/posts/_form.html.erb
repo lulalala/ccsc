@@ -8,7 +8,7 @@
     <%= f.input :body, label:'內文', as: :ckeditor, input_html: {rows: 40} %>
 
     <% if params[:fountain_id] %>
-      <%= f.input :fountain_id, label:'心泉期數', input_html: {value: params[:fountain_id]} %>
+      <%= f.input :fountain_id, label:'期數', input_html: {value: params[:fountain_id]} %>
     <% end %>
   </div>
 
