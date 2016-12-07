@@ -53,5 +53,5 @@ group :development do
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'mtif', path:'~/code/lib/mtif'
+  gem 'mtif'
 end
