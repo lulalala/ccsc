@@ -13,6 +13,7 @@ gem 'lulalala_presenter'
 
 gem 'disqus_rails', '~> 0.0.6'
 gem 'builder', '~> 3.2.2'
+gem 'mtif'
 
 # Setting
 gem 'settingslogic', '~> 2.0'
@@ -53,5 +54,4 @@ group :development do
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'mtif'
 end
