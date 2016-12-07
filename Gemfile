@@ -14,6 +14,7 @@ gem 'nilify_blanks', '~> 1.2.1'
 gem 'auto_html', '~> 1.6.4'
 gem 'active_interaction'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'mtif'
 
 gem 'rb-readline'
 gem 'acts_as_list'

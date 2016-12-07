@@ -141,6 +141,7 @@ GEM
     mini_magick (4.2.10)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mtif (0.0.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nilify_blanks (1.2.1)
@@ -259,6 +260,7 @@ DEPENDENCIES
   lulalala_presenter
   migration_comments (~> 0.3)
   mini_magick
+  mtif
   nilify_blanks (~> 1.2.1)
   nokogiri (~> 1.6.7)
   pg (~> 0.18.4)
@@ -277,6 +279,9 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+RUBY VERSION
+   ruby 2.2.1p85
 
 BUNDLED WITH
    1.13.6
