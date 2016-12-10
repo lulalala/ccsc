@@ -7,3 +7,5 @@
 <div class="body">
   <%= @post.body.html_safe %>
 </div>
+
+<%- disqus_thread "post/#{@post.id}" %>
