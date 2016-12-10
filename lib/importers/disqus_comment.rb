@@ -1,10 +1,9 @@
 require 'mtif'
 require 'importers/mtif_comment'
 
-xml = Builder::XmlMarkup.new(:indent => 2)
-
+keys= {comment_author: :author, comment_author_email: :email, comment_author_url: :url, comment_author_IP: :ip}
+xml = Builder::XmlMarkup.new
 xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
-
 xml.rss 'version' => "2.0",
   'xmlns:content' => "http://purl.org/rss/1.0/modules/content/",
   'xmlns:dsq' => "http://www.disqus.com/",
@@ -17,11 +16,15 @@ xml.rss 'version' => "2.0",
         post = e.post
         comments = post.misc[:comment]
         next if comments.blank?
-
         xml.item do
           xml.title post.title
-          xml.link Rails.application.routes.url_helpers.periodical_entry_path(e)
-          xml.content(:encoded) { |x| x << "<!--[CDATA[" + post.body + "]]-->" }
+          url = "http://ccsc.org.tw/periodical_entries/#{e.id}"
+          xml.link url
+          xml.content(:encoded) {
+            doc = Nokogiri::HTML(post.body)
+            doc.xpath("//script").remove
+            xml.cdata!(doc.text)
+          }
           xml.dsq(:thread_identifier) { |x| x << "post/#{post.id}" }
           xml.wp(:post_date_gmt) { |x| x << post.created_at.utc.to_formatted_s(:db) }
           xml.wp(:comment_status) { |x| x << "open" } #all comments open
@@ -29,20 +32,18 @@ xml.rss 'version' => "2.0",
           comments.each_with_index do |c, index|
             mc = MTIF::Comment.new(c).data
 
+            body = mc[:body].strip || ""
+            if body.length < 3
+              next
+            end
+
             xml.wp(:comment) do
               xml.wp(:comment_id) { |x| x << "post/#{post.id}/#{index+1}" }
-              xml.wp(:comment_author) do |x|
-                x << (mc[:author] || "")
-              end
-              xml.wp(:comment_author_email) do |x|
-                x << (mc[:email] || "")
-              end
-              xml.wp(:comment_author_url) do |x|
-                x << (mc[:url] || "")
-              end
 
-              xml.wp(:comment_author_IP) { |x|
-                x << (mc[:ip]|| "")
+              keys.each {|disqus_key, mtif_key|
+                xml.wp(disqus_key) do |x|
+                  x << (mc[mtif_key].try(:strip) || "")
+                end
               }
 
               xml.wp(:comment_date_gmt) { |x|
@@ -50,14 +51,12 @@ xml.rss 'version' => "2.0",
                 x << time.utc.to_formatted_s(:db)
               }
 
-              xml.wp(:comment_content) { |x|
-                body = mc[:body] || ""
-                x << "<!--[CDATA[" + body + "]]-->"
+              xml.wp(:comment_content) {
+                xml.cdata!(body)
               }
 
-              xml.wp(:comment_approved) { |x| x << 1 } #approve all comments
-
-              xml.wp(:comment_parent) { |x| x << 0 }
+              xml.wp(:comment_approved) { |x| x << '1' } #approve all comments
+              xml.wp(:comment_parent) { |x| x << '0' }
             end
           end
         end
@@ -65,3 +64,4 @@ xml.rss 'version' => "2.0",
     end
   end
 end
+File.write("xml.xml", xml.target!)
