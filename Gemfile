@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'bh', '~> 1.3.5'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'lulalala_presenter'
+gem 'nilify_blanks', '~> 1.2.1'
+gem 'auto_html', '~> 1.6.4'
 
 gem 'disqus_rails', '~> 0.0.6'
 
@@ -44,6 +46,7 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'ckeditor', '~> 4.1.6'
 gem 'cells', '~> 3.11.3'
+gem 'cells-collection', '~> 0.0.2'
 
 # Import
 gem 'nokogiri', '~> 1.6.7'
