@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106115845) do
+ActiveRecord::Schema.define(version: 20170108160146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,24 @@ ActiveRecord::Schema.define(version: 20161106115845) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "comment_posts", force: :cascade do |t|
+    t.integer  "topic_id"
+    t.string   "author"
+    t.text     "content"
+    t.text     "content_html"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "comment_topics", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comment_topics", ["owner_type", "owner_id"], name: "index_comment_topics_on_owner_type_and_owner_id", using: :btree
 
   create_table "culture_entries", force: :cascade do |t|
     t.integer  "post_id"
@@ -179,6 +197,7 @@ ActiveRecord::Schema.define(version: 20161106115845) do
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comment_posts", "comment_topics", column: "topic_id"
   add_foreign_key "culture_entries", "categories"
   add_foreign_key "culture_entries", "posts"
   add_foreign_key "periodical_entries", "periodicals"
