@@ -21,6 +21,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_interaction (3.4.0)
+      activemodel (>= 4, < 6)
     activejob (4.2.6)
       activesupport (= 4.2.6)
       globalid (>= 0.3.0)
@@ -231,6 +233,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_interaction
   acts-as-taggable-on (~> 3.4)
   auto_html (~> 1.6.4)
   better_errors
