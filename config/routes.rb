@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   resources :albums, only: [:index, :show]
   get 'infos/:seo_name', to: 'infos#show', as: :info
 
+  namespace :comment do
+    resources :posts, only: [:create]
+  end
+
   namespace :admin do
     get "/", to: redirect('/admin/notices')
     resources :fountains, type:"Fountain", controller:"periodicals", except: [:show]
