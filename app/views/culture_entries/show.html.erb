@@ -12,4 +12,4 @@
   <%= @culture_entry.post.body.html_safe %>
 </div>
 
-<%- disqus_thread "#{@culture_entry.class.model_name.cache_key}/#{@culture_entry.id}" %>
+<%= render_comments(@culture_entry) %>
