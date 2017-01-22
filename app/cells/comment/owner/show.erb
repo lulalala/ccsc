@@ -1,0 +1,9 @@
+<div class="comment">
+  <h3>留言</h3>
+
+  <%= render_cell 'comment/owner', :form, @owner %>
+
+  <% if @owner.comment_topic.present? %>
+      <%= render_cell 'comment/topic', :show, @owner.comment_topic %>
+  <% end %>
+</div>

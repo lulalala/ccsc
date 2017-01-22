@@ -1,0 +1,9 @@
+<article class="post">
+  <header class="info">
+    <span class="author">名字：<%= @post.author || '匿名' %></span>
+    <%= time_tag(@post.created_at) %>
+  </header>
+  <div class="content break-word">
+    <%= @post.content_html %>
+  </div>
+</article>

@@ -1,0 +1,17 @@
+<%= form_tag(comment_posts_path) do %>
+  <%= hidden_field_tag :owner_id, @owner.id %>
+  <%= hidden_field_tag :owner_type, @owner.class %>
+
+  <div class="field">
+    <%= label_tag :author, '名字' %>
+    <%= text_field_tag :author %>
+  </div>
+
+  <%= text_area_tag :content, nil, autocomplete:'off' %>
+
+  <div class="actions">
+    <%= submit_tag '留言',
+      class: 'btn btn-large',
+      data:{disable_with:'留言中...'} %>
+  </div>
+<% end %>
