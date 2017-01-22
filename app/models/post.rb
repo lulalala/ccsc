@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :owner, polymorphic: true
   acts_as_taggable
+  has_one :comment_topic, class_name:'Comment::Topic', as: :owner
 
   serialize :misc, Hash
 
