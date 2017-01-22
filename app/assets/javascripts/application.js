@@ -16,5 +16,4 @@
 //= require bootstrap-sprockets
 //= require ekko-lightbox
 //= require ckeditor/init
-//= require disqus_rails
 //= require_tree .
