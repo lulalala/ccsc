@@ -1,0 +1,19 @@
+<%= form_tag(forum_board_topics_path(@board)) do %>
+  <div class="field">
+    <%= label_tag :title, '標題' %>
+    <%= text_field_tag :title %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :author, '名字' %>
+    <%= text_field_tag :author %>
+  </div>
+
+  <%= text_area_tag :content, nil, autocomplete:'off' %>
+
+  <div class="actions">
+    <%= submit_tag '留言',
+      class: 'btn btn-large',
+      data:{disable_with:'留言中...'} %>
+  </div>
+<% end %>

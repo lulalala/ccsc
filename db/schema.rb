@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170108160146) do
+ActiveRecord::Schema.define(version: 20170122114405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,24 @@ ActiveRecord::Schema.define(version: 20170108160146) do
 
   add_index "culture_entries", ["category_id"], name: "index_culture_entries_on_category_id", using: :btree
   add_index "culture_entries", ["post_id"], name: "index_culture_entries_on_post_id", using: :btree
+
+  create_table "forum_boards", force: :cascade do |t|
+    t.string   "name"
+    t.text     "config"
+    t.integer  "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forum_topics", force: :cascade do |t|
+    t.string   "title"
+    t.boolean  "sticky"
+    t.integer  "board_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "forum_topics", ["board_id"], name: "index_forum_topics_on_board_id", using: :btree
 
   create_table "groups", force: :cascade, comment: "內部團體" do |t|
     t.string   "name",                    comment: "名稱"

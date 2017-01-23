@@ -1,0 +1,16 @@
+<h1><%= @board.name %></h1>
+
+<table class="table">
+  <thead>
+    <th>標題</th>
+  </thead>
+  <tbody>
+    <% @board.topics.each do |topic| %>
+      <tr>
+        <td>
+          <%= link_to topic.title, forum_board_topic_path(@board, topic) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

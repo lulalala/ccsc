@@ -22,6 +22,13 @@ Rails.application.routes.draw do
     resources :posts, only: [:create]
   end
 
+  namespace :forum do
+    resources :boards, only: [:show] do
+      resources :topics, only: [:new, :show, :create]
+    end
+    get '/', to: 'boards#index'
+  end
+
   namespace :admin do
     get "/", to: redirect('/admin/notices')
     resources :fountains, type:"Fountain", controller:"periodicals", except: [:show]

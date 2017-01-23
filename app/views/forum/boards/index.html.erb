@@ -1,0 +1,16 @@
+<h1>討論區</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>主題</th>
+  </tr>
+  </thead>
+  <% Forum::Board.order(id: :asc).each do |board| %>
+    <tr>
+      <td>
+        <%= link_to board.name, forum_board_path(board) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

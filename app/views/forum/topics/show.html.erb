@@ -1,0 +1,17 @@
+<% comment_topic = @topic.comment_topic %>
+
+<%= link_to "⏎ 回到 #{@board.name} 列表", forum_board_path(@board) %>
+
+<h1>
+  <%= @topic.title %>
+</h1>
+
+<div class="comment">
+  <% if @topic.comment_topic.present? %>
+      <%= render_cell 'comment/topic', :show, @topic.comment_topic %>
+  <% end %>
+
+  <hr/>
+
+  <%= render_cell 'comment/owner', :form, @topic %>
+</div>
