@@ -16,8 +16,8 @@
       <tr>
         <td><%= admin_notice.group.name %></td>
         <td><%= admin_notice.title %></td>
-        <td><%= link_to 'Edit', edit_admin_notice_path(admin_notice) %></td>
-        <td><%= link_to 'Destroy', admin_notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '更改當期訊息', edit_admin_notice_path(admin_notice) %></td>
+        <td><%= link_to '刪除', admin_notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Notice', new_admin_notice_path %>
+<%= link_to '寫新訊息', new_admin_notice_path %>
