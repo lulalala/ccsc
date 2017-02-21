@@ -9,6 +9,8 @@
 
   <%= text_area_tag :content, nil, autocomplete:'off' %>
 
+  <%= recaptcha_tags(hl: 'zh-TW') %>
+
   <div class="actions">
     <%= submit_tag '留言',
       class: 'btn btn-large',

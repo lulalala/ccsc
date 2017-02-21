@@ -16,3 +16,6 @@ admin:
 flickr:
   key: 
   secret: 
+recaptcha:
+  site_key: 
+  secret_key: 

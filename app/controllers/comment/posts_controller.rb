@@ -2,6 +2,12 @@ module Comment
   class PostsController < ApplicationController
     # For creating new topic or replying
     def create
+      if !verify_recaptcha
+        flash[:error] = "留言必須按'我不是機器人'"
+        redirect_to :back
+        return
+      end
+
       outcome = Comment::Create.run(
         owner: Comment::Post.find_owner(params[:owner_type], params[:owner_id]),
         author: params[:author],
