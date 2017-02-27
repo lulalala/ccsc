@@ -91,3 +91,7 @@ section {
 .actions {
   margin-top: 0.5em;
 }
+
+a[data-method=delete] {
+  color: #ff0000;
+}

@@ -1,3 +1,5 @@
 <h1>修改文章</h1>
 
+<%= link_to "刪除文章", [:admin, @periodical_entry], method: :delete, class: 'pull-right', data: { confirm: '你確定要刪除嗎？' } %>
+
 <%= render 'form' %>
