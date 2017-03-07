@@ -5,6 +5,7 @@ class Forum::CreateTopic < ActiveInteraction::Base
   string :author
   string :title
   string :content
+  boolean :content_is_html, default: false
 
   def execute
     board_topic = board.topics.build(
@@ -20,7 +21,8 @@ class Forum::CreateTopic < ActiveInteraction::Base
         Comment::Create,
         owner: board_topic,
         author: author,
-        content: content
+        content: content,
+        content_is_html: content_is_html
       )
     end
 
