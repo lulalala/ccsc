@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   namespace :forum do
     resources :boards, only: [:show] do
-      resources :topics, only: [:new, :show, :create]
+      resources :topics, only: [:new, :show, :create, :edit, :update]
     end
     get '/', to: 'boards#index'
   end

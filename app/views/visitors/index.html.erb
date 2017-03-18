@@ -58,7 +58,7 @@
                     <h4><i class="fa fa-fw fa-compass"></i> 文化福傳</h4>
                 </div>
                 <div class="panel-body">
-                  <%= @culture_entry.post.title %><br />
+                  <%= @culture_entry.try(:post).try(:title) %><br />
                   <%= @culture_entry.presenter.index_abstract %>
                   <%= link_to "閱讀內文", culture_preaching_path(@culture_entry), 'btn btn-default' %>
                 </div>
