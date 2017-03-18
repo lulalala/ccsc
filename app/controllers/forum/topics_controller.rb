@@ -14,7 +14,8 @@ module Forum
         board: @board,
         author: params[:author],
         title: params[:title],
-        content: params[:content]
+        content: params[:content],
+        content_is_html: true
       )
 
       respond_to do |format|

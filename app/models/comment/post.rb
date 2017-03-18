@@ -9,7 +9,7 @@ module Comment
       simple_format
     end
 
-    validates :content, presence: true
+    validate :validate_content
 
     nilify_blanks
 
@@ -20,6 +20,14 @@ module Comment
       raise if VALID_OWNER_CLASSES.include?(klass)
 
       klass.find(id)
+    end
+
+    private
+
+    def validate_content
+      if content.blank? && content_html.blank?
+        errors.add(:content, :blank)
+      end
     end
   end
 end

@@ -4,6 +4,7 @@ class Comment::Create < ActiveInteraction::Base
   object :owner, default: nil, class: Object
   string :author
   string :content
+  boolean :content_is_html, default: false
 
   def execute
     topic = owner.comment_topic
@@ -11,10 +12,17 @@ class Comment::Create < ActiveInteraction::Base
       topic = Comment::Topic.new(owner: owner)
     end
 
-    post = topic.posts.build(
-      author: author,
-      content: content
-    )
+    if content_is_html
+      post = topic.posts.build(
+        author: author,
+        content_html: content
+      )
+    else
+      post = topic.posts.build(
+        author: author,
+        content: content
+      )
+    end
 
     post.save
 
