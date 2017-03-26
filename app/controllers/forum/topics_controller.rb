@@ -25,7 +25,8 @@ module Forum
       )
 
       if current_user
-        outcome.update_attribute(:user_id, current_user.id)
+        outcome.result.user_id = current_user.id
+        outcome.result.save!
       end
 
       respond_to do |format|
