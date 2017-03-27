@@ -43,5 +43,17 @@ Rails.application.routes.draw do
     resources :banners, except: [:show]
     resources :infos, except: [:show]
     resources :categories, except: [:show]
+    namespace :forum do
+      resources :boards, only: [:show, :new, :create] do
+        resources :topics, except: [:index] do
+          get 'move_to_top', to: 'topics#move_to_top'
+        end
+      end
+      get '/', to: 'boards#index'
+      get 'all_topics', to: 'topics#all_topics'
+    end
+    namespace :comment do
+      resources :posts, only: [:create]
+    end
   end
 end

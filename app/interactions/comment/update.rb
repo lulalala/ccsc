@@ -21,6 +21,8 @@ class Comment::Update < ActiveInteraction::Base
         errors.merge!(model.errors)
       end
     }
+    topic.commented_at = post.created_at
+    topic.save
 
     topic
   end

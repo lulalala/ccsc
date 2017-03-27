@@ -1,0 +1,29 @@
+<h1><%= @board.name %></h1>
+<%= link_to '建立新標題', new_admin_forum_board_topic_path(board_id: @board.id) %>
+<%= link_to '照文章建立時間排序', admin_forum_board_path(board_id: @board.id, order: "created_at") %>
+<%= link_to '照文章被回覆時間排序', admin_forum_board_path(board_id: @board.id, order: "replied_at") %>
+<table class="table">
+  <thead>
+    <th>標題</th>
+  </thead>
+  <tbody>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td>
+          <%= link_to topic.title, admin_forum_board_topic_path(@board, topic) %>
+        </td>
+        <td>
+          <%= link_to '編輯', edit_admin_forum_board_topic_path(board_id: @board.id, id: topic.id) %>
+        </td>
+        <td>
+          <%= link_to '刪除', admin_forum_board_topic_path(board_id: @board.id, id: topic.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        <td>
+          <% if topic.position != 1 %>
+            <%= link_to '置頂', admin_forum_board_topic_move_to_top_path(board_id: @board.id, topic_id: topic.id) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
