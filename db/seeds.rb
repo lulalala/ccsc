@@ -7,3 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+
+[:intro, :purpose, :history, :timeline].each do |name|
+  Info.find_or_create_by(seo_name: name)
+end
