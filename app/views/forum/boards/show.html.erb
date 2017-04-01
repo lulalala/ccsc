@@ -10,7 +10,7 @@
         <td>
           <%= link_to topic.title, forum_board_topic_path(@board, topic) %>
         </td>
-        <% if current_user.id == topic.user_id %>
+        <% if current_user && current_user.id == topic.user_id %>
           <td>
             <%= link_to '編輯', edit_forum_board_topic_path(board_id: @board.id, id: topic.id) %>
           </td>

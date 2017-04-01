@@ -63,7 +63,7 @@ module Forum
     end
 
     def check_user
-      if current_user.id != @topic.user_id
+      if !current_user || current_user.id != @topic.user_id
         redirect_to :back
         flash[:error] = "您沒有權限編輯此內容"
       end
