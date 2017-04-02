@@ -1,4 +1,4 @@
-<%= form_tag(forum_board_topics_path(@board)) do %>
+<%= form_tag(forum_board_topic_path(board_id: @board.id, id: @topic.id)) do %>
   <div class="field">
     <%= label_tag :title, '標題' %>
     <%= text_field_tag :title %>
@@ -9,13 +9,11 @@
     <%= text_field_tag :author %>
   </div>
 
-
   <%= text_area_tag :content, nil, autocomplete:'off' %>
   <%= recaptcha_tags(hl: 'zh-TW') %>
-
   <div class="actions">
-    <%= submit_tag '留言',
+    <%= submit_tag '更新留言',
       class: 'btn btn-large',
-      data:{disable_with:'留言中...'} %>
+      data:{disable_with:'更新中...'} %>
   </div>
 <% end %>

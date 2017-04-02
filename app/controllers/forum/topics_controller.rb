@@ -1,15 +1,21 @@
 module Forum
   class TopicsController < ApplicationController
     before_filter :set_board
+    before_filter :set_topic, only: [:show, :edit, :update]
 
     def show
-      @topic = @board.topics.find(params[:id])
     end
 
     def new
     end
 
     def create
+      if !verify_recaptcha
+        flash[:error] = "留言必須按'我不是機器人'"
+        redirect_to :back
+        return
+      end
+
       outcome = Forum::CreateTopic.run(
         board: @board,
         author: params[:author],
@@ -17,6 +23,11 @@ module Forum
         content: params[:content],
         content_is_html: true
       )
+
+      if current_user
+        outcome.result.user_id = current_user.id
+        outcome.result.save!
+      end
 
       respond_to do |format|
         if outcome.valid?
@@ -31,10 +42,32 @@ module Forum
       end
     end
 
+    def edit
+      check_user
+    end
+
+    def update
+      check_user
+      @topic.update(topic_params)
+      redirect_to forum_board_path(id: @board.id)
+    end
+
     private
 
     def set_board
       @board = Forum::Board.find(params[:board_id])
     end
+
+    def set_topic
+      @topic = @board.topics.find(params[:id])
+    end
+
+    def check_user
+      if !current_user || current_user.id != @topic.user_id
+        redirect_to :back
+        flash[:error] = "您沒有權限編輯此內容"
+      end
+    end
+
   end
 end
