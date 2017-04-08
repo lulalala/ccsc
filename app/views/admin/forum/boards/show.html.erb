@@ -1,5 +1,5 @@
 <h1><%= @board.name %></h1>
-<%= link_to '建立新標題', new_admin_forum_board_topic_path(board_id: @board.id) %>
+<%= link_to '建立新標題', new_admin_forum_board_topic_path(board_id: @board.id), class: 'btn btn-default pull-right' %>
 <%= link_to '照文章建立時間排序', admin_forum_board_path(board_id: @board.id, order: "created_at") %>
 <%= link_to '照文章被回覆時間排序', admin_forum_board_path(board_id: @board.id, order: "replied_at") %>
 <%= link_to '回復初始排序', admin_forum_board_path(board_id: @board.id) %>
