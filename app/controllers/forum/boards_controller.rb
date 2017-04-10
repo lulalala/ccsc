@@ -6,6 +6,7 @@ module Forum
     end
 
     def show
+      @topics = @board.topics.order('position IS NULL, position', 'created_at') # Null's last
     end
 
     private

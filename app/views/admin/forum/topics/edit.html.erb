@@ -1,16 +1,21 @@
-<%= form_tag(admin_forum_board_topic_path(board_id: @board.id, id: @topic.id)) do %>
+<%= form_tag(admin_forum_board_topic_path(board_id: @board.id, id: @topic.id), method: :put) do %>
   <div class="field">
     <%= label_tag :title, '標題' %>
     <%= text_field_tag :title %>
   </div>
 
   <div class="field">
+    <%= label_tag :position, '排序' %>
+    <%= number_field_tag :position, nil, min: 1 %>
+  </div>
+
+  <div class="field">
     <%= label_tag :author, '名字' %>
     <%= text_field_tag :author %>
   </div>
+  <%= label_tag :content, "內容" %>
+  <%= text_area_tag :content, nil, autocomplete:'off', class: "ckeditor" %>
 
-  <%= text_area_tag :content, nil, autocomplete:'off' %>
-  <%= recaptcha_tags(hl: 'zh-TW') %>
   <div class="actions">
     <%= submit_tag '更新留言',
       class: 'btn btn-large',

@@ -5,10 +5,12 @@ class Forum::UpdateTopic < ActiveInteraction::Base
   string :author
   string :title
   string :content
+  integer :position
 
   def execute
     topic.update(
-      title: title
+      title: title,
+      position: position
     )
 
     Forum::Topic.transaction do

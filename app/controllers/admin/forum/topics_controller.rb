@@ -10,17 +10,13 @@ module Admin::Forum
     end
 
     def create
-      if !verify_recaptcha
-        flash[:error] = "留言必須按'我不是機器人'"
-        redirect_to :back
-        return
-      end
 
       outcome = Forum::CreateTopic.run(
         board: @board,
         author: params[:author],
         title: params[:title],
         content: params[:content],
+        position: params[:position].empty? ? nil : params[:position].to_i,
         content_is_html: true
       )
 
@@ -46,8 +42,30 @@ module Admin::Forum
     end
 
     def update
-      @topic.update(topic_params)
-      redirect_to admin_forum_board_path(id: @board.id)
+      outcome = Forum::UpdateTopic.run(
+        board: @board,
+        author: params[:author],
+        title: params[:title],
+        content: params[:content],
+        position: params[:position].empty? ? nil : params[:position].to_i
+      )
+
+      if current_user
+        outcome.result.user_id = current_user.id
+        outcome.result.save!
+      end
+
+      respond_to do |format|
+        if outcome.valid?
+          flash[:notice] = 'Successfully created.'
+
+          format.html { redirect_to admin_forum_board_topic_path(@board, outcome.result) }
+        else
+          flash[:error] = outcome.errors.full_messages.join('<br/>').html_safe
+
+          format.html { redirect_to admin_forum_board_path(@board) }
+        end
+      end
     end
 
     def destroy

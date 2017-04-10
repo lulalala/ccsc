@@ -7,10 +7,8 @@
 
   <div class="field">
     <%= label_tag :admin, '只有管理者可留言' %>
-    <%= radio_button_tag :admin, true %>
+    <%= check_box_tag :admin, true %>
   </div>
-
-  <%= recaptcha_tags(hl: 'zh-TW') %>
 
   <div class="actions">
     <%= submit_tag '新建留言板',

@@ -1,4 +1,9 @@
-<%= form_tag(comment_posts_path) do %>
+<% if current_page?(admin_forum_board_topic_path) %>
+  <% url = admin_comment_posts_path %>
+<% else %>
+  <% url = comment_posts_path %>
+<% end %>
+<%= form_tag(url) do %>
   <%= hidden_field_tag :owner_id, @owner.id %>
   <%= hidden_field_tag :owner_type, @owner.class %>
 
@@ -8,9 +13,9 @@
   </div>
 
   <%= text_area_tag :content, nil, autocomplete:'off' %>
-
-  <%= recaptcha_tags(hl: 'zh-TW') %>
-
+  <% unless current_page?(admin_forum_board_topic_path) %>
+    <%= recaptcha_tags(hl: 'zh-TW') %>
+  <% end %>
   <div class="actions">
     <%= submit_tag '留言',
       class: 'btn btn-large',

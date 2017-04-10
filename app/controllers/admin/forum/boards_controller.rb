@@ -8,7 +8,7 @@ module Admin::Forum
     def show
       if params[:order].present?
         sort_by = (params[:order] == 'created_at') ? 'created_at' : 'comment_topics.commented_at'
-        @topics = @board.topics.includes(:comment_topic).order(sort_by)
+        @topics = @board.topics.includes(:comment_topic).order('position IS NULL, position', sort_by) # Null's last
       else
         @topics = @board.topics.order(:position)
       end

@@ -5,11 +5,13 @@ class Forum::CreateTopic < ActiveInteraction::Base
   string :author
   string :title
   string :content
+  integer :position
   boolean :content_is_html, default: false
 
   def execute
     board_topic = board.topics.build(
-      title: title
+      title: title,
+      position: position
     )
 
     Forum::Topic.transaction do
