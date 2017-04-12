@@ -43,20 +43,20 @@ module Admin::Forum
 
     def update
       outcome = Forum::UpdateTopic.run(
-        board: @board,
+        topic: @topic,
         author: params[:author],
         title: params[:title],
         content: params[:content],
         position: params[:position].empty? ? nil : params[:position].to_i
       )
 
-      if current_user
-        outcome.result.user_id = current_user.id
-        outcome.result.save!
-      end
-
       respond_to do |format|
         if outcome.valid?
+          if current_user
+            outcome.result.user_id = current_user.id
+            outcome.result.save!
+          end
+
           flash[:notice] = 'Successfully created.'
 
           format.html { redirect_to admin_forum_board_topic_path(@board, outcome.result) }
