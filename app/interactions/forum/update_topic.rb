@@ -8,7 +8,7 @@ class Forum::UpdateTopic < ActiveInteraction::Base
   integer :position, default: nil
 
   def execute
-    topic.update(
+    topic.assign_attributes(
       title: title,
       position: position
     )
