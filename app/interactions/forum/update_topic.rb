@@ -5,7 +5,7 @@ class Forum::UpdateTopic < ActiveInteraction::Base
   string :author
   string :title
   string :content
-  integer :position
+  integer :position, default: nil
 
   def execute
     topic.update(
