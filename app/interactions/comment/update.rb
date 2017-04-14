@@ -1,17 +1,13 @@
 require 'active_interaction'
 
 class Comment::Update < ActiveInteraction::Base
-  object :owner, default: nil, class: Object
+  object :post, class: Comment::Post
   string :author
   string :content
 
   def execute
-    topic = owner.comment_topic
-    if topic.nil?
-      topic = Comment::Topic.new(owner: owner)
-    end
 
-    post = topic.posts.update(
+    post.update(
       author: author,
       content: content
     )
@@ -21,7 +17,8 @@ class Comment::Update < ActiveInteraction::Base
         errors.merge!(model.errors)
       end
     }
-    topic.commented_at = post.created_at
+    topic = post.topic
+    topic.commented_at = post.updated_at
     topic.save
 
     topic

@@ -53,7 +53,7 @@ Rails.application.routes.draw do
       get 'all_topics', to: 'topics#all_topics'
     end
     namespace :comment do
-      resources :posts, only: [:create]
+      resources :posts, only: [:create, :edit, :update]
     end
   end
 end

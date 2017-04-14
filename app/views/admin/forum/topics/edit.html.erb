@@ -9,13 +9,6 @@
     <%= number_field_tag :position, nil, min: 1 %>
   </div>
 
-  <div class="field">
-    <%= label_tag :author, '名字' %>
-    <%= text_field_tag :author %>
-  </div>
-  <%= label_tag :content, "內容" %>
-  <%= text_area_tag :content, nil, autocomplete:'off', class: "ckeditor" %>
-
   <div class="actions">
     <%= submit_tag '更新留言',
       class: 'btn btn-large',

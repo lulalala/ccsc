@@ -5,5 +5,6 @@
   </header>
   <div class="content break-word">
     <%= @post.content_html %>
+    <%= link_to '編輯', edit_admin_comment_post_path(id: @post.id) %>
   </div>
 </article>

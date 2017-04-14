@@ -44,9 +44,7 @@ module Admin::Forum
     def update
       outcome = Forum::UpdateTopic.run(
         topic: @topic,
-        author: params[:author],
         title: params[:title],
-        content: params[:content],
         position: params[:position].empty? ? nil : params[:position].to_i
       )
 
