@@ -2,9 +2,9 @@
   <header class="info">
     <span class="author">名字：<%= @post.author || '匿名' %></span>
     <%= time_tag(@post.created_at) %>
+    <%= link_to '編輯', edit_admin_comment_post_path(id: @post.id), class:'btn btn-default' %>
   </header>
   <div class="content break-word">
     <%= @post.content_html %>
-    <%= link_to '編輯', edit_admin_comment_post_path(id: @post.id) %>
   </div>
 </article>
