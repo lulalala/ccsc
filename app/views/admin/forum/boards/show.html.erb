@@ -19,11 +19,6 @@
         <td>
           <%= link_to '刪除', admin_forum_board_topic_path(board_id: @board.id, id: topic.id), method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
-        <td>
-          <% if topic.position != 1 %>
-            <%= link_to '置頂', admin_forum_board_topic_move_to_top_path(board_id: @board.id, topic_id: topic.id) %>
-          <% end %>
-        </td>
       </tr>
     <% end %>
   </tbody>

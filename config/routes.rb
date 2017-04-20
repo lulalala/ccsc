@@ -45,9 +45,7 @@ Rails.application.routes.draw do
     resources :categories, except: [:show]
     namespace :forum do
       resources :boards, only: [:show, :new, :create] do
-        resources :topics, except: [:index] do
-          get 'move_to_top', to: 'topics#move_to_top'
-        end
+        resources :topics, except: [:index]
       end
       get '/', to: 'boards#index'
       get 'all_topics', to: 'topics#all_topics'

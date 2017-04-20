@@ -1,12 +1,12 @@
 <%= form_tag(admin_forum_board_topic_path(board_id: @board.id, id: @topic.id), method: :put) do %>
   <div class="field">
     <%= label_tag :title, '標題' %>
-    <%= text_field_tag :title %>
+    <%= text_field_tag :title, @topic.title %>
   </div>
 
   <div class="field">
     <%= label_tag :position, '排序' %>
-    <%= number_field_tag :position, nil, min: 1 %>
+    <%= number_field_tag :position, @topic.position, min: 1 %>
   </div>
 
   <div class="actions">

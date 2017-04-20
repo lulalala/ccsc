@@ -1,7 +1,7 @@
 <%= form_tag(forum_board_topic_path(board_id: @board.id, id: @topic.id)) do %>
   <div class="field">
     <%= label_tag :title, '標題' %>
-    <%= text_field_tag :title %>
+    <%= text_field_tag :title, @topic.title %>
   </div>
 
   <div class="field">

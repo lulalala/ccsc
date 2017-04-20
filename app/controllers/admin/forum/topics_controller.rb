@@ -50,10 +50,6 @@ module Admin::Forum
 
       respond_to do |format|
         if outcome.valid?
-          if current_user
-            outcome.result.user_id = current_user.id
-            outcome.result.save!
-          end
 
           flash[:notice] = 'Successfully created.'
 
@@ -69,12 +65,6 @@ module Admin::Forum
     def destroy
       @topic.destroy
       redirect_to admin_forum_board_path(id: @board.id)
-    end
-
-    def move_to_top
-      @topic = ::Forum::Topic.find(params[:topic_id])
-      @topic.move_to_top
-      redirect_to :back
     end
 
     def all_topics
