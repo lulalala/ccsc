@@ -6,6 +6,10 @@
 <table class="table">
   <thead>
     <th>標題</th>
+    <th/>
+    <th>置頂順序</th>
+    <th/>
+    <th/>
   </thead>
   <tbody>
     <% @topics.each do |topic| %>
@@ -15,6 +19,9 @@
         </td>
         <td>
           <%= link_to '編輯標題及置頂順序', edit_admin_forum_board_topic_path(board_id: @board.id, id: topic.id) %>
+        </td>
+        <td>
+          <%= topic.position %>
         </td>
         <td>
           <%= link_to '刪除', admin_forum_board_topic_path(board_id: @board.id, id: topic.id), method: :delete, data: { confirm: 'Are you sure?' } %>
