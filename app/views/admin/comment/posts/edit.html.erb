@@ -1,10 +1,10 @@
 <%= form_tag(admin_comment_post_path(id: @post.id), method: :put) do %>
   <div class="field">
     <%= label_tag :author, '名字' %>
-    <%= text_field_tag :author %>
+    <%= text_field_tag :author, @post.author %>
   </div>
-  <%= label_tag :content, "內容" %>
-  <%= text_area_tag :content, nil, autocomplete:'off', class: "ckeditor" %>
+  <%= label_tag :content_html, "內容" %>
+  <%= text_area_tag :content_html, @post.content_html, autocomplete:'off', class: "ckeditor" %>
   <div class="actions">
     <%= submit_tag '更新留言',
       class: 'btn btn-large',

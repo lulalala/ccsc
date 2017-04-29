@@ -28,15 +28,17 @@ module Admin::Comment
 
     def update
       @post = ::Comment::Post.find(params[:id])
+      @board = @post.topic.owner.board
+      @topic = @post.topic.owner
       outcome = Comment::Update.run(
         post: @post,
         author: params[:author],
-        content: params[:content]
+        content_html: params[:content_html]
       )
       respond_to do |format|
         if outcome.valid?
           flash[:notice] = 'Successfully updated.'
-          format.html { redirect_to :back }
+          format.html { redirect_to admin_forum_board_topic_path(board_id: @board.id, id: @topic.id) }
         else
           flash[:error] = outcome.errors.full_messages.join('<br/>').html_safe
           format.html { redirect_to :back }

@@ -42,16 +42,6 @@ module Forum
       end
     end
 
-    def edit
-      check_user
-    end
-
-    def update
-      check_user
-      @topic.update(topic_params)
-      redirect_to forum_board_path(id: @board.id)
-    end
-
     private
 
     def set_board
@@ -62,12 +52,13 @@ module Forum
       @topic = @board.topics.find(params[:id])
     end
 
-    def check_user
-      if !current_user || current_user.id != @topic.user_id
-        redirect_to :back
-        flash[:error] = "您沒有權限編輯此內容"
-      end
-    end
+    # 這個功能是用來檢查前台使用者編輯權限，現在前台改成不讓人編輯，所以先註解
+    # def check_user
+    #   if !current_user || current_user.id != @topic.user_id
+    #     redirect_to :back
+    #     flash[:error] = "您沒有權限編輯此內容"
+    #   end
+    # end
 
   end
 end

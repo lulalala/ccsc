@@ -3,13 +3,13 @@ require 'active_interaction'
 class Comment::Update < ActiveInteraction::Base
   object :post, class: Comment::Post
   string :author
-  string :content
+  string :content_html
 
   def execute
-
     post.update(
       author: author,
-      content: content
+      content_html: content_html,
+      content: content_html
     )
 
     [post, post].each {|model|
