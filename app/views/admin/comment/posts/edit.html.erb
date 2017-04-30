@@ -4,7 +4,8 @@
     <%= text_field_tag :author, @post.author %>
   </div>
   <%= label_tag :content_html, "內容" %>
-  <%= text_area_tag :content_html, @post.content_html, autocomplete:'off', class: "ckeditor" %>
+  <%= text_area_tag :content, @post.content_html, autocomplete:'off', class: "ckeditor" %>
+  <%= hidden_field_tag :content_is_html, true %>
   <div class="actions">
     <%= submit_tag '更新留言',
       class: 'btn btn-large',

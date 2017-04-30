@@ -3,14 +3,22 @@ require 'active_interaction'
 class Comment::Update < ActiveInteraction::Base
   object :post, class: Comment::Post
   string :author
-  string :content_html
+  string :content
+  boolean :content_is_html, default: false
 
   def execute
-    post.update(
-      author: author,
-      content_html: content_html,
-      content: content_html
-    )
+    if content_is_html
+      post.update(
+        author: author,
+        content_html: content
+      )
+      post.update_columns(content: nil)
+    else
+      post.update(
+        author: author,
+        content: content
+      )
+    end
 
     [post, post].each {|model|
       if !model.persisted?

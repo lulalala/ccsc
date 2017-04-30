@@ -33,7 +33,8 @@ module Admin::Comment
       outcome = Comment::Update.run(
         post: @post,
         author: params[:author],
-        content_html: params[:content_html]
+        content: params[:content],
+        content_is_html: params[:content_is_html]
       )
       respond_to do |format|
         if outcome.valid?
