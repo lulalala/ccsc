@@ -1,3 +1,5 @@
+require 'comment'
+
 module Comment
   class Topic < ActiveRecord::Base
     belongs_to :owner, polymorphic: true

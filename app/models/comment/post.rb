@@ -1,3 +1,5 @@
+require 'comment'
+
 module Comment
   class Post < ActiveRecord::Base
     belongs_to :topic, inverse_of: :posts, class_name: "Comment::Topic"
