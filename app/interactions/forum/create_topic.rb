@@ -5,7 +5,7 @@ class Forum::CreateTopic < ActiveInteraction::Base
   string :author
   string :title
   string :content
-  integer :position
+  integer :position, default: nil
   boolean :content_is_html, default: false
 
   def execute
