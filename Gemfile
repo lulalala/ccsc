@@ -17,6 +17,7 @@ gem "recaptcha", require: "recaptcha/rails"
 
 gem 'rb-readline'
 gem 'acts_as_list'
+gem 'loofah', '~> 2.2.1'
 
 # Setting
 gem 'settingslogic', '~> 2.0'
@@ -52,7 +53,7 @@ gem 'cells', '~> 3.11.3'
 gem 'cells-collection', '~> 0.0.2'
 
 # Import
-gem 'nokogiri', '~> 1.6.7'
+gem 'nokogiri', '~> 1.8.1'
 
 group :development do
   gem 'better_errors'
