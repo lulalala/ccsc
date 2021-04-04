@@ -1,5 +1,5 @@
 module Forum
-  class Board < ActiveRecord::Base
+  class Board < ApplicationRecord
     has_many :topics, inverse_of: :board, class_name: "Forum::Topic"
 
     serialize :config, BoardConfigSerializer

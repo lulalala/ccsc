@@ -1,4 +1,4 @@
-class Group < ActiveRecord::Base
+class Group < ApplicationRecord
   has_many :notices, inverse_of: :group
   has_many :schedules
 

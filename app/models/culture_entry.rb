@@ -1,4 +1,4 @@
-class CultureEntry < ActiveRecord::Base
+class CultureEntry < ApplicationRecord
   CATEGORIES = ['宗旨', '小故事小道理', '論文']
 
   has_one :post, as: :owner

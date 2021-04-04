@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   belongs_to :user
   belongs_to :owner, polymorphic: true
   acts_as_taggable

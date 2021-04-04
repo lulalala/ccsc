@@ -1,4 +1,4 @@
-class PeriodicalEntry < ActiveRecord::Base
+class PeriodicalEntry < ApplicationRecord
   belongs_to :periodical
   has_one :post, as: :owner
 

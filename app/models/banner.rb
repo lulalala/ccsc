@@ -1,4 +1,4 @@
-class Banner < ActiveRecord::Base
+class Banner < ApplicationRecord
   mount_uploader :image, BannerUploader
 
   validates :name, presence: true

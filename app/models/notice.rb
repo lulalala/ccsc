@@ -1,4 +1,4 @@
-class Notice < ActiveRecord::Base
+class Notice < ApplicationRecord
   belongs_to :group, inverse_of: :notices
 
   validates :group_id, presence: true

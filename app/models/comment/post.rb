@@ -1,7 +1,7 @@
 require 'comment'
 
 module Comment
-  class Post < ActiveRecord::Base
+  class Post < ApplicationRecord
     belongs_to :topic, inverse_of: :posts, class_name: "Comment::Topic"
 
     auto_html_for :content do

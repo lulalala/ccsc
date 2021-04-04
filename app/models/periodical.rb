@@ -1,4 +1,4 @@
-class Periodical < ActiveRecord::Base
+class Periodical < ApplicationRecord
   has_many :entries, class_name: "PeriodicalEntry"
   mount_uploader :image, FountainUploader
 
