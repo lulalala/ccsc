@@ -57,7 +57,7 @@
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-compass"></i> 文化福傳</h4>
                 </div>
-                <% if @culture_entry %>
+                <% if @culture_entry&.post %>
                   <div class="panel-body">
                     <%= @culture_entry.post.title %><br />
                     <%= @culture_entry.presenter.index_abstract %>
