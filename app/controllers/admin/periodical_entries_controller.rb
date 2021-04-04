@@ -40,6 +40,6 @@ class Admin::PeriodicalEntriesController < Admin::BaseController
   end
 
   def periodical_entry_params
-    params.require(:periodical_entry).permit([{post_attributes: [:title, :author, :body]}, :periodical_id, :category, :order])
+    params.require(:periodical_entry).permit([{post_attributes: [:title, :author, :body, :id]}, :periodical_id, :category, :order])
   end
 end
