@@ -1,5 +1,5 @@
 class PeriodicalEntry < ApplicationRecord
-  belongs_to :periodical
+  belongs_to :periodical, optional: true
   has_one :post, as: :owner
 
   accepts_nested_attributes_for :post

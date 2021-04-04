@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to :user
-  belongs_to :owner, polymorphic: true
+  belongs_to :user, optional: true
+  belongs_to :owner, polymorphic: true, optional: true
   acts_as_taggable
   has_one :comment_topic, class_name:'Comment::Topic', as: :owner
 
