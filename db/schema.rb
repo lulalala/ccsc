@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606123312) do
+ActiveRecord::Schema.define(version: 20210404025003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +28,8 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.string   "scope"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
   end
-
-  add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -44,10 +42,9 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.integer  "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
   end
-
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "comment_posts", force: :cascade do |t|
     t.integer  "topic_id"
@@ -64,17 +61,15 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.datetime "commented_at"
+    t.index ["owner_type", "owner_id"], name: "index_comment_topics_on_owner_type_and_owner_id", using: :btree
   end
-
-  add_index "comment_topics", ["owner_type", "owner_id"], name: "index_comment_topics_on_owner_type_and_owner_id", using: :btree
 
   create_table "culture_entries", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
+    t.index ["category_id"], name: "index_culture_entries_on_category_id", using: :btree
   end
-
-  add_index "culture_entries", ["category_id"], name: "index_culture_entries_on_category_id", using: :btree
 
   create_table "forum_boards", force: :cascade do |t|
     t.string   "name"
@@ -92,9 +87,8 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "position"
+    t.index ["board_id"], name: "index_forum_topics_on_board_id", using: :btree
   end
-
-  add_index "forum_topics", ["board_id"], name: "index_forum_topics_on_board_id", using: :btree
 
   create_table "groups", force: :cascade, comment: "內部團體" do |t|
     t.string   "name",                    comment: "名稱"
@@ -108,9 +102,8 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["seo_name"], name: "index_infos_on_seo_name", using: :btree
   end
-
-  add_index "infos", ["seo_name"], name: "index_infos_on_seo_name", using: :btree
 
   create_table "notices", force: :cascade, comment: "新聞訊息" do |t|
     t.integer  "group_id"
@@ -126,9 +119,8 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.datetime "updated_at",    null: false
     t.integer  "order"
     t.string   "category"
+    t.index ["periodical_id"], name: "index_periodical_entries_on_periodical_id", using: :btree
   end
-
-  add_index "periodical_entries", ["periodical_id"], name: "index_periodical_entries_on_periodical_id", using: :btree
 
   create_table "periodicals", force: :cascade do |t|
     t.integer  "issue"
@@ -151,9 +143,8 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.datetime "updated_at", null: false
     t.integer  "owner_id"
     t.string   "owner_type"
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
-
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "schedules", force: :cascade do |t|
     t.text     "body"
@@ -170,17 +161,22 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.string   "tagger_type"
     t.string   "context",       limit: 128
     t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context", using: :btree
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+    t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy", using: :btree
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id", using: :btree
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type", using: :btree
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type", using: :btree
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id", using: :btree
   end
-
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
-
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -208,13 +204,12 @@ ActiveRecord::Schema.define(version: 20170606123312) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
+    t.index ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
-  add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
-  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "comment_posts", "comment_topics", column: "topic_id"
   add_foreign_key "culture_entries", "categories"

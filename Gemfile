@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
-ruby '2.4.2'
+ruby '2.5.1'
 gem 'rake', '~> 11.3.0'
-gem 'rails', '4.2.10'
+gem 'rails', '~> 5.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bh', '~> 1.3.5'
-gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts-as-taggable-on', '~> 4.0'
 gem 'lulalala_presenter'
 gem 'nilify_blanks', '~> 1.2.1'
 gem 'auto_html', '~> 1.6.4'
@@ -18,6 +18,9 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'rb-readline'
 gem 'acts_as_list'
 gem 'loofah', '~> 2.2.1'
+
+# Fake version of the gem to trick bundler
+gem 'mimemagic', '0.3.7', path: 'vendor/shims/mimemagic', require: false
 
 # Setting
 gem 'settingslogic', '~> 2.0'
@@ -29,7 +32,8 @@ gem 'mini_magick'
 
 # Assets
 source 'https://rails-assets.org' do
-  gem 'rails-assets-ekko-lightbox', '~> 4.0.1'
+  gem 'rails-assets-ekko-lightbox', '4.0.1'
+  gem 'rails-assets-bootstrap', '< 4.0'
 end
 
 group :development, :test do
@@ -57,6 +61,5 @@ gem 'nokogiri', '~> 1.8.1'
 
 group :development do
   gem 'better_errors'
-  gem 'quiet_assets'
   gem 'rails_layout'
 end
