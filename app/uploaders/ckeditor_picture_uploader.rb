@@ -28,7 +28,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  process :read_dimensions
+  process :extract_dimensions
 
   # Create different versions of your uploaded files:
   version :thumb do
@@ -43,5 +43,14 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     Ckeditor.image_file_types
+  end
+
+  private
+
+  def extract_dimensions
+    if model.image? && model.has_dimensions?
+      model.width = magick[:width]
+      model.height = magick[:height]
+    end
   end
 end

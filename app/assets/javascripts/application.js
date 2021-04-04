@@ -15,5 +15,4 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require ekko-lightbox
-//= require ckeditor/init
 //= require_tree .

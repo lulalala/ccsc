@@ -54,7 +54,7 @@ gem 'pg', '~> 0.18.4'
 gem 'puma'
 gem 'simple_form'
 gem 'kaminari'
-gem 'ckeditor', '~> 4.1.6'
+gem 'ckeditor', '~> 5.1'
 gem 'cells', '~> 3.11.3'
 gem 'cells-collection', '~> 0.0.2'
 
