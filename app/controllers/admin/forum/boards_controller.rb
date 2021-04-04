@@ -1,6 +1,6 @@
 module Admin::Forum
   class BoardsController < Admin::BaseController
-    before_filter :set_board, only:[:show]
+    before_action :set_board, only:[:show]
 
     def index
     end

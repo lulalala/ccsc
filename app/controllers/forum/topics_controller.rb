@@ -1,7 +1,7 @@
 module Forum
   class TopicsController < ApplicationController
-    before_filter :set_board
-    before_filter :set_topic, only: [:show, :edit, :update]
+    before_action :set_board
+    before_action :set_topic, only: [:show, :edit, :update]
 
     def show
     end

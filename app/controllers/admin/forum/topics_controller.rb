@@ -1,7 +1,7 @@
 module Admin::Forum
   class TopicsController < Admin::BaseController
-    before_filter :set_board, except: [:all_topics]
-    before_filter :set_topic, only: [:show, :edit, :update, :destroy]
+    before_action :set_board, except: [:all_topics]
+    before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
     def show
     end
