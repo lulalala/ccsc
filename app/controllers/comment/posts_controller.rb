@@ -18,11 +18,11 @@ module Comment
         if outcome.valid?
           flash[:notice] = 'Successfully created.'
 
-          format.html { redirect_to :back }
+          format.html { redirect_back(fallback_location: root_path) }
         else
           flash[:error] = outcome.errors.full_messages.join('<br/>').html_safe
 
-          format.html { redirect_to :back }
+          format.html { redirect_back(fallback_location: root_path) }
         end
       end
     end

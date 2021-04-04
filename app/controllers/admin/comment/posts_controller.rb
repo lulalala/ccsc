@@ -13,11 +13,11 @@ module Admin::Comment
         if outcome.valid?
           flash[:notice] = 'Successfully created.'
 
-          format.html { redirect_to :back }
+          format.html { redirect_back(fallback_location: root_path) }
         else
           flash[:error] = outcome.errors.full_messages.join('<br/>').html_safe
 
-          format.html { redirect_to :back }
+          format.html { redirect_back(fallback_location: root_path) }
         end
       end
     end
@@ -42,7 +42,7 @@ module Admin::Comment
           format.html { redirect_to admin_forum_board_topic_path(board_id: @board.id, id: @topic.id) }
         else
           flash[:error] = outcome.errors.full_messages.join('<br/>').html_safe
-          format.html { redirect_to :back }
+          format.html { redirect_back(fallback_location: root_path) }
         end
       end
     end

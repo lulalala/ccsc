@@ -12,7 +12,7 @@ module Forum
     def create
       if !verify_recaptcha
         flash[:error] = "留言必須按'我不是機器人'"
-        redirect_to :back
+        redirect_back(fallback_location: root_path)
         return
       end
 
@@ -55,7 +55,7 @@ module Forum
     # 這個功能是用來檢查前台使用者編輯權限，現在前台改成不讓人編輯，所以先註解
     # def check_user
     #   if !current_user || current_user.id != @topic.user_id
-    #     redirect_to :back
+    #     redirect_back(fallback_location: root_path)
     #     flash[:error] = "您沒有權限編輯此內容"
     #   end
     # end
