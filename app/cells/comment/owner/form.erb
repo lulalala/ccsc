@@ -9,8 +9,14 @@
 
   <%= text_area_tag :content, nil, autocomplete:'off' %>
   <% if !@under_admin %>
-    <%= recaptcha_tags(hl: 'zh-TW') %>
+    <%= recaptcha_tags(hl: 'zh-TW') if Rails.env.production? %>
   <% end %>
+
+  <div class="field">
+    防止廣告請回答：天主是幾位一體？（一個字：中文數字）
+    <%= text_field_tag :question %>
+  </div>
+
   <div class="actions">
     <%= submit_tag '留言',
       class: 'btn btn-large',
