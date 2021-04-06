@@ -8,8 +8,8 @@
   </div>
 
   <%= text_area_tag :content, nil, autocomplete:'off' %>
-  <% if !@under_admin %>
-    <%= recaptcha_tags(hl: 'zh-TW') if Rails.env.production? %>
+  <% if !@under_admin && Rails.env.production? %>
+    <%= recaptcha_tags(hl: 'zh-TW') %>
   <% end %>
 
   <div class="field">

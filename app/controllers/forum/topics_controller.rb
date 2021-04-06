@@ -10,8 +10,14 @@ module Forum
     end
 
     def create
-      if !verify_recaptcha
+      if Rails.env.production? && !verify_recaptcha
         flash[:error] = "留言必須按'我不是機器人'"
+        redirect_back(fallback_location: root_path)
+        return
+      end
+
+      unless %w(三).include? params[:question]
+        flash[:error] = "留言必須回答簡單教理問題"
         redirect_back(fallback_location: root_path)
         return
       end

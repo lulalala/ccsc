@@ -11,7 +11,15 @@
 
 
   <%= text_area_tag :content, nil, autocomplete:'off' %>
-  <%= recaptcha_tags(hl: 'zh-TW') %>
+
+  <% if !@under_admin && Rails.env.production? %>
+    <%= recaptcha_tags(hl: 'zh-TW') %>
+  <% end %>
+
+  <div class="field">
+    防止廣告請回答：天主是幾位一體？（一個字：中文數字）
+    <%= text_field_tag :question %>
+  </div>
 
   <div class="actions">
     <%= submit_tag '留言',
