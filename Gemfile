@@ -18,7 +18,7 @@ gem "recaptcha", require: "recaptcha/rails"
 
 gem 'rb-readline'
 gem 'acts_as_list'
-gem 'loofah', '~> 2.2.1'
+gem 'loofah', '~> 2.3.1'
 
 # Setting
 gem 'settingslogic', '~> 2.0'
