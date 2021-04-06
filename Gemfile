@@ -20,15 +20,12 @@ gem 'rb-readline'
 gem 'acts_as_list'
 gem 'loofah', '~> 2.2.1'
 
-# Fake version of the gem to trick bundler
-gem 'mimemagic', '0.3.7', path: 'vendor/shims/mimemagic', require: false
-
 # Setting
 gem 'settingslogic', '~> 2.0'
 
 # Image
 gem 'flickr-objects', '~> 0.6.2'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 2.2.1'
 gem 'mini_magick'
 
 # Assets
