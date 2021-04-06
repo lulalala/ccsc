@@ -3,7 +3,7 @@
     <% @topics.each do |topic| %>
       <tr>
         <td>
-          <%= topic.title %>
+          <%= link_to topic.title || '(無題)', forum_board_topic_path(topic.board, topic) %>
         </td>
         <td>
           <%= link_to '刪除', admin_forum_board_topic_path(board_id: topic.board.id, id: topic.id), method: :delete, data: { confirm: 'Are you sure?' } %>

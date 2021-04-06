@@ -8,7 +8,7 @@
     <% @topics.each do |topic| %>
       <tr>
         <td>
-          <%= link_to topic.title || '(untitled)', forum_board_topic_path(@board, topic) %>
+          <%= link_to topic.title || '(無題)', forum_board_topic_path(@board, topic) %>
         </td>
         <% if current_user && current_user.id == topic.user_id %>
           <td>
