@@ -4,7 +4,7 @@
 
 <%= banner_tag('文化福傳列表') %><br/>
 <br>
-  <h3 class="title">宗旨</h3>
+  <h3 class="title">信仰與文化</h3>
   <hr />
   <% @category_intro.children.each do |sub| %>
     <%= link_to sub.name, category_culture_preachings_path(category: sub.name) %>
@@ -16,7 +16,7 @@
     <%= link_to sub.name, category_culture_preachings_path(category: sub.name) %>
   <% end %>
 
-  <h3 class="title">論文</h3>
+  <h3 class="title">信仰我見我思</h3>
   <hr />
   <% @category_essay.children.each do |sub| %>
     <%= link_to sub.name, category_culture_preachings_path(category: sub.name) %>
