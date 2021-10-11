@@ -1,11 +1,11 @@
 GEM
-  remote: https://rails-assets.org/
+  remote: http://insecure.rails-assets.org/
   specs:
     rails-assets-bootstrap (3.4.1)
       rails-assets-jquery (>= 1.9.1, < 4)
     rails-assets-ekko-lightbox (4.0.1)
       rails-assets-bootstrap (>= 3.0.0)
-    rails-assets-jquery (3.4.1)
+    rails-assets-jquery (3.6.0)
 
 GEM
   remote: https://rubygems.org/

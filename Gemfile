@@ -29,7 +29,7 @@ gem 'carrierwave', '~> 2.2.1'
 gem 'mini_magick'
 
 # Assets
-source 'https://rails-assets.org' do
+source 'http://insecure.rails-assets.org/' do
   gem 'rails-assets-ekko-lightbox', '4.0.1'
   gem 'rails-assets-bootstrap', '< 4.0'
 end
