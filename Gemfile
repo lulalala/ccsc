@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 gem 'rake', '~> 12.3.3'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0'
 gem 'bootsnap'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
