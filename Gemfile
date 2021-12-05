@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '2.5.8'
 gem 'rake', '~> 12.3.3'
 gem 'rails', '~> 6.0'
 gem 'bootsnap'
