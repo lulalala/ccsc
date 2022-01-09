@@ -1,10 +1,10 @@
 module CustomUrlHelper
   def admin_periodicals_path(options = {})
-    url_for([:admin, params[:type].underscore.pluralize])
+    url_for([:admin, params[:type].underscore.pluralize.to_sym])
   end
 
   def new_admin_periodical_path(options = {})
-    url_for([:new, :admin, params[:type].underscore])
+    url_for([:new, :admin, params[:type].underscore.to_sym])
   end
 
   def edit_admin_periodical_path(record)
