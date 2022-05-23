@@ -56,7 +56,7 @@ gem 'cells', '~> 3.11.3'
 gem 'cells-collection', '~> 0.0.2'
 
 # Import
-gem 'nokogiri', '~> 1.11.0'
+gem 'nokogiri', '~> 1.13.6'
 
 group :development do
   gem 'better_errors'
