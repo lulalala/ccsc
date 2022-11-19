@@ -12,6 +12,7 @@ module Comment
     end
 
     validate :validate_content
+    validates :content, length: { maximum: 3000 }
 
     nilify_blanks
 
