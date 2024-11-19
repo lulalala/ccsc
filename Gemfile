@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.7.5'
+ruby '3.1.6'
 gem 'rake', '~> 12.3.3'
-gem 'rails', '~> 6.0'
+gem 'rails', '~> 7.0.8'
 gem 'bootsnap'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -9,12 +9,13 @@ gem 'coffee-rails', '~> 4.2.2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bh', '~> 1.3.5'
-gem 'acts-as-taggable-on', '~> 6.0'
+gem 'acts-as-taggable-on', '~> 9.0'
 gem 'lulalala_presenter'
 gem 'nilify_blanks', '~> 1.2.1'
 gem 'auto_html', '~> 1.6.4'
-gem 'active_interaction'
+gem 'active_interaction', '~> 4.1'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'psych', '< 4'
 
 gem 'rb-readline'
 gem 'acts_as_list'
@@ -38,16 +39,15 @@ group :development, :test do
   gem 'byebug'
 end
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3'
   gem 'spring'
-  gem 'migration_comments', '~> 0.3'
   gem 'listen'
 end
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'devise_invitable'
+gem 'devise_invitable', '~> 2.0.9'
 gem 'high_voltage'
-gem 'pg', '~> 0.18.4'
+gem 'pg', '~> 1.1'
 gem 'puma', '~> 4'
 gem 'simple_form'
 gem 'kaminari'
@@ -56,7 +56,7 @@ gem 'cells', '~> 3.11.3'
 gem 'cells-collection', '~> 0.0.2'
 
 # Import
-gem 'nokogiri', '~> 1.11.0'
+gem 'nokogiri', '~> 1.15.0'
 
 group :development do
   gem 'better_errors'
