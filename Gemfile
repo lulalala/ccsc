@@ -39,7 +39,7 @@ group :development, :test do
   gem 'byebug'
 end
 group :development do
-  gem 'web-console', '~> 3'
+  gem 'web-console', '~> 4'
   gem 'spring'
   gem 'listen'
 end
