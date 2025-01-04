@@ -1,3 +1,5 @@
 <div class="topic" data-id="<%= @topic.id %>">
-  <%= render_cell_collection :'comment/post', :show, @posts %>
+  <% @posts.each do |post| %>
+    <%= cell :'comment/post', post %>
+  <% end %>
 </div>

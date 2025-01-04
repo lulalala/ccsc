@@ -1,5 +1,5 @@
 module Comment
-  class PostCell < Cell::Rails
+  class PostCell < ApplicationCell
     helper ApplicationHelper
     helper Devise::Controllers::Helpers
 

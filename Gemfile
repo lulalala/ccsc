@@ -52,8 +52,8 @@ gem 'puma', '~> 4'
 gem 'simple_form'
 gem 'kaminari'
 gem 'ckeditor', '~> 5.1'
-gem 'cells', '~> 3.11.3'
-gem 'cells-collection', '~> 0.0.2'
+gem 'cells-rails'
+gem 'cells-erb'
 
 # Import
 gem 'nokogiri', '~> 1.15.0'

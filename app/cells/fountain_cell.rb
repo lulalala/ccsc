@@ -1,4 +1,4 @@
-class FountainCell < Cell::Rails
+class FountainCell < ApplicationCell
   class CategorySection
     attr_accessor :entries
     attr_accessor :category

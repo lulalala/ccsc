@@ -21,4 +21,11 @@ module ApplicationHelper
     end
     classes.join(' ')
   end
+
+  # Cells 3 style cell render call.
+  def render_cell(name, state, *args)
+    cell(name).(state, *args)
+  end
+
+  deprecate :render_cell
 end

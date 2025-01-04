@@ -8,10 +8,10 @@
 
 <div class="comment">
   <% if @topic.comment_topic.present? %>
-      <%= render_cell 'comment/topic', :show, @topic.comment_topic %>
+      <%= cell 'comment/topic', :show, @topic.comment_topic %>
   <% end %>
 
   <hr/>
 
-  <%= render_cell 'comment/owner', :form, @topic %>
+  <%= cell 'comment/owner', :form, @topic %>
 </div>

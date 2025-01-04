@@ -1,5 +1,5 @@
 module Comment
-  class TopicCell < Cell::Rails
+  class TopicCell < ApplicationCell
     def show(topic)
       @topic = topic
       @posts = @topic.posts.order(id: :asc)

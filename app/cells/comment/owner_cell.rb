@@ -1,5 +1,5 @@
 module Comment
-  class OwnerCell < Cell::Rails
+  class OwnerCell < ApplicationCell
     helper ApplicationHelper
 
     def form(owner, under_admin = false)
