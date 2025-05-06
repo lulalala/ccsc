@@ -31,5 +31,7 @@ module Ccsc
     # the framework and any gems in your application.
 
     config.filter_parameters += [:content]
+   
+    config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
   end
 end
