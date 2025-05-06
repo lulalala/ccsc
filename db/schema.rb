@@ -113,36 +113,38 @@ ActiveRecord::Schema.define(version: 2021_04_04_102626) do
     t.datetime "updated_at", null: false
   end
 
+  # One entry in a Periodical. It has_one post which contains the actual content
   create_table "periodical_entries", id: :serial, force: :cascade do |t|
     t.integer "periodical_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "order"
-    t.string "category"
+    t.integer "order", comment: 'display ordering of the entries in the periodical'
+    t.string "category", comment: 'text labelling special entries such as 專題專文'
     t.index ["periodical_id"], name: "index_periodical_entries_on_periodical_id"
   end
 
+  # Represent each monthly or annual publication
   create_table "periodicals", id: :serial, force: :cascade do |t|
-    t.integer "issue"
+    t.integer "issue", comment: 'issue number of the periodical'
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "catalogue"
+    t.text "catalogue", comment: 'html customizable catalogue'
     t.string "image"
-    t.string "type"
+    t.string "type", comment: 'type of periodical, can be either "Fountain" or "Seed"'
     t.boolean "public", default: false, null: false
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|
     t.string "title"
-    t.text "body"
-    t.string "author"
-    t.integer "user_id"
-    t.text "misc"
+    t.text "body", comment: 'html body'
+    t.string "author", comment: 'freeform field to record the author/speaker/editor name'
+    t.integer "user_id", comment: 'user who created the post'
+    t.text "misc", comment: 'hash of misc data, not used but keeping for historic purposes'
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "owner_id"
-    t.string "owner_type"
+    t.string "owner_type", commnet: 'Can either be nil, or "CultureEntry" or "PeriodicalEntry"'
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
