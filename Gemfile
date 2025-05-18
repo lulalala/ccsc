@@ -37,6 +37,11 @@ end
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner-active_record'
 end
 group :development do
   gem 'web-console', '~> 4'
@@ -47,7 +52,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise_invitable', '~> 2.0.9'
 gem 'high_voltage'
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.5.6'
 gem 'puma', '~> 4'
 gem 'simple_form'
 gem 'kaminari'
