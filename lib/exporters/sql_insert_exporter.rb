@@ -1,17 +1,6 @@
 module Exporters
   # Provides functionality to generate SQL INSERT and UPSERT statements from Ruby hashes
   class SqlInsertExporter
-    # Generates a SQL INSERT statement for a single row
-    #
-    # @param table_name [String] The name of the target table
-    # @param data_hash [Hash] A hash where keys are column names and values are the data to insert
-    # @return [String] A properly formatted SQL INSERT statement
-    #
-    # @example
-    #   data = { name: 'John', age: 25, email: 'john@example.com' }
-    #   SqlInsertExporter.generate_insert('users', data)
-    #   # => "INSERT INTO users (name, age, email) VALUES ('John', 25, 'john@example.com');"
-    #
     # Generates a SQL UPSERT statement for a single row using MySQL's ON DUPLICATE KEY UPDATE syntax
     #
     # @param table_name [String] The name of the target table
@@ -24,13 +13,6 @@ module Exporters
     #   SqlInsertExporter.generate_upsert('users', data, [:id])
     #   # => "INSERT INTO users (id, name, age, email) VALUES (1, 'John', 25, 'john@example.com') 
     #   #     ON DUPLICATE KEY UPDATE name = 'John', age = 25, email = 'john@example.com';"
-    def self.generate_insert(table_name, data_hash)
-      columns = data_hash.keys
-      values = data_hash.values.map { |v| format_sql_value(v) }
-      
-      "INSERT INTO #{table_name} (#{columns.join(', ')}) VALUES (#{values.join(', ')});"
-    end
-
     def self.generate_upsert(table_name, data_hash, key_columns)
       raise ArgumentError, 'key_columns must be an array' unless key_columns.is_a?(Array)
       raise ArgumentError, 'key_columns cannot be empty' if key_columns.empty?
