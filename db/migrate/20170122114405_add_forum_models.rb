@@ -1,4 +1,4 @@
-class AddForumModels < ActiveRecord::Migration
+class AddForumModels < ActiveRecord::Migration[5.0]
   def change
     create_table :forum_boards do |t|
       t.string :name

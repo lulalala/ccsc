@@ -1,4 +1,4 @@
-class AddCategoryIdToCultureEntries < ActiveRecord::Migration
+class AddCategoryIdToCultureEntries < ActiveRecord::Migration[5.0]
   def up
     remove_column :culture_entries, :category
     add_reference :culture_entries, :category, index: true, foreign_key: true

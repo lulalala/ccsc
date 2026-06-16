@@ -1,4 +1,4 @@
-class UpdateFountainEntryToPeriodicalEntryInPosts < ActiveRecord::Migration
+class UpdateFountainEntryToPeriodicalEntryInPosts < ActiveRecord::Migration[5.0]
   def change
     Post.reset_column_information
     Post.where(owner_type: "FountainEntry").update_all(owner_type: "PeriodicalEntry")

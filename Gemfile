@@ -1,25 +1,25 @@
 source 'https://rubygems.org'
-ruby '3.1.6'
-gem 'rake', '~> 12.3.3'
+ruby '>= 3.1.6'
+gem 'rake', '~> 12.3'
 gem 'rails', '~> 7.0.8'
 gem 'bootsnap'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2.2'
+gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bh', '~> 1.3.5'
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'lulalala_presenter'
-gem 'nilify_blanks', '~> 1.2.1'
-gem 'auto_html', '~> 1.6.4'
+gem 'nilify_blanks', '~> 1.2'
+gem 'auto_html', '~> 1.6'
 gem 'active_interaction', '~> 4.1'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'psych', '< 4'
 
 gem 'rb-readline'
 gem 'acts_as_list'
-gem 'loofah', '~> 2.3.1'
+gem 'loofah', '>= 2.3'
 
 # Setting
 gem 'settingslogic', '~> 2.0'
@@ -29,11 +29,6 @@ gem 'flickr-objects', '~> 0.6.2'
 gem 'carrierwave', '~> 2.2.1'
 gem 'mini_magick'
 
-# Assets
-source 'http://insecure.rails-assets.org/' do
-  gem 'rails-assets-ekko-lightbox', '4.0.1'
-  gem 'rails-assets-bootstrap', '< 4.0'
-end
 
 group :development, :test do
   gem 'byebug'
@@ -56,7 +51,7 @@ gem 'cells-rails'
 gem 'cells-erb'
 
 # Import
-gem 'nokogiri', '~> 1.15.0'
+gem 'nokogiri', '>= 1.15'
 
 group :development do
   gem 'better_errors'

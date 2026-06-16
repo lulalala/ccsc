@@ -1,4 +1,4 @@
-class CreateNotices < ActiveRecord::Migration
+class CreateNotices < ActiveRecord::Migration[5.0]
   def change
     create_table :notices, comment:'新聞訊息' do |t|
       t.references :group

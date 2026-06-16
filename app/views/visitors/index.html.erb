@@ -28,11 +28,13 @@
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-check"></i> 最新消息</h4>
                 </div>
+                <% if @notice %>
                 <div class="panel-body">
                   <%= @notice.title %><br />
                   <%= @notice.presenter.index_abstract %>
                   <%= link_to "閱讀內文", @notice.try(:group), 'btn btn-default' %>
                 </div>
+                <% end %>
             </div>
         </div>
         <div class="col-md-4">
@@ -40,16 +42,13 @@
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-gift"></i> 活動報導</h4>
                 </div>
+                <% @old_people = Info.find_by(seo_name: :old_people) %>
+                <% if @old_people %>
                 <div class="panel-body">
-                  <%=
-                    @old_people = Info.find_by(seo_name: :old_people)
-                    truncate(
-                      strip_tags(@old_people.body),
-                      length:80
-                    )
-                  %></p>
+                  <%= truncate(strip_tags(@old_people.body), length: 80) %></p>
                   <%= link_to "閱讀內文", info_path(seo_name: :old_people), 'btn btn-default' %>
                 </div>
+                <% end %>
             </div>
         </div>
         <div class="col-md-4">

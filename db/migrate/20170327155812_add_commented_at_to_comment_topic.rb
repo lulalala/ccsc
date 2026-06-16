@@ -1,4 +1,4 @@
-class AddCommentedAtToCommentTopic < ActiveRecord::Migration
+class AddCommentedAtToCommentTopic < ActiveRecord::Migration[5.0]
   def change
     add_column :comment_topics, :commented_at, :datetime
     Comment::Topic.find_each do |ct|

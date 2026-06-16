@@ -1,4 +1,4 @@
-class CreateFountainEntries < ActiveRecord::Migration
+class CreateFountainEntries < ActiveRecord::Migration[5.0]
   def change
     create_table :fountain_entries do |t|
       t.references :fountain, index: true, foreign_key: true

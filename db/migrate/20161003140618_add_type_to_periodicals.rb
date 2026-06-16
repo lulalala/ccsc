@@ -1,4 +1,4 @@
-class AddTypeToPeriodicals < ActiveRecord::Migration
+class AddTypeToPeriodicals < ActiveRecord::Migration[5.0]
   def change
     add_column :periodicals, :type, :string, after: :id
     Periodical.reset_column_information
