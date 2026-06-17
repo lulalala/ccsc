@@ -46,6 +46,18 @@ def slugify(str)
      .strip
 end
 
+# Mirrors WordPress sanitize_title(): percent-encodes non-ASCII chars (lowercase hex),
+# lowercases ASCII, strips unsafe chars. Required for slugs so get_term_by() can resolve them.
+def wp_sanitize_title(str)
+  str.to_s
+     .chars
+     .map { |c| c.ord > 127 ? c.encode('UTF-8').bytes.map { |b| "%%%02x" % b }.join : c.downcase }
+     .join
+     .gsub(/[^a-z0-9%\-_]/, '')
+     .gsub(/-+/, '-')
+     .strip
+end
+
 def sql_output(filename)
   path = File.join(SQL_DIR, filename)
   File.open(path, 'w') do |f|

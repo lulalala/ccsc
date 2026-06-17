@@ -67,11 +67,11 @@ def build_nav_content(groups)
 end
 
 def export_nav
-  # Derive group slugs using the same logic as groups_exporter
+  # Derive group slugs using the same logic as groups_exporter (wp_sanitize_title)
   rows = db.exec("SELECT id, name FROM groups ORDER BY id")
   seen = {}
   groups = rows.map do |g|
-    base_slug = g['name']
+    base_slug = wp_sanitize_title(g['name'])
     slug = seen[base_slug] ? "#{base_slug}-#{g['id']}" : base_slug
     seen[base_slug] = true
     { name: g['name'], slug: slug }

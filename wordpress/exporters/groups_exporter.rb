@@ -15,10 +15,13 @@ def export_groups
     f.puts ""
 
     f.puts "-- wp_terms"
+    # Slugs must use sanitize_title encoding (URL-percent-encoded lowercase)
+    # so WordPress's get_term_by('slug', ...) can resolve them correctly.
+    # Chinese characters are percent-encoded; ASCII characters are kept as-is.
     seen_slugs = {}
     groups.each do |g|
       term_id   = TERM_GROUP_OFFSET + g['id'].to_i
-      base_slug = slugify(g['name'])
+      base_slug = wp_sanitize_title(g['name'])
       slug      = seen_slugs[base_slug] ? "#{base_slug}-#{g['id']}" : base_slug
       seen_slugs[base_slug] = true
       name = escape_string(g['name'])
