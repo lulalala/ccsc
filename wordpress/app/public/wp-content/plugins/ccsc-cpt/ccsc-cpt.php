@@ -9,6 +9,7 @@ add_action('init', 'ccsc_register_post_types');
 add_action('init', 'ccsc_register_taxonomies');
 add_filter('post_type_link', 'ccsc_plain_permalink', 10, 2);
 add_action('pre_get_posts', 'ccsc_resolve_p_for_cpts');
+add_filter('the_content', 'ccsc_periodical_entry_list');
 
 function ccsc_plain_permalink($url, $post) {
     $ccsc_types = ['notice', 'periodical', 'periodical_entry'];
@@ -23,6 +24,39 @@ function ccsc_resolve_p_for_cpts($query) {
     if (!is_admin() && $query->is_main_query() && $query->get('p')) {
         $query->set('post_type', 'any');
     }
+}
+
+// Append a table of periodical entries to a periodical's single post view.
+function ccsc_periodical_entry_list($content) {
+    if (!is_singular('periodical') || !in_the_loop()) {
+        return $content;
+    }
+
+    $entries = get_posts([
+        'post_type'   => 'periodical_entry',
+        'post_parent' => get_the_ID(),
+        'numberposts' => -1,
+        'orderby'     => 'menu_order',
+        'order'       => 'ASC',
+        'post_status' => 'any',
+    ]);
+
+    if (empty($entries)) {
+        return $content;
+    }
+
+    $rows = '';
+    foreach ($entries as $entry) {
+        $author = get_post_meta($entry->ID, 'author', true);
+        $url    = get_permalink($entry);
+        $rows  .= '<tr>';
+        $rows  .= '<td><a href="' . esc_url($url) . '">' . esc_html($entry->post_title) . '</a></td>';
+        $rows  .= '<td>' . esc_html($author) . '</td>';
+        $rows  .= '</tr>';
+    }
+
+    $table  = '<table class="ccsc-periodical-entries"><tbody>' . $rows . '</tbody></table>';
+    return $content . $table;
 }
 
 function ccsc_register_post_types() {
