@@ -110,6 +110,24 @@ function ccsc_header_styles() { ?>
     background-color: #4a2810;
 }
 
+/* ── Periodical archive: uniform cover height, no distortion ── */
+.tax-periodical_type .post-thumb-img-content,
+.post-type-archive-periodical .post-thumb-img-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 280px;
+    background: #f5efe6;
+    overflow: hidden;
+}
+.tax-periodical_type .post-thumb-img-content .wp-post-image,
+.post-type-archive-periodical .post-thumb-img-content .wp-post-image {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
 /* ── Mobile menu ── */
 #ast-mobile-site-navigation {
     background-color: #3d2110;
