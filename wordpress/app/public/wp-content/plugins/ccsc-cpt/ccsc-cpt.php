@@ -11,6 +11,8 @@ add_filter('post_type_link', 'ccsc_plain_permalink', 10, 2);
 add_action('pre_get_posts', 'ccsc_resolve_p_for_cpts');
 add_filter('the_content', 'ccsc_periodical_entry_list');
 add_filter('the_content', 'ccsc_periodical_entry_meta');
+add_filter('astra_the_title_enabled', 'ccsc_hide_front_page_title');
+add_action('wp_head', 'ccsc_header_styles');
 
 function ccsc_plain_permalink($url, $post) {
     $ccsc_types = ['notice', 'periodical', 'periodical_entry'];
@@ -59,6 +61,64 @@ function ccsc_periodical_entry_list($content) {
     $table  = '<table class="ccsc-periodical-entries"><tbody>' . $rows . '</tbody></table>';
     return $content . $table;
 }
+
+function ccsc_hide_front_page_title($enabled) {
+    return is_front_page() ? false : $enabled;
+}
+
+function ccsc_header_styles() { ?>
+<style>
+/* ── Site title ── */
+.ast-site-identity .site-title,
+.ast-site-identity .site-title a {
+    color: #3d2110 !important;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+/* ── Golden separator between header and content ── */
+#masthead {
+    border-bottom: 3px solid #b07330;
+}
+
+/* ── Top-level nav items ── */
+.main-header-menu > .menu-item > .menu-link {
+    color: #3d2110 !important;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+.main-header-menu > .menu-item:hover > .menu-link,
+.main-header-menu > .menu-item.focus > .menu-link,
+.main-header-menu > .menu-item.current-menu-item > .menu-link,
+.main-header-menu > .menu-item.current-menu-ancestor > .menu-link {
+    color: #b07330 !important;
+}
+
+/* ── Dropdown submenus ── */
+.main-header-menu .sub-menu {
+    background-color: #3d2110;
+    border-top: 2px solid #b07330;
+}
+.main-header-menu .sub-menu .menu-link {
+    color: #fef5e7 !important;
+    letter-spacing: 0.03em;
+}
+.main-header-menu .sub-menu .menu-item:hover > .menu-link,
+.main-header-menu .sub-menu .menu-item.focus > .menu-link {
+    color: #d4a96a !important;
+    background-color: #4a2810;
+}
+
+/* ── Mobile menu ── */
+#ast-mobile-site-navigation {
+    background-color: #3d2110;
+}
+#ast-mobile-site-navigation .menu-link {
+    color: #fef5e7 !important;
+}
+</style>
+<?php }
 
 // Prepend breadcrumb + author + category to a periodical entry's single post view.
 function ccsc_periodical_entry_meta($content) {
