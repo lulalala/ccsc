@@ -10,6 +10,7 @@ add_action('init', 'ccsc_register_taxonomies');
 add_filter('post_type_link', 'ccsc_plain_permalink', 10, 2);
 add_action('pre_get_posts', 'ccsc_resolve_p_for_cpts');
 add_filter('the_content', 'ccsc_periodical_entry_list');
+add_filter('the_content', 'ccsc_periodical_entry_meta');
 
 function ccsc_plain_permalink($url, $post) {
     $ccsc_types = ['notice', 'periodical', 'periodical_entry'];
@@ -57,6 +58,36 @@ function ccsc_periodical_entry_list($content) {
 
     $table  = '<table class="ccsc-periodical-entries"><tbody>' . $rows . '</tbody></table>';
     return $content . $table;
+}
+
+// Prepend breadcrumb + author + category to a periodical entry's single post view.
+function ccsc_periodical_entry_meta($content) {
+    if (!is_singular('periodical_entry') || !in_the_loop()) {
+        return $content;
+    }
+
+    $post      = get_post();
+    $parent_id = $post->post_parent;
+    $meta      = '';
+
+    // Breadcrumb → parent periodical
+    if ($parent_id) {
+        $issue      = get_post_meta($parent_id, 'issue', true);
+        $type_terms = get_the_terms($parent_id, 'periodical_type');
+        $type_label = (!empty($type_terms) && !is_wp_error($type_terms)) ? $type_terms[0]->name : '';
+        $crumb      = trim($type_label . ($issue ? ' 第' . $issue . '期' : ''));
+        $meta      .= '<p class="ccsc-entry-breadcrumb"><a href="' . esc_url(get_permalink($parent_id)) . '">← ' . esc_html($crumb) . '</a></p>';
+    }
+
+    // Author and category inline
+    $author   = trim(get_post_meta($post->ID, 'author', true));
+    $category = trim(get_post_meta($post->ID, 'periodical_category', true));
+    if ($author || $category) {
+        $parts = array_filter([$category, $author]);
+        $meta .= '<p class="ccsc-entry-byline">' . esc_html(implode('　', $parts)) . '</p>';
+    }
+
+    return $meta . $content;
 }
 
 function ccsc_register_post_types() {
