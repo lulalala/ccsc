@@ -51,7 +51,7 @@ def build_nav_content(groups)
   end
 
   lines += nav_submenu('服務與生活') do
-    [nav_link('文化福傳', '#')]
+    [nav_link('文化福傳', '/?post_type=culture_entry')]
   end
 
   lines << nav_link('行事曆', "/?page_id=#{SCHEDULE_PAGE_ID}")

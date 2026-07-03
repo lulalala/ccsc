@@ -179,6 +179,58 @@ STI subclass: `FountainEntry` (for Fountain periodicals).
 
 ---
 
+## CultureEntry
+
+**Table:** `culture_entries`
+
+| Column | Type | Notes |
+|--------|------|-------|
+| id | integer | PK |
+| category_id | integer | FK → categories (validated present) |
+| created_at | datetime | NOT NULL |
+| updated_at | datetime | NOT NULL |
+
+**Associations:**
+- `belongs_to :category`
+- `has_one :post, as: :owner` (polymorphic via `posts` table)
+  - `posts.owner_type = "CultureEntry"`, `posts.owner_id = culture_entry.id`
+- `has_one :comment_topic, as: :owner` (polymorphic via `comment_topics`)
+
+**Post record** (`posts` table — same shape as PeriodicalEntry's):
+title (NOT NULL), body (raw HTML from CKEditor, may embed `/uploads/ckeditor/...` images), author (string byline), owner_id/owner_type.
+The post is taggable (acts-as-taggable): `taggings` rows with `context = 'culture_entry_tags'`, `taggable_type = 'Post'` → `tags`.
+
+**Categories** (`categories` table, `scope = "文化福傳"`) — two-level hierarchy via `parent_id`:
+
+| id | name | parent |
+|----|------|--------|
+| 1 | 宗旨 | — |
+| 2 | 小故事小道理 | — |
+| 3 | 論文 | — |
+| 4 | 宗旨 | 1 |
+| 5 | 1 信仰與文化 | 2 |
+| 6 | 論文 | 3 |
+| 7 | 2 信仰我見我思 | 2 |
+
+**Comments:** `comment_topics` (owner = CultureEntry) → `comment_posts` (author string nullable, content, created_at). Public comment form on the show page.
+
+**Public URLs:**
+- `/culture_preachings` — index grouped by the three top-level categories
+- `/culture_preachings/:id` — single entry
+- `/culture_preachings/categories/:category` — entries in a named category
+- `/culture_preachings/tag?tag=x` — entries tagged x
+
+**Rendered structure (show):**
+```
+<h1>{post.title}</h1>
+<div class="author">{post.author}</div>
+關鍵字：{post.tag_list}
+<div class="body">{post.body — raw HTML}</div>
+{comments + comment form}
+```
+
+---
+
 ## Relationship Diagram
 
 ```
@@ -199,6 +251,11 @@ PeriodicalEntry (STI: FountainEntry)
   ├── belongs_to :periodical
   └── has_one :post (polymorphic via posts table)
 
+CultureEntry
+  ├── belongs_to :category (categories, scope 文化福傳, self-referential parent_id)
+  ├── has_one :post (polymorphic via posts table; post is taggable)
+  └── has_one :comment_topic → comment_posts
+
 Post
-  └── belongs_to :owner (PeriodicalEntry)
+  └── belongs_to :owner (PeriodicalEntry | CultureEntry)
 ```

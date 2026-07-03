@@ -1,16 +1,18 @@
 <?php
 /**
  * Plugin Name: CCSC Custom Post Types
- * Description: Registers Notice, Periodical, PeriodicalEntry, and Schedule CPTs with Group and PeriodicalType taxonomies.
- * Version: 1.0
+ * Description: Registers Notice, Periodical, PeriodicalEntry, Schedule, and CultureEntry CPTs with Group, PeriodicalType, and CultureCategory taxonomies.
+ * Version: 1.1
  */
 
 add_action('init', 'ccsc_register_post_types');
 add_action('init', 'ccsc_register_taxonomies');
 add_filter('post_type_link', 'ccsc_plain_permalink', 10, 2);
 add_action('pre_get_posts', 'ccsc_resolve_p_for_cpts');
+add_action('pre_get_posts', 'ccsc_tag_archive_include_culture');
 add_filter('the_content', 'ccsc_periodical_entry_list');
 add_filter('the_content', 'ccsc_periodical_entry_meta');
+add_filter('the_content', 'ccsc_culture_entry_meta');
 add_filter('astra_the_title_enabled', 'ccsc_hide_front_page_title');
 add_action('wp_head', 'ccsc_header_styles');
 add_action('add_meta_boxes', 'ccsc_add_periodical_parent_metabox');
@@ -19,7 +21,7 @@ add_action('save_post_periodical_entry', 'ccsc_save_periodical_parent', 10, 2);
 add_shortcode('ccsc_schedules', 'ccsc_schedules_shortcode');
 
 function ccsc_plain_permalink($url, $post) {
-    $ccsc_types = ['notice', 'periodical', 'periodical_entry'];
+    $ccsc_types = ['notice', 'periodical', 'periodical_entry', 'culture_entry'];
     if (in_array($post->post_type, $ccsc_types, true)) {
         return home_url('/?p=' . $post->ID);
     }
@@ -30,6 +32,14 @@ function ccsc_plain_permalink($url, $post) {
 function ccsc_resolve_p_for_cpts($query) {
     if (!is_admin() && $query->is_main_query() && $query->get('p')) {
         $query->set('post_type', 'any');
+    }
+}
+
+// Tag archives (/?tag=slug) query post_type=post only by default;
+// include culture entries so their tag links resolve.
+function ccsc_tag_archive_include_culture($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_tag()) {
+        $query->set('post_type', ['post', 'culture_entry']);
     }
 }
 
@@ -189,6 +199,29 @@ function ccsc_periodical_entry_meta($content) {
     if ($author || $category) {
         $parts = array_filter([$category, $author]);
         $meta .= '<p class="ccsc-entry-byline">' . esc_html(implode('　', $parts)) . '</p>';
+    }
+
+    return $meta . $content;
+}
+
+// Prepend author byline and append tag list to a culture entry's single post view,
+// mirroring the Rails culture_entries/show view (.author div + 關鍵字 tag list).
+function ccsc_culture_entry_meta($content) {
+    if (!is_singular('culture_entry') || !in_the_loop()) {
+        return $content;
+    }
+
+    $post = get_post();
+    $meta = '';
+
+    $author = trim(get_post_meta($post->ID, 'author', true));
+    if ($author) {
+        $meta .= '<p class="ccsc-entry-byline">' . esc_html($author) . '</p>';
+    }
+
+    $tags = get_the_term_list($post->ID, 'post_tag', '<p class="ccsc-entry-tags">關鍵字：', '、', '</p>');
+    if ($tags && !is_wp_error($tags)) {
+        $content .= $tags;
     }
 
     return $meta . $content;
@@ -414,6 +447,25 @@ function ccsc_register_post_types() {
         'supports'          => ['title', 'editor', 'page-attributes', 'custom-fields'],
         'rewrite'           => false,
     ]);
+
+    register_post_type('culture_entry', [
+        'labels' => [
+            'name'          => '文化福傳',
+            'singular_name' => '文化福傳',
+            'add_new_item'  => '新增文章',
+            'edit_item'     => '編輯文章',
+            'view_item'     => '查看文章',
+            'search_items'  => '搜尋文章',
+        ],
+        'public'            => true,
+        'publicly_queryable'=> true,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'has_archive'       => true,
+        'supports'          => ['title', 'editor', 'custom-fields', 'comments'],
+        'taxonomies'        => ['culture_category', 'post_tag'],
+        'rewrite'           => false,
+    ]);
 }
 
 function ccsc_register_taxonomies() {
@@ -441,6 +493,22 @@ function ccsc_register_taxonomies() {
             'all_items'     => '所有類型',
             'edit_item'     => '編輯類型',
             'add_new_item'  => '新增類型',
+        ],
+        'public'            => true,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'hierarchical'      => true,
+        'rewrite'           => false,
+    ]);
+
+    register_taxonomy('culture_category', ['culture_entry'], [
+        'labels' => [
+            'name'          => '文化類別',
+            'singular_name' => '文化類別',
+            'search_items'  => '搜尋類別',
+            'all_items'     => '所有類別',
+            'edit_item'     => '編輯類別',
+            'add_new_item'  => '新增類別',
         ],
         'public'            => true,
         'show_ui'           => true,

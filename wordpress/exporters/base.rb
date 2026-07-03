@@ -12,6 +12,10 @@ ENTRY_OFFSET         = 30_000  # wp post ID = entry.id + 30000
 ATTACHMENT_OFFSET    = 40_000  # wp post ID = periodical.id + 40000
 SCHEDULE_OFFSET      = 60_000  # wp post ID = schedule.id + 60000
 SCHEDULE_PAGE_ID     = 65_000  # wp post ID of the 行事曆 page holding [ccsc_schedules]
+TERM_CULTURE_OFFSET  = 300     # term_id = 300 + category.id (categories scope 文化福傳)
+TERM_TAG_OFFSET      = 400     # term_id = 400 + tag.id (culture entry tags → post_tag)
+CULTURE_OFFSET       = 70_000  # wp post ID = culture_entry.id + 70000
+COMMENT_OFFSET       = 100_000 # wp comment_ID = comment_post.id + 100000
 
 SQL_DIR = File.expand_path('../sql', __dir__)
 

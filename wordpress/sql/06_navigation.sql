@@ -23,7 +23,7 @@ UPDATE wp_posts
 <!-- wp:navigation-link {"label":"影音紀錄","url":"#","kind":"custom","isTopLevelLink":false} /-->
 <!-- /wp:navigation-submenu -->
 <!-- wp:navigation-submenu {"label":"服務與生活","url":"#","kind":"custom","isTopLevelLink":false} -->
-<!-- wp:navigation-link {"label":"文化福傳","url":"#","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"文化福傳","url":"/?post_type=culture_entry","kind":"custom","isTopLevelLink":false} /-->
 <!-- /wp:navigation-submenu -->
 <!-- wp:navigation-link {"label":"行事曆","url":"/?page_id=65000","kind":"custom","isTopLevelLink":false} /-->
 <!-- wp:navigation-submenu {"label":"小會刊物","url":"#","kind":"custom","isTopLevelLink":false} -->

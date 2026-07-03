@@ -5,6 +5,7 @@ require_relative 'periodical_entries_exporter'
 require_relative 'infos_exporter'
 require_relative 'nav_exporter'
 require_relative 'schedules_exporter'
+require_relative 'culture_entries_exporter'
 
 puts "Starting WordPress SQL export..."
 puts ""
@@ -16,6 +17,7 @@ export_periodical_entries
 export_infos
 export_nav
 export_schedules
+export_culture_entries
 
 puts ""
 puts "Done. SQL files written to wordpress/sql/"
@@ -29,3 +31,4 @@ puts "  wp db query < sql/04_periodical_entries.sql"
 puts "  wp db query < sql/05_info_pages.sql"
 puts "  wp db query < sql/06_navigation.sql"
 puts "  wp db query < sql/07_schedules.sql"
+puts "  wp db query < sql/08_culture_entries.sql"
