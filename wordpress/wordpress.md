@@ -149,12 +149,7 @@ wp media regenerate
 
 See `download_images.sh` for details.
 
-In-body images (culture entries and others) are embedded by CKEditor as relative `/uploads/ckeditor/...` URLs. Copy the Rails uploads into the WP web root so they resolve as-is — no URL rewriting or attachment rows needed (the path is gitignored):
-
-```bash
-mkdir -p wordpress/app/public/uploads
-cp -R public/uploads/ckeditor wordpress/app/public/uploads/
-```
+In-body images (culture entries and others) are embedded by CKEditor as `/uploads/ckeditor/...` URLs in the Rails bodies. The CKEditor asset tree already lives at `wp-content/uploads/ckeditor/` (gitignored), so exporters rewrite body refs to `/wp-content/uploads/ckeditor/...` — no attachment rows needed.
 
 ---
 

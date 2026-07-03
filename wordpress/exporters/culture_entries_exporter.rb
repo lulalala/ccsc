@@ -7,6 +7,10 @@ require_relative 'base'
 # 'culture_entry_tags') become built-in 'post_tag' terms. Comments
 # (comment_topics/comment_posts) become wp_comments rows.
 #
+# In-body CKEditor image refs are rewritten from the Rails path
+# (/uploads/ckeditor/...) to the WP uploads dir
+# (/wp-content/uploads/ckeditor/...), matching prior migrations.
+#
 # Output: sql/08_culture_entries.sql (self-contained: terms first)
 # Tables written: wp_terms, wp_term_taxonomy, wp_posts, wp_postmeta,
 #                 wp_term_relationships, wp_comments
@@ -102,7 +106,7 @@ def export_culture_entries
     entries.each do |e|
       wp_id         = CULTURE_OFFSET + e['id'].to_i
       title         = escape_string(e['post_title'])
-      content       = escape_string(e['post_body'])
+      content       = escape_string(e['post_body']&.gsub('/uploads/ckeditor/', '/wp-content/uploads/ckeditor/'))
       post_date     = format_date(e['created_at'])
       post_modified = format_date(e['updated_at'])
       post_name     = escape_string("culture-entry-#{e['id']}")

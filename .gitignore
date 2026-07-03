@@ -12,7 +12,6 @@
 
 # wordpress
 /wordpress/app/public/wp-content/uploads/
-/wordpress/app/public/uploads/
 
 # bundler state
 /.bundle

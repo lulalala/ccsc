@@ -2950,7 +2950,7 @@ VALUES
 
 <p>轉身，我又看到婉如蝶舞春風的四照花，她也有個奇怪的英文名字叫Dogwood。相傳兩千年前，耶穌被釘的十字架就是用木質異常堅硬的Dogwood做的，主耶穌背負著沉重的十字架，一步步艱辛地走到Calvary山上。事後Dogwood 自覺愧疚，從此不再長得粗壯挺直，其枝幹變得細而彎曲， 不能成為做十字架的木材。再看它十字形的苞葉，每片尖端略帶枯紅，好似凍傷，卻給苞葉造成美麗的曲線，輕翹翻轉飛舞，也有傳說，它是耶穌在十字架上受苦，由釘痕流出的鮮血濺至花上所致。我又開始聯想了，四照花的花期在四月，正值復活期，象徵主耶穌死而復活，完成了救贖世人的恩典。十字形的苞片中間，有許多如冠狀的小花，應証了「我們必須經過許多困難，纔能進入天主的國。」（宗十四：21）的信德。四照花各個部位都不同，就繪畫綫條而言，有春蠶吐絲般的苞片，也有鉄線銀勾般的枝條。每個時節，又都有它的可觀性，春花亮麗舞翩翩，夏葉油油濃且密，秋來碧綠轉棗紅，冬至結果紅彤彤。周而復始，年復一年。是的，我試著走進它的內心，在變動中，我找到了規律，又在規律中，找到了變化。我看到了「凡事包容，凡事相信，凡事盼望，凡事忍耐。」的信息，「看，我已更新了一切。」（默廿一5），若能感悟，默存於心，便不在多言。</p>
 
-<p><img alt="" src="/uploads/ckeditor/pictures/362/content________.jpg" style="width: 800px; height: 600px;" /></p>
+<p><img alt="" src="/wp-content/uploads/ckeditor/pictures/362/content________.jpg" style="width: 800px; height: 600px;" /></p>
 
 <p>&nbsp;</p>
 
@@ -3023,7 +3023,7 @@ VALUES
 
 <p>十多年前起，沖繩料理逐漸普及，原產於南國的沖繩綠苦瓜成了家家戶戶的常備菜，也間接改變了「綠簾子」的風潮。綠苦瓜的葉蔓濃密、易於種植又少有蟲害、而且只需一株母莖便結實累累。因此，綠苦瓜幾乎成了現今遮陽棚的代名詞。夏日漫步於寧靜的住宅區，每隔幾步肯定會遇上一面苦瓜窗簾：手舞足蹈的綠葉、含羞帶怯的黃花、飽滿沉甸的果實&hellip;隨風搖曳，很是好看。偶爾，會有一兩顆高懸於屋主視野外的，乏人問津地熟過了頭，竟整個轉為太陽般的豔橘色，油亮亮地裹於一團綠意中，別有風情。</p>
 
-<p style="text-align: center;"><img alt="" src="/uploads/ckeditor/pictures/365/content________1.jpg" style="width: 800px; height: 494px;" /><br />
+<p style="text-align: center;"><img alt="" src="/wp-content/uploads/ckeditor/pictures/365/content________1.jpg" style="width: 800px; height: 494px;" /><br />
 <span style="color:#0000FF;">綠苦瓜炒豆腐午餐肉，再撒上花朵般的柴魚屑，是夏天最棒的下酒菜</span></p>
 
 <p>今年初夏，自宅的公寓樓下鄰居也撐桿架網，開始種起綠苦瓜。瓜苗的生命力勢如破竹，沒多久就爬遍了整面網，繼續往上另尋出路。藤蔓的柔軟觸鬚先在我家陽台的底端探頭探腦，也沒打聲招呼，就擅自前來定居。兩三天後，陽台下方已被攻佔，鋁欄杆上大辣辣地繞起了好似傳統電話線的綠色藤蔓。我不栽不植，竟憑空得了一小片黃花綠意，偶爾還附帶嗡嗡振翅的細腰蜂子，多麼有趣！於是，我好似認真記錄暑假作業的小學生，不時步上陽台殷勤探望，樂此不疲地觀察植物的朝夕變化。</p>
@@ -3036,7 +3036,7 @@ VALUES
 
 <p>我憶起那顆晶瑩翠綠、日漸茁壯的苦瓜寶寶，越想越難受，竟不爭氣地哭了起來。明明知道瓜藤不屬於自己，一旦失落卻又像被扯裂了心頭肉，怎麼也止不住淚。不過，悲傷的情緒卻也不持久，因為不期然想起了約納的故事。</p>
 
-<p style="text-align: center;"><img alt="" src="/uploads/ckeditor/pictures/364/content________2.jpg" style="width: 800px; height: 600px;" /><br />
+<p style="text-align: center;"><img alt="" src="/wp-content/uploads/ckeditor/pictures/364/content________2.jpg" style="width: 800px; height: 600px;" /><br />
 <span style="color:#0000FF;">陽台上的苦瓜寶寶</span></p>
 
 <p>約納，是舊約聖經中最著名的先知之一。他為了躲避天主，不願遵命前往尼尼微城宣布毀滅的消息，曾被吞在大魚腹中三天三夜。後來，尼尼微全城上下聽從了先知的警告，悔改祈禱，因而得到慈悲天主的寬恕。約納卻又開始鬧脾氣，哀怨地覺得自己白忙一場，死了還比活著好。</p>
@@ -5783,7 +5783,7 @@ VALUES
 <br />
 彌撒禮儀結束，明紐醫生替代因病缺席的管風琴手，從天而降，欣喜藝術小組又完成一件集體創作，這時一列前所未見、衣冠楚楚的聖詠團從神父更衣廳魚貫而出，走到馬槽前指指點點，一打聽，原來是遠從聖方濟薩威家鄉來的佳賓&hellip;&hellip;</font></font></p>
 
-<p><img alt="" src="/uploads/ckeditor/pictures/424/content_%E9%A6%AC%E6%A7%BD3.jpg" style="height: 600px; width: 800px;" /></p>
+<p><img alt="" src="/wp-content/uploads/ckeditor/pictures/424/content_%E9%A6%AC%E6%A7%BD3.jpg" style="height: 600px; width: 800px;" /></p>
 
 <p style="text-align: right;"><font color="#000000"><font size="3"><font color="#000000"><font size="2">轉載自《心泉》第78期（2008年）</font></font></font></font></p>
 
@@ -6180,7 +6180,7 @@ INSERT INTO wp_posts
    post_status, comment_status, ping_status, post_name, post_modified, post_modified_gmt,
    post_content_filtered, to_ping, pinged, post_parent, menu_order, post_type, comment_count)
 VALUES
-  (70131, 1, '2022-01-29 19:24:11', '2022-01-29 19:24:11', '<p><img alt="" src="/uploads/ckeditor/pictures/433/content_Christine_1.jpeg" style="width: 800px; height: 544px;" /><br />
+  (70131, 1, '2022-01-29 19:24:11', '2022-01-29 19:24:11', '<p><img alt="" src="/wp-content/uploads/ckeditor/pictures/433/content_Christine_1.jpeg" style="width: 800px; height: 544px;" /><br />
 張仕娟（左一）在2006年7月14日與真空法師（二排左）、一行禪師合影</p>
 
 <p><br />
@@ -6198,7 +6198,7 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/434/content_Christine_2.jpeg" style="width: 694px; height: 431px;" /></font></font></font></font><br />
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/434/content_Christine_2.jpeg" style="width: 694px; height: 431px;" /></font></font></font></font><br />
 作者張仕娟與一行禪師正在修習正念禪修</p>
 
 <p><br />
@@ -6209,7 +6209,7 @@ VALUES
 記起他的叮囑：「我是不會死的！只要你們繼續修行，我會在你們的呼吸及步伐中！」他說：「如果我在任何地方，它就在你正念的呼吸和你平靜的腳步中。」</font></font></font></font><br />
 &nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/435/content_Christine_3.jpeg" style="width: 800px; height: 534px;" /></font></font></font></font></font></font><br />
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/435/content_Christine_3.jpeg" style="width: 800px; height: 534px;" /></font></font></font></font></font></font><br />
 張仕娟與女兒思齊去機場迎接一行禪師。幾年後，她的女兒於梅村出家。</p>
 
 <p><br />
@@ -8318,7 +8318,7 @@ VALUES
 或許祂平凡地如一杯水，我們卻在找一杯有滋有味的咖啡！<br />
 似乎在每個時刻、每個呼吸間，你我容易與天主擦身而過！</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/448/content_%E5%92%96%E5%95%A1%E7%9A%84%E9%BB%98%E6%83%B3.jpg" style="width: 190px; height: 244px;" /><br />
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/448/content_%E5%92%96%E5%95%A1%E7%9A%84%E9%BB%98%E6%83%B3.jpg" style="width: 190px; height: 244px;" /><br />
 <br />
 我們忽視水，因為心中想著咖啡！<br />
 終於明白，生命的朝聖之旅，原來是去放下心中的那杯咖啡，<br />
@@ -8611,7 +8611,7 @@ VALUES
 <br />
 「<font face="KaiTi, monospace">形而上者謂之道，形而下者謂之器</font>」《繫辭傳上.第十二章》。眼看得到的存在是形下，眼看不到的存在是形上。天主聖三是形上存在，要講解本就不容易，西方神學不容易吸引信徒，除了表達方式，主要原因，天主聖三是被信徒朝拜的對象，不是被研究的對象，且兩千年來許多神學家說天主聖三是奧秘，既然是奧秘，那就不必費勁研究，誠心朝拜即可。但是，天主聖三本體若是宇宙、物理和生命的密碼呢？那就當以心眼好好默觀，不止於朝拜了。</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/450/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%961.jpg" style="width: 250px; height: 221px;" />&nbsp;<img alt="" src="/uploads/ckeditor/pictures/451/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%962.jpg" style="width: 250px; height: 136px;" /><br />
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/450/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%961.jpg" style="width: 250px; height: 221px;" />&nbsp;<img alt="" src="/wp-content/uploads/ckeditor/pictures/451/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%962.jpg" style="width: 250px; height: 136px;" /><br />
 <br />
 <strong>道家的無與有</strong><br />
 聖三的本體已經烙印在萬事萬物裡，老子默觀人間事物，就不會離開天主聖三的模式：「<font face="KaiTi, monospace">道可道，非常道。名可名，非常名。無，名天地之始；有，名萬物之母。故常無欲，以觀其妙；常有欲，以觀其徼。此兩者，同出而異名，同謂之玄。玄之又玄，眾妙之門。</font>」《道德經.第一章》以天主聖三信仰來詮釋既是：「天主若可以講清楚，可以用名字來含括，那麼就不是超越者了。<strong><font face="KaiTi, monospace">無</font></strong>（聖父）是天地的創始者，<strong><font face="KaiTi, monospace">有</font></strong>（聖子）是天地的造生者。默觀者只要將心靈置於空無，就能默觀其奧秘。<strong><font face="KaiTi, monospace">無</font></strong>和<strong><font face="KaiTi, monospace">有</font></strong>是同一天主，稱呼有所不同而已，二者合一的玄奧，就是聖神，聖神是萬事萬物的奧秘之門。」<br />
@@ -8630,7 +8630,7 @@ VALUES
 <strong>天主聖三的無與有</strong><br />
 聖經為什麼不說聖父降生救贖世界？為什麼不說聖神降生救贖世界？而是聖子降生？那是因為聖父是隱藏的天主（無），聖子是彰顯的天主（有），聖神是無有相生相成之下的神能，故此以聖子降生開展天主聖三的奧秘。</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/452/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%963.jpg" style="width: 280px; height: 170px;" /><br />
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/452/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%963.jpg" style="width: 280px; height: 170px;" /><br />
 <br />
 耶穌在最後晚餐時和宗徒們講解天主聖父：「<font face="KaiTi, monospace">你們若認識我，也就必然認識我父；現在你們已認識祂，並且已經看見祂。</font>」斐理伯聽了就很嚮往：「<font face="KaiTi, monospace">主：把父顯示給我們，我們就心滿意足了。</font>」斐理伯只懂肉眼事物，缺乏悟性，耶穌回答說：「<font face="KaiTi, monospace">誰看見了我，就是看見了父；你怎麼說把父顯示給我們呢？你不信我在父內，父在我內嗎？</font>」（參閱若十四 7-9）聖若望寫了這段教導我們，<strong><font face="KaiTi, monospace">無</font></strong>是看不見的<strong><font face="KaiTi, monospace">有</font></strong>，<strong><font face="KaiTi, monospace">有</font></strong>是看得見的<strong><font face="KaiTi, monospace">無</font></strong>；看見聖子耶穌，就已是看到聖父。如果還是看不到，那是你以肉眼去看，不是以默觀之心眼去看。<br />
 <br />
@@ -8641,7 +8641,7 @@ VALUES
 <strong>生命哲學的無與有</strong><br />
 以生命哲學來說，「無」並非絕對的好，也非絕對的壞。無禍、無病、無憎、無憂、無怨、無悔是一種美好狀態。無、無義、無禮、無樂、無福、無錢、無人關愛，就不是很好狀況了。「有」不是絕對的好，亦非絕對的壞。有情、有義、有禮、有樂、有福、有錢、有利、有人關愛、有深愛的人相伴，這是美好狀態。有禍、有病、有怨、有恨、有執、有小人相伴，那就不妙了。</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/453/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%964.jpg" style="width: 250px; height: 288px;" /><br />
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/453/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%964.jpg" style="width: 250px; height: 288px;" /><br />
 <br />
 形上哲學所探索的無與有，著重其本質和法則。老子論述有和無，佛學講述色和空，易學的陰和陽，就是往這方向。萬事萬物皆是無中藏有，有中藏無，你中有我、我中有你。無的變相就是有，有的變相就是無，人生常常經驗無和有的洗禮，我尚未來到這世界之前，我是無；出生到了這世界，就是有；壽終正寢時又回歸於無。<br />
 <br />
@@ -8658,7 +8658,7 @@ VALUES
 <br />
 「<font face="KaiTi, monospace">上德不德，是以有德。下德不失德，所以無德。</font>」《道德經.第三十八章》老子認為德行分上下等級。上德的人，出於純樸自然，不勉強，不造作，品德感人，這是上級的德行。下德的人，一直注意自己的言行是否合乎道德，雖然是善人，但檔次低一些。</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/454/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%965.jpg" style="width: 260px; height: 161px;" /><br />
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/454/content_%E5%A4%A9%E4%B8%BB%E8%81%96%E4%B8%89_-_%E7%84%A1%E6%9C%89%E7%9B%B8%E7%94%9F%E7%9B%B8%E6%88%90_%E5%9C%965.jpg" style="width: 260px; height: 161px;" /><br />
 <br />
 舊約聖經記載，亞巴郎為了保命，否認撒辣是他的妻子，讓妻子被阿彼默肋客王佔有（參閱創廿章）。從世間角度來看，亞巴郎是貪生怕死、懦弱、無德的人，但從信仰角度來說，卻非如此。亞巴郎重視天主的許諾勝於一切，天主的許諾未實現之前，他不能為保住妻子而被殺死，因此亞巴郎寧願戴綠帽子，也要否認撒辣是他的妻子。亞巴郎在信仰上的超越，是屬於上上之德的無德。無德的意思是超脫人間價值觀，亞巴郎寧願失德於妻子，卻不願失德於天主；寧願妻子撒辣恨他，也不願毀掉天主的盟約。像亞巴郎這樣的人，天主怎會不愛他？怎能不大大祝福他呢？<br />
 <br />
@@ -8749,7 +8749,7 @@ VALUES
 <br />
 無論甘心，或不甘心，無論多麼「捨不得」，我們最終都要學會「捨得」。<br />
 <br />
-<img alt="" src="/uploads/ckeditor/pictures/455/content_%E6%8D%A8%E5%BE%97%E6%8D%A8%E4%B8%8D%E5%BE%97.jpg" style="width: 184px; height: 201px;" /><br />
+<img alt="" src="/wp-content/uploads/ckeditor/pictures/455/content_%E6%8D%A8%E5%BE%97%E6%8D%A8%E4%B8%8D%E5%BE%97.jpg" style="width: 184px; height: 201px;" /><br />
 <br />
 <strong>捨不得</strong><br />
 <br />
@@ -9620,7 +9620,7 @@ INSERT INTO wp_posts
 VALUES
   (70187, 1, '2022-11-09 13:21:42', '2022-11-09 13:21:42', '<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif">吳經熊、中華文化、本地化、聖經、靈修、小德蘭、神嬰小道、道家、法學、人文主義</font></font></font></p>
 
-<p><img alt="" src="/uploads/ckeditor/pictures/464/content_%E5%90%B3%E7%B6%93%E7%86%8A_-1389x900.jpeg" style="width: 400px; height: 259px;" /></p>
+<p><img alt="" src="/wp-content/uploads/ckeditor/pictures/464/content_%E5%90%B3%E7%B6%93%E7%86%8A_-1389x900.jpeg" style="width: 400px; height: 259px;" /></p>
 
 <p><font color="#000000"><font size="3"><strong>簡介</strong><br />
 <br />
@@ -10761,7 +10761,7 @@ INSERT INTO wp_posts
 VALUES
   (70201, 1, '2022-12-27 16:04:56', '2022-12-27 16:04:56', '<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif">徐光啟、利瑪竇、「保祿博士」</font></font></font></p>
 
-<p><img alt="" src="/uploads/ckeditor/pictures/465/content_%E5%BE%90%E5%85%89%E5%95%9F.jpg" style="width: 218px; height: 120px;" /></p>
+<p><img alt="" src="/wp-content/uploads/ckeditor/pictures/465/content_%E5%BE%90%E5%85%89%E5%95%9F.jpg" style="width: 218px; height: 120px;" /></p>
 
 <p><font color="#000000"><font size="3">徐家匯是上海大都市的一個中心市區，這里高樓林立，一片繁華，它的上海話發音和外文名稱是Zikawei。在主要街道的十字路口，整潔美觀的指路牌上標有市區平面圖，徐家匯簡史以及著名景點。徐家匯原名「徐家厙」，是徐光啟家族居住的地方，位於兩條河流的匯合處。在一條主幹道邊，一尊壯觀的現代銅像坐落於花團錦簇的街邊花壇中：一位衣著傳統服裝的文官危襟而坐，目光炯炯，他舉首高望，一手持書，一手拿著渾天儀。他就是徐家匯的肇始者徐光啟，他的陵墓和生平紀念館坐落於附近一個幽靜的公園中。園中的幾座雕塑概述了他一生中的主要事跡：徐利談道、桑園試種、督造火炮和夜觀星象。徐光啟為家國和人民鞠躬盡瘁，對故鄉授予他的榮譽受之無愧。<br />
 <br />
@@ -11387,7 +11387,7 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><img alt="" src="/uploads/ckeditor/pictures/486/content_%E5%BF%83%E6%B3%89%E5%B0%81%E9%9D%A23.jpg" style="width: 434px; height: 538px;" /></p>
+<p><img alt="" src="/wp-content/uploads/ckeditor/pictures/486/content_%E5%BF%83%E6%B3%89%E5%B0%81%E9%9D%A23.jpg" style="width: 434px; height: 538px;" /></p>
 
 <p><font color="#000000"><font color="#000000"><font size="3">小會一甲子的成長，100期的《心泉》，是小會會員對聖三的答覆&mdash;心泉是湧自耶穌被刺穿的聖心，洗濯、更新，是我們新生命之源。<br />
 小會以聖三為主保，這是聖三恩賜小會的靈修見證。<br />
@@ -13042,7 +13042,7 @@ VALUES
 
 <p><font color="#000000"><font size="3">今年八月廿七日，在長安天主堂二樓舉辦「那些『基因體』教我／沒有教我的事&mdash;&mdash;有關生命、科學與信仰」的演講，邀請到在中央研究院基因體中心擔任訪問學人的林白翎博士主講。她指出，現今科學家普遍相信：生命的起源是從海底火山的物質，經過漫長時間的演變而來，最後成為現在的樣貌，其中甚至帶有隨機、偶然的。倘若如此，對教友們來說，我們所信仰的天主又在哪裡？我們的生命又有何意義呢？因此，林博士從生命科學的觀點，來探討生命、科學與信仰。</font></font></p>
 
-<p><img height="250" src="http://ccsc.org.tw/uploads/ckeditor/pictures/187/content_95p51.jpg" width="192" /><br />
+<p><img height="250" src="http://ccsc.org.tw/wp-content/uploads/ckeditor/pictures/187/content_95p51.jpg" width="192" /><br />
 <br />
 <font color="#000000"><font size="3"><strong>一、生命之書的奧妙超乎人們所能想像</strong><br />
 <br />
@@ -13351,9 +13351,9 @@ VALUES
 
 <p><font size="3">【後記】本文作者萬致第昵稱「阿弟」，是北美分會會員，2010年在北加州過世。阿弟的這篇文章發表在2000年，23年後，二十幾位北美會員回臺灣參加小會60周年慶的全球共融營，營前在臺灣會員的陪同下，特地到靜山墓園，瞻仰過世的小會輔導神父們的遺容，是新一代會員的「又回靜山」，謝謝李樺院長神父的熱情招待。</font></p>
 
-<p><font size="3"><img alt="" src="/uploads/ckeditor/pictures/501/content_%E5%BD%B0%E5%8C%96%E9%9D%9C%E5%B1%B1_230401.jpg" style="width: 800px; height: 389px;" /><br />
+<p><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/501/content_%E5%BD%B0%E5%8C%96%E9%9D%9C%E5%B1%B1_230401.jpg" style="width: 800px; height: 389px;" /><br />
 <br />
-&nbsp;<img alt="" src="/uploads/ckeditor/pictures/502/content_%E5%BD%B0%E5%8C%96%E9%9D%9C%E5%B1%B1_230402.jpg" style="width: 800px; height: 610px;" /> </font></p>
+&nbsp;<img alt="" src="/wp-content/uploads/ckeditor/pictures/502/content_%E5%BD%B0%E5%8C%96%E9%9D%9C%E5%B1%B1_230402.jpg" style="width: 800px; height: 610px;" /> </font></p>
 
 <p align="right"><font color="#000000"><font color="#000000"><font size="3"><font size="3"><font color="#000000"><font size="3">原載於《心泉》第64期, 2000年6月</font></font></font></font></font></font></p>
 
@@ -15496,7 +15496,7 @@ VALUES
 <br />
 時間：2010年6月8日‧地點：台中靜宜大學</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/505/content_IMG_6107.jpeg" style="width: 1067px; height: 800px;" /><br />
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/505/content_IMG_6107.jpeg" style="width: 1067px; height: 800px;" /><br />
 <br />
 俞明德校長：單國璽是天主教樞機主教，是亞洲地區少有的樞機主教，也是台灣地區唯一的樞機主教。星雲大師是我們佛教界的心靈領導大師，毫無疑問也是佛教界的大師。這兩位同時是時代的人物，所謂時代的人物，是需要時代慢慢醞釀成的。<br />
 兩位大師在百忙之中撥出時間蒞臨靜宜大學，與我們所有同仁、同學及附近的鄉親們做一次心靈分享，我們十分感激，請再一次鼓掌歡迎兩位。在此也代表靜宜大學感謝每一位來賓的參與，祝大家平安、喜樂，謝謝！</font></font></p>
@@ -16405,7 +16405,7 @@ INSERT INTO wp_posts
 VALUES
   (70261, 1, '2023-08-26 21:13:28', '2023-08-26 21:13:28', '<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif">吳歷、中華文化、本地化、儒家、佛家、耶穌會、山水畫、傳統音樂、詩詞</font></font></font></p>
 
-<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif"><img alt="" src="/uploads/ckeditor/pictures/511/content_%E5%90%B3%E6%AD%B7.jpg" style="width: 400px; height: 200px;" /></font></font></font></p>
+<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif"><img alt="" src="/wp-content/uploads/ckeditor/pictures/511/content_%E5%90%B3%E6%AD%B7.jpg" style="width: 400px; height: 200px;" /></font></font></font></p>
 
 <p><font color="#000000"><font size="3"><strong>歷史背景</strong><br />
 <br />
@@ -16546,7 +16546,7 @@ VALUES
 <br />
 「德日進神父從事地質研究。他熱切地渴望舉行神聖的彌撒，但缺乏面包和葡萄酒。於是他創作了他的『在世界祭台上的彌撒」，用這樣的話來表達他的奉獻詞：『<strong>主啊，接受這個無所不包的面餅，這是你的整個受造界，被你所吸引著，在這個新一天的黎明給你的奉獻。</strong>』」</font></font></font></p>
 
-<p><font color="#000000"><font size="3"><font face="KaiTi, monospace"><img alt="" src="/uploads/ckeditor/pictures/513/content_%E9%9F%931.jpg" style="width: 485px; height: 659px;" /></font></font></font></p>
+<p><font color="#000000"><font size="3"><font face="KaiTi, monospace"><img alt="" src="/wp-content/uploads/ckeditor/pictures/513/content_%E9%9F%931.jpg" style="width: 485px; height: 659px;" /></font></font></font></p>
 
 <p><font color="#000000"><font size="3"><font face="KaiTi, monospace">第一次世界大戰期間，當他在前線充當擔架隊員時，他已經形成了類似的祈禱。這位司鐸經常被誤解，他直覺地認為『<strong>聖體聖事在某種程度上總是在世界的祭壇上慶祝</strong>』，是『<strong>宇宙的活生生的中心，充滿了愛和無窮無盡的生命的核心</strong>』（《願你受讚頌》，236)，即使是在我們這樣被沖突和戰爭打上烙印的時代。」<br />
 <br />
@@ -16558,7 +16558,7 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/512/content_%E9%9F%932.jpg" style="width: 800px; height: 600px;" /></font></font></p>
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/512/content_%E9%9F%932.jpg" style="width: 800px; height: 600px;" /></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3">（2018年6月翻拍於寧夏水洞溝博物館）</font></font></p>
 
@@ -16574,23 +16574,23 @@ VALUES
 <br />
 1892年，就讀於由耶穌會經營的蒙格雷聖母中學的德日進對數學和哲學已經表現出了特殊的興趣與愛好。1899年，剛滿18歲的他便不出人意外地加入耶穌會成為初學修士。再經過以後數年的哲學、神學學習和靈修培育， 終於1911年晉升為神父。緊接著，受到當時巴黎博物館古生物學教授瑪瑟蘭&middot;蒲勒（Marcellin Boule）和其他相關學者的影響，德日進對古生物學產生了濃厚興趣，開始致力鉆研而且成效顯著，常有學術報告和文章發表。然而，這一研究過程卻被突如其來的第一次世界大戰暫時擱置了：從1914年底到1919年初，四年多的時間，德日進被征招入伍，擔任戰地擔架隊隊員。即使是在這炮火紛飛、死屍遍野的戰場上，包括他的兩個弟弟都犧牲在這裡，德日進的思想和寫作從未停止，也正是在這期間，他與遠房表姐瑪格麗特（Marguerite Teilhard-Chambon）&mdash;&mdash;這位被他視為是「理想女性」者&mdash;&mdash;的書信不斷（1）。在一場殘酷戰爭的間隙，他這樣寫說：<font face="KaiTi, monospace">「<strong>當我看著眼前這塊滿是苦澀的景象時，我被這樣一種想法震懾住了：我有幸站在兩三處地方，就是在這裡，也就是在此時此刻，宇宙的整個生命使痛苦之地潮起潮落，但正是在這裡，一個偉大的未來（我越來越相信）正在成形</strong>」</font>（2）。最終，這些書信被匯集出版，名為《塑造一個思想》（The Making of a Mind），從中我們可以看到德日進早期哲學和神學思想的逐漸成形、成熟。戰爭一結束，他立即離開軍隊回到修院，繼續致力於古生物學和地質學的研究。</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/514/content_%E9%9F%933.png" style="width: 800px; height: 511px;" /></font></font></p>
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/514/content_%E9%9F%933.png" style="width: 800px; height: 511px;" /></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3">（母親和父親）</font></font></p>
 
-<p><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/515/content_%E9%9F%934.png" style="width: 440px; height: 298px;" /> </font></font></p>
+<p><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/515/content_%E9%9F%934.png" style="width: 440px; height: 298px;" /> </font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（少年德日進（前左）和兄弟姐妹）</font></font></font></font></p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/516/content_%E9%9F%935.png" style="width: 395px; height: 529px;" /> </font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/516/content_%E9%9F%935.png" style="width: 395px; height: 529px;" /> </font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（在耶穌穌會初學期間的德日進）</font></font></font></font></font></font></p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/517/content_%E9%9F%936.png" style="width: 622px; height: 800px;" /></font></font> </font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/517/content_%E9%9F%936.png" style="width: 622px; height: 800px;" /></font></font> </font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（第一次世界大戰期間的德日進（其兩個弟弟死在戰場））</font></font></font></font></font></font></p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/518/content_%E9%9F%937.png" style="width: 225px; height: 224px;" /> </font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/518/content_%E9%9F%937.png" style="width: 225px; height: 224px;" /> </font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（影響了德日進早期神學和靈修思想的表姐瑪格麗特）</font></font></font></font></font></font></font></font></p>
 
@@ -16606,11 +16606,11 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/519/content_%E9%9F%938.png" style="width: 440px; height: 586px;" /> </font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/519/content_%E9%9F%938.png" style="width: 440px; height: 586px;" /> </font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（黃河、白河博物館現在外貌）</font></font></font></font></font></font></font></font></p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/520/content_%E9%9F%939.png" style="width: 440px; height: 286px;" /> </font></font></font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/520/content_%E9%9F%939.png" style="width: 440px; height: 286px;" /> </font></font></font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（志華和德日進與其他在天津工商學院工作的耶穌會會士的合影）</font></font></font></font></font></font></font></font></font></font></p>
 
@@ -16622,11 +16622,11 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font face="KaiTi, monospace"><img alt="" src="/uploads/ckeditor/pictures/521/content_%E9%9F%9310.png" style="width: 690px; height: 505px;" /></font> </font></font></font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font face="KaiTi, monospace"><img alt="" src="/wp-content/uploads/ckeditor/pictures/521/content_%E9%9F%9310.png" style="width: 690px; height: 505px;" /></font> </font></font></font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（德日進和桑志華在水洞溝住過的的小旅店）</font></font></font></font></font></font></font></font></font></font></p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/522/content_%E9%9F%9311.png" style="width: 690px; height: 459px;" /> </font></font></font></font></font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/522/content_%E9%9F%9311.png" style="width: 690px; height: 459px;" /> </font></font></font></font></font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（店主、德日進和桑志華的蠟像）</font></font></font></font></font></font></font></font></font></font></font></font></p>
 
@@ -16636,7 +16636,7 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/523/content_%E9%9F%9312.png" style="width: 635px; height: 478px;" /> </font></font></font></font></font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/523/content_%E9%9F%9312.png" style="width: 635px; height: 478px;" /> </font></font></font></font></font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（德日進和中外古人類學家在周口店）</font></font></font></font></font></font></font></font></font></font></font></font></p>
 
@@ -16646,11 +16646,11 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/524/content_%E9%9F%9313.png" style="width: 625px; height: 512px;" /></font></font> </font></font></font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/524/content_%E9%9F%9313.png" style="width: 625px; height: 512px;" /></font></font> </font></font></font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（雕塑北京猿人頭像的露茜）</font></font></font></font></font></font></font></font></font></font></p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/525/content_%E9%9F%9314.png" style="width: 440px; height:295px;" /> </font></font></font></font></font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/525/content_%E9%9F%9314.png" style="width: 440px; height:295px;" /> </font></font></font></font></font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">(德日進和露茜喝茶聊天）</font></font></font></font></font></font></font></font></font></font></font></font></p>
 
@@ -16658,7 +16658,7 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/526/content_%E9%9F%9315.png" style="width: 533px; height: 789px;" /></font></font> </font></font></font></font></font></font></font></font></p>
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/526/content_%E9%9F%9315.png" style="width: 533px; height: 789px;" /></font></font> </font></font></font></font></font></font></font></font></p>
 
 <p style="text-align: center;"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3">（德日進墓碑）</font></font></font></font></font></font></font></font></font></font></p>
 
@@ -16681,7 +16681,7 @@ VALUES
 
 <p>&nbsp;</p>
 
-<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/uploads/ckeditor/pictures/527/content_%E9%9F%9316.png" style="width: 660px; height: 800px;" /></font></font><br />
+<p><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><font color="#000000"><font size="3"><img alt="" src="/wp-content/uploads/ckeditor/pictures/527/content_%E9%9F%9316.png" style="width: 660px; height: 800px;" /></font></font><br />
 <br />
 <font color="#000000"><font size="3"><strong>對基督宗教忠實的批評和意見</strong><br />
 <br />
@@ -16901,7 +16901,7 @@ INSERT INTO wp_posts
 VALUES
   (70267, 1, '2023-10-27 09:56:07', '2023-10-27 09:56:07', '<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif">徐甘弟大、中華文化、本地化、女性基督徒、明朝皇宮、柏應理神父、徐光啟、濟貧、善會</font></font></font></p>
 
-<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif"><img alt="" src="/uploads/ckeditor/pictures/533/content_%E5%BE%90%E7%94%98%E5%BC%9F%E5%A4%A7_candida-1024x576.jpg" style="width: 400px; height: 225px;" /></font></font></font></p>
+<p><font face="Arial Unicode MS"><font color="#ff0000"><font face="Times New Roman, serif"><img alt="" src="/wp-content/uploads/ckeditor/pictures/533/content_%E5%BE%90%E7%94%98%E5%BC%9F%E5%A4%A7_candida-1024x576.jpg" style="width: 400px; height: 225px;" /></font></font></font></p>
 
 <p><font color="#000000"><font size="3">許多人都對16至18世紀在中國傳教的耶穌會士有所耳聞，他們中最著名的一位是利瑪竇。利氏之被載入史冊，是由於他在中西文化交流中所扮演的主角；而於教會而言，也是因為他是以「本地化」形式向中國傳教的典範。總體而言，「本地化」是指向在文化上與歐洲截然不同的民族宣講福音。然而，利瑪竇僅僅是一位先驅，繼其後還有無數其他傑出人物，他們的貢獻主要體現於科學技術（天文學、數學、水力學、鑄炮&hellip;&hellip;）、文化（翻譯儒家經典作品&hellip;&hellip;）、藝術（繪畫、建築&hellip;&hellip;）等方面，以至於有人質疑耶穌會的主要任務究竟是文化交流還是傳播福音。<br />
 <br />
