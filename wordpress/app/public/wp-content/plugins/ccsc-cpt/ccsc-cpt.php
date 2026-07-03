@@ -13,6 +13,7 @@ add_action('pre_get_posts', 'ccsc_tag_archive_include_culture');
 add_filter('the_content', 'ccsc_periodical_entry_list');
 add_filter('the_content', 'ccsc_periodical_entry_meta');
 add_filter('the_content', 'ccsc_culture_entry_meta');
+add_filter('the_author', 'ccsc_culture_entry_author_name');
 add_filter('astra_the_title_enabled', 'ccsc_hide_front_page_title');
 add_action('wp_head', 'ccsc_header_styles');
 add_action('add_meta_boxes', 'ccsc_add_periodical_parent_metabox');
@@ -202,6 +203,17 @@ function ccsc_periodical_entry_meta($content) {
     }
 
     return $meta . $content;
+}
+
+// Culture entry posts all belong to the WP admin user; show the real author
+// (from the 'author' meta) wherever the loop displays an author name,
+// e.g. the archive list's entry meta.
+function ccsc_culture_entry_author_name($display_name) {
+    if (is_admin() || get_post_type() !== 'culture_entry') {
+        return $display_name;
+    }
+    $author = trim(get_post_meta(get_the_ID(), 'author', true));
+    return $author !== '' ? $author : $display_name;
 }
 
 // Prepend author byline and append tag list to a culture entry's single post view,
