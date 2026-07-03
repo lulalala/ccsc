@@ -149,7 +149,12 @@ wp media regenerate
 
 See `download_images.sh` for details.
 
-In-body images (culture entries and others) are embedded by CKEditor as relative `/uploads/ckeditor/...` URLs. The Rails `public/uploads/` tree is copied to `wordpress/app/public/uploads/`, so these resolve as-is — no URL rewriting or attachment rows needed.
+In-body images (culture entries and others) are embedded by CKEditor as relative `/uploads/ckeditor/...` URLs. Copy the Rails uploads into the WP web root so they resolve as-is — no URL rewriting or attachment rows needed (the path is gitignored):
+
+```bash
+mkdir -p wordpress/app/public/uploads
+cp -R public/uploads/ckeditor wordpress/app/public/uploads/
+```
 
 ---
 
@@ -173,3 +178,5 @@ After import:
 - [ ] A 關鍵字 tag link (`/?tag=<slug>`) lists tagged culture entries
 - [ ] `/?p=70066` and `/?p=70068` render in-body CKEditor images
 - [ ] Nav 服務與生活 → 文化福傳 links to `/?post_type=culture_entry`
+
+> **Nav caveat:** the front-end header renders the classic menu 主選單 (assigned to the `primary`/`mobile_menu` locations), not the `wp_navigation` post that `sql/06_navigation.sql` updates. New/changed nav links must also be updated in WP Admin → Appearance → Menus (or via the menu item's `_menu_item_url` postmeta).
