@@ -355,7 +355,7 @@ function ccsc_register_taxonomies() {
         'public'            => true,
         'show_ui'           => true,
         'show_in_menu'      => true,
-        'hierarchical'      => false,
+        'hierarchical'      => true,
         'rewrite'           => false,
     ]);
 }
