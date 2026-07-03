@@ -353,25 +353,8 @@ function ccsc_register_post_types() {
         'rewrite'           => false,
     ]);
 
-    register_post_type('periodical', [
-        'labels' => [
-            'name'          => '期刊',
-            'singular_name' => '期刊',
-            'add_new_item'  => '新增期刊',
-            'edit_item'     => '編輯期刊',
-            'view_item'     => '查看期刊',
-            'search_items'  => '搜尋期刊',
-        ],
-        'public'            => true,
-        'publicly_queryable'=> true,
-        'show_ui'           => true,
-        'show_in_menu'      => true,
-        'has_archive'       => true,
-        'supports'          => ['title', 'thumbnail', 'custom-fields', 'page-attributes'],
-        'taxonomies'        => ['periodical_type'],
-        'rewrite'           => false,
-    ]);
-
+    // Registered right after notice so 行事曆 sits next to 公告 in the admin menu
+    // (CPTs without menu_position are placed in registration order).
     // Schedules have no public single/archive view in the Rails app — only the
     // aggregated 行事曆 page rendered by the [ccsc_schedules] shortcode.
     register_post_type('schedule', [
@@ -392,6 +375,25 @@ function ccsc_register_post_types() {
         'supports'           => ['title', 'editor'],
         'taxonomies'         => ['group'],
         'rewrite'            => false,
+    ]);
+
+    register_post_type('periodical', [
+        'labels' => [
+            'name'          => '期刊',
+            'singular_name' => '期刊',
+            'add_new_item'  => '新增期刊',
+            'edit_item'     => '編輯期刊',
+            'view_item'     => '查看期刊',
+            'search_items'  => '搜尋期刊',
+        ],
+        'public'            => true,
+        'publicly_queryable'=> true,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'has_archive'       => true,
+        'supports'          => ['title', 'thumbnail', 'custom-fields', 'page-attributes'],
+        'taxonomies'        => ['periodical_type'],
+        'rewrite'           => false,
     ]);
 
     register_post_type('periodical_entry', [
