@@ -13,6 +13,9 @@ add_filter('the_content', 'ccsc_periodical_entry_list');
 add_filter('the_content', 'ccsc_periodical_entry_meta');
 add_filter('astra_the_title_enabled', 'ccsc_hide_front_page_title');
 add_action('wp_head', 'ccsc_header_styles');
+add_action('add_meta_boxes', 'ccsc_add_periodical_parent_metabox');
+add_action('add_meta_boxes', 'ccsc_add_periodical_entries_metabox');
+add_action('save_post_periodical_entry', 'ccsc_save_periodical_parent', 10, 2);
 
 function ccsc_plain_permalink($url, $post) {
     $ccsc_types = ['notice', 'periodical', 'periodical_entry'];
@@ -166,6 +169,102 @@ function ccsc_periodical_entry_meta($content) {
     }
 
     return $meta . $content;
+}
+
+function ccsc_add_periodical_parent_metabox() {
+    add_meta_box(
+        'ccsc_periodical_parent',
+        '所屬期刊',
+        'ccsc_periodical_parent_metabox_html',
+        'periodical_entry',
+        'side',
+        'high'
+    );
+}
+
+function ccsc_add_periodical_entries_metabox() {
+    add_meta_box(
+        'ccsc_periodical_entries',
+        '期刊文章',
+        'ccsc_periodical_entries_metabox_html',
+        'periodical',
+        'side',
+        'high'
+    );
+}
+
+function ccsc_periodical_parent_metabox_html($post) {
+    // Pre-fill from URL when creating a new entry via the periodical screen.
+    $current_parent = $post->post_parent
+        ? $post->post_parent
+        : intval($_GET['ccsc_parent'] ?? 0);
+
+    if ($current_parent) {
+        $parent = get_post($current_parent);
+        $issue  = get_post_meta($current_parent, 'issue', true);
+        $label  = $parent ? $parent->post_title . ($issue ? ' 第' . $issue . '期' : '') : '';
+        wp_nonce_field('ccsc_set_periodical_parent', 'ccsc_periodical_parent_nonce');
+        echo '<input type="hidden" name="ccsc_periodical_parent_id" value="' . esc_attr($current_parent) . '">';
+        echo '<p>' . esc_html($label) . '</p>';
+        $edit_url = admin_url('post.php?post=' . $current_parent . '&action=edit');
+        echo '<a href="' . esc_url($edit_url) . '">← 返回期刊</a>';
+    } else {
+        $periodicals = get_posts([
+            'post_type'   => 'periodical',
+            'numberposts' => -1,
+            'orderby'     => 'title',
+            'order'       => 'ASC',
+            'post_status' => 'any',
+        ]);
+        wp_nonce_field('ccsc_set_periodical_parent', 'ccsc_periodical_parent_nonce');
+        echo '<select name="ccsc_periodical_parent_id" style="width:100%">';
+        echo '<option value="0">— 未指定 —</option>';
+        foreach ($periodicals as $p) {
+            $issue = get_post_meta($p->ID, 'issue', true);
+            $label = $p->post_title . ($issue ? ' 第' . $issue . '期' : '');
+            echo '<option value="' . esc_attr($p->ID) . '">' . esc_html($label) . '</option>';
+        }
+        echo '</select>';
+    }
+}
+
+function ccsc_periodical_entries_metabox_html($post) {
+    $entries = get_posts([
+        'post_type'   => 'periodical_entry',
+        'post_parent' => $post->ID,
+        'numberposts' => -1,
+        'orderby'     => 'menu_order',
+        'order'       => 'ASC',
+        'post_status' => 'any',
+    ]);
+
+    if ($entries) {
+        echo '<ul style="margin:0 0 10px;padding-left:1.2em">';
+        foreach ($entries as $e) {
+            $edit_url = admin_url('post.php?post=' . $e->ID . '&action=edit');
+            echo '<li><a href="' . esc_url($edit_url) . '">' . esc_html($e->post_title) . '</a></li>';
+        }
+        echo '</ul>';
+    } else {
+        echo '<p style="color:#888;margin:0 0 10px">尚無文章</p>';
+    }
+
+    $new_url = admin_url('post-new.php?post_type=periodical_entry&ccsc_parent=' . $post->ID);
+    echo '<a href="' . esc_url($new_url) . '" class="button button-primary">新增期刊文章</a>';
+}
+
+function ccsc_save_periodical_parent($post_id, $post) {
+    if (!isset($_POST['ccsc_periodical_parent_nonce'])) return;
+    if (!wp_verify_nonce($_POST['ccsc_periodical_parent_nonce'], 'ccsc_set_periodical_parent')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    $parent_id = isset($_POST['ccsc_periodical_parent_id']) ? intval($_POST['ccsc_periodical_parent_id']) : 0;
+
+    wp_update_post([
+        'ID'          => $post_id,
+        'post_parent' => $parent_id,
+    ]);
 }
 
 function ccsc_register_post_types() {
