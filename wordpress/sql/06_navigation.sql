@@ -25,7 +25,7 @@ UPDATE wp_posts
 <!-- wp:navigation-submenu {"label":"服務與生活","url":"#","kind":"custom","isTopLevelLink":false} -->
 <!-- wp:navigation-link {"label":"文化福傳","url":"#","kind":"custom","isTopLevelLink":false} /-->
 <!-- /wp:navigation-submenu -->
-<!-- wp:navigation-link {"label":"行事曆","url":"#","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"行事曆","url":"/?page_id=65000","kind":"custom","isTopLevelLink":false} /-->
 <!-- wp:navigation-submenu {"label":"小會刊物","url":"#","kind":"custom","isTopLevelLink":false} -->
 <!-- wp:navigation-link {"label":"心泉","url":"/?periodical_type=fountain","kind":"custom","isTopLevelLink":false} /-->
 <!-- wp:navigation-link {"label":"芥子","url":"/?periodical_type=seed","kind":"custom","isTopLevelLink":false} /-->

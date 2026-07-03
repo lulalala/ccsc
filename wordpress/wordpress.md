@@ -55,12 +55,19 @@ This plugin registers all Custom Post Types (CPTs) and taxonomies. It must be **
 - Archive: no (accessed only through parent periodical)
 - Single: `/?p=ID`
 
+#### `schedule` — 行事曆
+- Supports: title, editor
+- Taxonomy: `group` (same terms as notices)
+- Not publicly queryable (no archive, no single view) — mirrors Rails, which only exposes the aggregated `/schedules` index
+- Public display: the 行事曆 page (`/?page_id=65000`) contains the `[ccsc_schedules]` shortcode, which renders each group's **latest** schedule (body + 更新時間), or 目前暫無活動 when a group has none
+- Managed in WP Admin like notices; the newest published schedule per group is what shows on the page
+
 ### Taxonomies Registered
 
 #### `group`
-- Applied to: `notice` CPT
+- Applied to: `notice` and `schedule` CPTs
 - One term per Rails `Group` record
-- Used to filter notices by group: `/?post_type=notice&group=<slug>`
+- Used to filter notices by group: `/?post_type=notice&group=<slug>` (schedules never appear in taxonomy archives since they are not publicly queryable)
 
 #### `periodical_type`
 - Applied to: `periodical` CPT
@@ -100,6 +107,9 @@ wp db query < sql/01_terms.sql
 wp db query < sql/02_notices.sql
 wp db query < sql/03_periodicals.sql
 wp db query < sql/04_periodical_entries.sql
+wp db query < sql/05_info_pages.sql
+wp db query < sql/06_navigation.sql
+wp db query < sql/07_schedules.sql
 ```
 
 ---
@@ -130,3 +140,5 @@ After import:
 - [ ] `/?p=30001` shows a periodical entry with author ACF field + HTML body
 - [ ] `/?post_type=notice&group=<slug>` filters notices by group
 - [ ] `/?post_type=periodical&periodical_type=fountain` shows only Fountain periodicals
+- [ ] `/?page_id=65000` (行事曆) shows one section per group with its latest schedule or 目前暫無活動
+- [ ] Nav item 行事曆 links to `/?page_id=65000`

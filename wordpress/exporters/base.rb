@@ -10,6 +10,8 @@ NOTICE_OFFSET        = 10_000  # wp post ID = notice.id + 10000
 PERIODICAL_OFFSET    = 20_000  # wp post ID = periodical.id + 20000
 ENTRY_OFFSET         = 30_000  # wp post ID = entry.id + 30000
 ATTACHMENT_OFFSET    = 40_000  # wp post ID = periodical.id + 40000
+SCHEDULE_OFFSET      = 60_000  # wp post ID = schedule.id + 60000
+SCHEDULE_PAGE_ID     = 65_000  # wp post ID of the 行事曆 page holding [ccsc_schedules]
 
 SQL_DIR = File.expand_path('../sql', __dir__)
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: CCSC Custom Post Types
- * Description: Registers Notice, Periodical, and PeriodicalEntry CPTs with Group and PeriodicalType taxonomies.
+ * Description: Registers Notice, Periodical, PeriodicalEntry, and Schedule CPTs with Group and PeriodicalType taxonomies.
  * Version: 1.0
  */
 
@@ -16,6 +16,7 @@ add_action('wp_head', 'ccsc_header_styles');
 add_action('add_meta_boxes', 'ccsc_add_periodical_parent_metabox');
 add_action('add_meta_boxes', 'ccsc_add_periodical_entries_metabox');
 add_action('save_post_periodical_entry', 'ccsc_save_periodical_parent', 10, 2);
+add_shortcode('ccsc_schedules', 'ccsc_schedules_shortcode');
 
 function ccsc_plain_permalink($url, $post) {
     $ccsc_types = ['notice', 'periodical', 'periodical_entry'];
@@ -131,6 +132,28 @@ function ccsc_header_styles() { ?>
     object-fit: contain;
 }
 
+/* ── Schedules page (行事曆) ── */
+.ccsc-schedule-group {
+    margin-bottom: 2.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #e5d9c6;
+}
+.ccsc-schedule-group > h2 {
+    color: #3d2110;
+    border-left: 4px solid #b07330;
+    padding-left: 0.5em;
+}
+.ccsc-schedule-body {
+    overflow-x: auto;
+}
+.ccsc-schedule-date {
+    color: #888;
+    font-size: 0.85em;
+}
+.ccsc-schedule-empty {
+    color: #888;
+}
+
 /* ── Mobile menu ── */
 #ast-mobile-site-navigation {
     background-color: #3d2110;
@@ -169,6 +192,49 @@ function ccsc_periodical_entry_meta($content) {
     }
 
     return $meta . $content;
+}
+
+// [ccsc_schedules] — one section per group showing its latest schedule,
+// mirroring the Rails /schedules page (行事曆).
+function ccsc_schedules_shortcode() {
+    $terms = get_terms([
+        'taxonomy'   => 'group',
+        'hide_empty' => false,
+        'orderby'    => 'id',
+        'order'      => 'ASC',
+    ]);
+
+    if (empty($terms) || is_wp_error($terms)) {
+        return '';
+    }
+
+    $out = '<div class="ccsc-schedules">';
+    foreach ($terms as $term) {
+        $latest = get_posts([
+            'post_type'   => 'schedule',
+            'numberposts' => 1,
+            'orderby'     => 'date',
+            'order'       => 'DESC',
+            'tax_query'   => [[
+                'taxonomy' => 'group',
+                'field'    => 'term_id',
+                'terms'    => $term->term_id,
+            ]],
+        ]);
+
+        $out .= '<section class="ccsc-schedule-group">';
+        $out .= '<h2>' . esc_html($term->name) . '</h2>';
+        if ($latest) {
+            $out .= '<div class="ccsc-schedule-body">' . $latest[0]->post_content . '</div>';
+            $out .= '<p class="ccsc-schedule-date">更新時間 ' . esc_html(get_the_date('Y/m/d-H:i', $latest[0])) . '</p>';
+        } else {
+            $out .= '<p class="ccsc-schedule-empty">目前暫無活動</p>';
+        }
+        $out .= '</section>';
+    }
+    $out .= '</div>';
+
+    return $out;
 }
 
 function ccsc_add_periodical_parent_metabox() {
@@ -306,6 +372,28 @@ function ccsc_register_post_types() {
         'rewrite'           => false,
     ]);
 
+    // Schedules have no public single/archive view in the Rails app — only the
+    // aggregated 行事曆 page rendered by the [ccsc_schedules] shortcode.
+    register_post_type('schedule', [
+        'labels' => [
+            'name'          => '行事曆',
+            'singular_name' => '行事曆',
+            'add_new_item'  => '新增行事曆',
+            'edit_item'     => '編輯行事曆',
+            'view_item'     => '查看行事曆',
+            'search_items'  => '搜尋行事曆',
+        ],
+        'public'             => false,
+        'publicly_queryable' => false,
+        'exclude_from_search'=> true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'has_archive'        => false,
+        'supports'           => ['title', 'editor'],
+        'taxonomies'         => ['group'],
+        'rewrite'            => false,
+    ]);
+
     register_post_type('periodical_entry', [
         'labels' => [
             'name'          => '期刊文章',
@@ -327,7 +415,7 @@ function ccsc_register_post_types() {
 }
 
 function ccsc_register_taxonomies() {
-    register_taxonomy('group', ['notice'], [
+    register_taxonomy('group', ['notice', 'schedule'], [
         'labels' => [
             'name'          => '團體',
             'singular_name' => '團體',

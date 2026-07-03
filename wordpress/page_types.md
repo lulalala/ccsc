@@ -24,6 +24,37 @@
 
 ---
 
+## Schedule
+
+**Table:** `schedules`
+
+| Column | Type | Notes |
+|--------|------|-------|
+| id | integer | PK |
+| body | text | nullable; 內文 (raw HTML from CKEditor, often tables/images) |
+| group_id | integer | FK → groups (validated present) |
+| created_at | datetime | NOT NULL |
+| updated_at | datetime | NOT NULL |
+
+**Associations:**
+- `belongs_to :group`
+
+**Public URLs:**
+- `/schedules` — the only public view (行事曆); one table per group showing that group's **latest** schedule body plus 更新時間, or 目前暫無活動 if the group has none. Individual schedules are never publicly addressable.
+
+**Rendered structure (index, per group):**
+```
+<table>
+  <thead>{group.name}</thead>
+  活動內容 | {group.schedules.last.body — raw HTML}
+  更新時間 | {created_at "%Y/%m/%d-%H:%M"}
+</table>
+```
+
+**Admin:** full CRUD; history is kept (older schedules stay in the table but only the latest displays).
+
+---
+
 ## Notice
 
 **Table:** `notices`
@@ -156,6 +187,9 @@ Group
   └── has_many :schedules
 
 Notice
+  └── belongs_to :group
+
+Schedule
   └── belongs_to :group
 
 Periodical (STI: Fountain, Seed)
