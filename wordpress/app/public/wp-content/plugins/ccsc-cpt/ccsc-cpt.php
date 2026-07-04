@@ -56,7 +56,7 @@ function ccsc_periodical_entry_list($content) {
         'numberposts' => -1,
         'orderby'     => 'menu_order',
         'order'       => 'ASC',
-        'post_status' => 'any',
+        'post_status' => 'publish',
     ]);
 
     if (empty($entries)) {
