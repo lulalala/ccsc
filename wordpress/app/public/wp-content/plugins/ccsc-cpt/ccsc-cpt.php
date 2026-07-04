@@ -372,10 +372,9 @@ function ccsc_save_periodical_parent($post_id, $post) {
 
     $parent_id = isset($_POST['ccsc_periodical_parent_id']) ? intval($_POST['ccsc_periodical_parent_id']) : 0;
 
-    wp_update_post([
-        'ID'          => $post_id,
-        'post_parent' => $parent_id,
-    ]);
+    // Use direct DB update to avoid re-triggering save_post and causing infinite recursion.
+    global $wpdb;
+    $wpdb->update($wpdb->posts, ['post_parent' => $parent_id], ['ID' => $post_id], ['%d'], ['%d']);
 }
 
 function ccsc_register_post_types() {
