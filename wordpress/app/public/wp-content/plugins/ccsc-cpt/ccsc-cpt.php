@@ -16,6 +16,8 @@ add_filter('the_content', 'ccsc_culture_entry_meta');
 add_filter('the_author', 'ccsc_culture_entry_author_name');
 add_filter('astra_the_title_enabled', 'ccsc_hide_front_page_title');
 add_action('wp_head', 'ccsc_header_styles');
+add_filter('upload_mimes', 'ccsc_allow_svg_upload');
+add_filter('wp_check_filetype_and_ext', 'ccsc_fix_svg_filetype', 10, 4);
 add_action('add_meta_boxes', 'ccsc_add_periodical_parent_metabox');
 add_action('add_meta_boxes', 'ccsc_add_periodical_entries_metabox');
 add_action('save_post_periodical_entry', 'ccsc_save_periodical_parent', 10, 2);
@@ -81,6 +83,21 @@ function ccsc_hide_front_page_title($enabled) {
     return is_front_page() ? false : $enabled;
 }
 
+// The site logo (logo.svg) is an SVG; WP blocks SVG uploads by default as an XSS
+// precaution, so allow it explicitly for this trusted, admin-only upload.
+function ccsc_allow_svg_upload($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+
+function ccsc_fix_svg_filetype($data, $file, $filename, $mimes) {
+    if (!$data['type'] && preg_match('/\.svg$/i', $filename)) {
+        $data['ext']  = 'svg';
+        $data['type'] = 'image/svg+xml';
+    }
+    return $data;
+}
+
 function ccsc_header_styles() { ?>
 <style>
 /* ── Site title ── */
@@ -95,6 +112,22 @@ function ccsc_header_styles() { ?>
 /* ── Golden separator between header and content ── */
 #masthead {
     border-bottom: 3px solid #b07330;
+}
+
+/* ── Sticky header ── */
+#masthead {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* ── Logo next to site title ── */
+.ast-site-identity .site-logo-img {
+    margin-right: 0.75rem;
+}
+.ast-site-identity .site-logo-img img {
+    max-height: 50px;
+    width: auto;
 }
 
 /* ── Top-level nav items ── */
