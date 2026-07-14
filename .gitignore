@@ -13,6 +13,14 @@
 # wordpress
 /wordpress/app/public/wp-content/uploads/
 
+# local WP database dumps / backups (hundreds of MB)
+/backup-before-*.sql
+/wordpress/app/sql/
+/wordpress/logs/
+
+# Claude Code local state (worktrees, settings.local.json)
+/.claude/
+
 # bundler state
 /.bundle
 /vendor/bundle/
