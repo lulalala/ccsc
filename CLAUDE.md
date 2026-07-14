@@ -132,9 +132,12 @@ Rails stored uploads two ways, both requiring manual relinking after SQL import:
   path under `wp-content/uploads/`). Run *after* SQL import, from the repo root.
 - **CKEditor inline images** in `posts.body` / `culture_entries` HTML
   (`/uploads/ckeditor/...`, Rails-root-relative) — rewritten to
-  `/wp-content/uploads/ckeditor/...` at export time (see the `.gsub` in
-  `culture_entries_exporter.rb` and the equivalent step for periodical entries) rather than
-  via a post-import `wp search-replace`, for new exporters prefer doing this in the exporter.
+  `/wp-content/uploads/ckeditor/...` at export time via `rewrite_ckeditor_paths()` in
+  `base.rb`, not via a post-import `wp search-replace`. **Every exporter that emits a body
+  must pipe it through this helper** (`notices`, `schedules`, `periodical_entries`, `infos`,
+  `culture_entries` all do) — `schedules_exporter.rb` was missing it and its images 404'd
+  until the paths were patched in place. The helper's negative lookbehind makes it idempotent,
+  so it's safe to apply to already-rewritten bodies.
 
 Known gotchas already fixed once (re-check if images break again after a fresh import):
 - `_wp_attached_file` postmeta must **not** include a leading `uploads/` — WP resolves it

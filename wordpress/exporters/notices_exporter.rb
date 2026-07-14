@@ -21,7 +21,7 @@ def export_notices
       wp_id        = NOTICE_OFFSET + n['id'].to_i
       term_tax_id  = TERM_GROUP_OFFSET + n['group_id'].to_i
       title        = escape_string(n['title'])
-      content      = escape_string(n['body'])
+      content      = escape_string(rewrite_ckeditor_paths(n['body']))
       post_date    = format_date(n['created_at'])
       post_modified = format_date(n['updated_at'])
       post_name    = escape_string("notice-#{n['id']}")

@@ -36,7 +36,7 @@ def export_periodical_entries
       parent_wp_id  = PERIODICAL_OFFSET + e['periodical_id'].to_i
       post_status   = e['periodical_public'] == 't' ? 'publish' : 'draft'
       title         = escape_string(e['post_title'])
-      content       = escape_string(e['post_body'])
+      content       = escape_string(rewrite_ckeditor_paths(e['post_body']))
       post_date     = format_date(e['created_at'])
       post_modified = format_date(e['updated_at'])
       menu_order    = e['order'].nil? ? 0 : e['order'].to_i

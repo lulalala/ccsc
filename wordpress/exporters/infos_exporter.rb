@@ -24,7 +24,7 @@ def export_infos
     infos.each do |info|
       wp_id         = INFO_OFFSET + info['id'].to_i
       title         = escape_string(info['title'])
-      content       = escape_string(info['body'])
+      content       = escape_string(rewrite_ckeditor_paths(info['body']))
       post_date     = format_date(info['created_at'])
       post_modified = format_date(info['updated_at'])
       post_name     = escape_string(info['seo_name'])

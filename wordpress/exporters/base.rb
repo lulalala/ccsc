@@ -38,6 +38,14 @@ def escape_string(value)
   "'#{value.to_s.gsub('\\', '\\\\\\\\').gsub("'", "\\\\'")}'"
 end
 
+# Rewrites in-body CKEditor image refs from the Rails-root-relative path
+# (/uploads/ckeditor/...) to the WP uploads dir (/wp-content/uploads/ckeditor/...).
+# Every exporter that emits a CKEditor body must run it through this, or the
+# images 404 after import.
+def rewrite_ckeditor_paths(body)
+  body&.gsub(%r{(?<!/wp-content)/uploads/ckeditor/}, '/wp-content/uploads/ckeditor/')
+end
+
 def format_date(ts)
   return "'0000-00-00 00:00:00'" if ts.nil?
   t = ts.is_a?(String) ? Time.parse(ts) : ts

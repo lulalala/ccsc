@@ -25,7 +25,7 @@ def export_schedules
       term_tax_id   = TERM_GROUP_OFFSET + s['group_id'].to_i
       created       = Time.parse(s['created_at'])
       title         = escape_string("#{s['group_name']}行事曆 #{created.strftime('%Y/%m/%d')}")
-      content       = escape_string(s['body'])
+      content       = escape_string(rewrite_ckeditor_paths(s['body']))
       post_date     = format_date(s['created_at'])
       post_modified = format_date(s['updated_at'])
       post_name     = escape_string("schedule-#{s['id']}")
