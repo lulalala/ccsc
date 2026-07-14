@@ -125,7 +125,7 @@ The `CATEGORY_MAP` mapping (leaf-category id → flattened term id) lives inline
 
 ## Image migration
 
-Rails stored uploads two ways, both requiring manual relinking after SQL import:
+Rails stored uploads three ways, all requiring manual relinking after SQL import:
 - **CarrierWave periodical covers** (`public/uploads/fountain/image/{id}/{file}`, production
   only, not in the dev repo) — fetched via `wordpress/download_images.sh` (uses `wp post list
   --post_type=attachment` to enumerate stub `guid`s, strips the domain, rsyncs the relative
@@ -138,11 +138,34 @@ Rails stored uploads two ways, both requiring manual relinking after SQL import:
   `culture_entries` all do) — `schedules_exporter.rb` was missing it and its images 404'd
   until the paths were patched in place. The helper's negative lookbehind makes it idempotent,
   so it's safe to apply to already-rewritten bodies.
+- **Base64 `data:` URIs** pasted inline into CKEditor — 99 of them, ~105 MB of base64 across
+  38 `notice`, 5 `periodical_entry` and 1 `culture_entry` posts (62% of the whole `wp_posts`
+  table). The exporters pass post bodies through untouched, so **these come back on every
+  re-import** and must be extracted again with `wordpress/extract_inline_images.php`:
+
+  ```bash
+  cd wordpress
+  wp db export ../backup-before-inline-extract.sql   # it rewrites post_content in place
+  wp eval-file extract_inline_images.php dry-run     # positional flag, NOT --dry-run
+  wp eval-file extract_inline_images.php
+  wp db query "OPTIMIZE TABLE wp_posts"              # InnoDB won't release the ~100 MB otherwise
+  ```
+
+  It decodes each data URI, writes it to `uploads/YYYY/MM/{post_type}-{post_id}-{n}.{ext}`,
+  creates a real attachment (parented to the source post, with generated thumbnail sizes), and
+  rewrites only the `src` attribute to a site-relative `/wp-content/uploads/...` URL — matching
+  the CKEditor convention above. Safe to re-run; once the data URIs are gone it is a no-op.
 
 Known gotchas already fixed once (re-check if images break again after a fresh import):
 - `_wp_attached_file` postmeta must **not** include a leading `uploads/` — WP resolves it
   relative to `wp-content/uploads/` already.
 - Attachment `guid` needs `PRODUCTION_DOMAIN` replaced with the actual local/prod URL.
+- Images over 2560px get a `-scaled` variant that WP treats as the canonical "full" size, while
+  the larger original stays on disk. Content `src` must use
+  `wp_get_attachment_image_url($id, 'full')`, **not** the URL returned by `wp_upload_bits()`,
+  or pages serve the oversized original.
+- `wp eval-file` passes its trailing arguments as a local `$args`; a `global $args;` declaration
+  in the script shadows it with `null` and silently disables flag parsing.
 
 ## Adding a new migrated model — checklist
 
