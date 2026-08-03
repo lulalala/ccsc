@@ -198,11 +198,26 @@ function ccsc_header_styles() { ?>
     color: #888;
 }
 
-/* ── Mobile menu ── */
-#ast-mobile-site-navigation {
+/* ── Mobile (hamburger) menu ── */
+/* Below Astra's 921px break point the inline menu, its .menu-link anchors and
+   its .sub-menus are all painted var(--ast-global-color-4) (#fff), which hid
+   our light menu text. Override Astra's own rule one-to-one — same three
+   targets, same specificity, later in the cascade — with the brown used by the
+   full-width dropdown menus, then make the text and expand arrows light. */
+.ast-builder-menu-mobile .main-navigation .main-header-menu,
+.ast-builder-menu-mobile .main-navigation .main-header-menu .menu-link,
+.ast-builder-menu-mobile .main-navigation .main-header-menu .sub-menu {
     background-color: #3d2110;
 }
-#ast-mobile-site-navigation .menu-link {
+#ast-hf-mobile-menu .menu-link {
+    color: #fef5e7 !important;
+}
+#ast-hf-mobile-menu .menu-item:hover > .menu-link,
+#ast-hf-mobile-menu .menu-item.focus > .menu-link,
+#ast-hf-mobile-menu .menu-item.current-menu-item > .menu-link {
+    color: #d4a96a !important;
+}
+#ast-hf-mobile-menu .ast-menu-toggle {
     color: #fef5e7 !important;
 }
 </style>
